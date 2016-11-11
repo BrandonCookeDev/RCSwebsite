@@ -14,32 +14,31 @@
     <img src="images/RCSWhite.png" height="150" width="150" />
 
     <!-- SMALL HR -->
-    <hr class="main"/>
-
     <!-- NAVBAR CENTERED FLOATING -->
     <div class="navbar">
         <div class="navbar-collapse">
             <span>
+                <hr class="main"/>
                 <ul class="nav navbar-nav">
+
                     <li ng-class="{active: $route.current.activeTab == 'Home'}">
-                        <a ng-href="#/">Home</a>
+                        <a ng-href="#/" class="main">Home</a>
                     </li>
                     <li ng-class="{active: $route.current.activeTab == 'Team'}">
-                        <a ng-href="#/team">Team</a>
+                        <a ng-href="#/team" class="main">Team</a>
                     </li>
                     <li ng-class="{active: $route.current.activeTab == 'Tournaments'}">
-                        <a ng-href="#/tournaments">Tournaments</a>
+                        <a ng-href="#/tournaments" class="main">Tournaments</a>
                     </li>
                     <li ng-class="{active: $route.current.activeTab == 'Contact'}">
-                        <a ng-href="#/contact">Contact Us</a>
+                        <a ng-href="#/contact" class="main">Contact Us</a>
                     </li>
+
                 </ul>
+                <hr class="main"/>
             </span>
         </div>
     </div>
-
-    <!-- SMALL HR -->
-    <hr class="main"/>
 
     <!-- ngView -->
     <div ng-view></div>

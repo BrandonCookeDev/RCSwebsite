@@ -1,18 +1,60 @@
+/* MAIN CSS */
 body.main{
     text-align: center;
     align: center;
 
-    padding-top: 5%;
+    padding-top: 2%;
 
     background-color: #232324;
 }
 
 hr.main{
-    color: white;
-    border-top: 2px solid white;
+    color: darkgrey;
+    border-top: 4px solid white;
     height: 2px;
-    width: 35%;
+    width: 10%;
     opacity: 0.5;
+    display:inline-block;
+}
+
+div.main {
+    font-size:16pt;
+}
+
+p.main{
+    color: darkgrey;
+
+}
+
+a:link.main{
+    color:dimgrey;
+}
+
+a:visited.main{
+    color:dimgray;
+}
+
+a:hover.main{
+    color:dimgrey;
+}
+
+a:active.main{
+    color:lightslategray;
+}
+
+img.stretch{
+    background-size:cover;
+    left:0px;
+    margin:0;
+}
+
+div.imageStretch{
+    background-image: url(../images/splash.banner.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:100%;
+    background-color: transparent;
+    background-size:cover;
 }
 
 /* THIS CENTERS CONTENT IN THE BOOTSTRAP NAVBAR */
