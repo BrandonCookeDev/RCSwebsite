@@ -1,0 +1,32 @@
+<div class="container">
+    <h1 class="team">Players:</h1>
+    <div ng-repeat="player in playersArray">
+        <div class="teamContainer">
+            <div class="teamImage">
+                <img src="{{player.picture}}" height="200" width="200">
+            </div>
+            <div class="teamBio">
+                <h2 class="team">Name: {{player.name}}</h2>
+                <h3 class="team">Position: {{player.position}}</h3>
+                <h4 class="team">Bio:</h4><br/>
+                <p class="team">{{player.bio}}</p>
+            </div>
+        </div>
+    </div>
+    <hr class="team"/>
+    <br/>
+    <h1 class="team">Staff:</h1>
+    <div ng-repeat="staff in staffArray">
+        <div class="teamContainer">
+            <div class="teamImage">
+                <img src="{{staff.picture}}" height="200" width="200"/>
+            </div>
+            <div class="teamBio">
+                <h2 class="team">Name: {{staff.name}}</h2>
+                <h3 class="team">Position: {{staff.position}}</h3>
+                <h4 class="team">Bio:</h4>
+                <p class="team">{{staff.bio}}</p>
+            </div>
+        </div>
+    </div>
+</div>
