@@ -1,0 +1,29 @@
+body.main{
+    text-align: center;
+    align: center;
+
+    padding-top: 5%;
+
+    background-color: #232324;
+}
+
+hr.main{
+    color: white;
+    border-top: 2px solid white;
+    height: 2px;
+    width: 35%;
+    opacity: 0.5;
+}
+
+/* THIS CENTERS CONTENT IN THE BOOTSTRAP NAVBAR */
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+    text-color: white;
+
+}

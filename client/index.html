@@ -2,15 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Recursion: Southeaster Smash Bros</title>
     <link rel='stylesheet' type='text/css' href='node_modules/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <link rel="icon" href="/images/favicon.png" type="image/png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 <body>
-<body>
+<body class="main">
 
+    <!-- Navbar Div -->
+    <!-- RCS LOGO CENTERED -->
+    <img src="images/RCSWhite.png" height="150" width="150" />
+
+    <!-- SMALL HR -->
+    <hr class="main"/>
+
+    <!-- NAVBAR CENTERED FLOATING -->
+    <div class="navbar">
+        <div class="navbar-collapse">
+            <span>
+                <ul class="nav navbar-nav">
+                    <li ng-class="{active: $route.current.activeTab == 'Home'}">
+                        <a ng-href="#/">Home</a>
+                    </li>
+                    <li ng-class="{active: $route.current.activeTab == 'Team'}">
+                        <a ng-href="#/team">Team</a>
+                    </li>
+                    <li ng-class="{active: $route.current.activeTab == 'Tournaments'}">
+                        <a ng-href="#/tournaments">Tournaments</a>
+                    </li>
+                    <li ng-class="{active: $route.current.activeTab == 'Contact'}">
+                        <a ng-href="#/contact">Contact Us</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+    </div>
+
+    <!-- SMALL HR -->
+    <hr class="main"/>
+
+    <!-- ngView -->
+    <div ng-view></div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
     <!--<script src='node_modules/angular/angular.min.js'></script>-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/angular-route/angular-route.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
