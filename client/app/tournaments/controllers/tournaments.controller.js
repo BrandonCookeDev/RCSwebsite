@@ -1,5 +1,5 @@
-angular.module('RCSapp.tournaments').controller('TournamentsCtrl', function($scope){
-
+angular.module('RCSapp.tournaments')
+    .controller('TournamentsCtrl', function($scope){
 
 });
 

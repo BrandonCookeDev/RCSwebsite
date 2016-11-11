@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="RCSapp">
 <head>
     <meta charset="UTF-8">
     <title>Recursion: Southeaster Smash Bros</title>
@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="styles/common.css" />
     <link rel="icon" href="/images/favicon.png" type="image/png" />
     <link rel="shortcut icon" href="/favicon.ico" />
-<body>
 <body class="main">
 
     <!-- Navbar Div -->
@@ -46,10 +45,22 @@
     <div ng-view></div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-    <!--<script src='node_modules/angular/angular.min.js'></script>-->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--<script src='node_modules/angular/angular.min.js'></script>-->
+    <!--<script src="node_modules/angular-route/angular-route.js"></script>-->
+
+    <script src="app/common/common.module.js"></script>
+    <script src="app/contact/contact.module.js"></script>
+    <script src="app/contact/controllers/contact.controller.js"></script>
+    <script src="app/tournaments/tournaments.module.js"></script>
+    <script src="app/tournaments/controllers/tournaments.controller.js"></script>
+    <script src="app/team/team.module.js"></script>
+    <script src="app/team/controllers/team.controller.js"></script>
+    <script src="app/splash/splash.module.js"></script>
+    <script src="app/splash/controllers/splash.controller.js"></script>
+    <script src="app/app.js"></script>
 </body>
 </html>

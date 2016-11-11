@@ -1,5 +1,4 @@
-angular.module('RCSapp.team').controller('TeamCtrl', function($scope){
-
-
+angular.module('RCSapp.team')
+    .controller('TeamCtrl', function($scope){
 
 });
