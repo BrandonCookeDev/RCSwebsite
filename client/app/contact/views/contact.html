@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="imageStretchContact">
+        <br/><br/><br/><br/>
+
+        <form ng-submit="submitContactForm()" class="contact">
+            <h1 class="contact"> Contact Us</h1>
+            <h4 class="contact">Name <b class="red">*</b></h4>
+            <input type="text" ng-model="firstName" placeholder="First Name" maxlength="8">
+            <input type="text" ng-model="lastName" placeholder="Last Name" maxlength="8"/>
+            <h4 class="contact">Email <b class="red">*</b> </h4>
+            <input type="text" ng-model="email" width="20"/>
+            <br/>
+            <h4 class="contact">Comment <b class="red">*</b> </h4>
+            <textarea ng-model="comment"></textarea>
+            <br/>
+            <input type="submit" value="Submit" />
+        </form>
+
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+    </div>
+</div>

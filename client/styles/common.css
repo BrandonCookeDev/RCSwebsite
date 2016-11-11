@@ -44,8 +44,8 @@ img.stretch{
     margin:0;
 }
 
-div.imageStretch{
-    background-image: url(../images/splash.banner.jpg);
+div.imageStretchMain {
+    background-image: url(../images/team/common/splash.banner.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;
@@ -71,7 +71,7 @@ hr.team{
 }
 
 div.teamContainer{
-    height:300px;
+    height:275px;
 }
 div.teamImage{
     padding-top:25px;
@@ -87,6 +87,31 @@ div.teamBio{
 
 td.team{
     height: 100px;
+}
+
+/* CONTACT VIEW */
+div.imageStretchContact{
+    background-image: url(../images/contact/contact.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:100%;
+    background-color: transparent;
+    background-size:cover;
+}
+
+b.red{
+    color:red
+}
+
+form.contact{
+    text-align: left;
+    padding-left:15%;
+}
+
+h1.contact, h2.contact,
+h3.contact, h4.contact,
+h5.contact{
+    color:white;
 }
 
 /* THIS CENTERS CONTENT IN THE BOOTSTRAP NAVBAR */
