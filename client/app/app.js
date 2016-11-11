@@ -3,7 +3,8 @@ var app = angular.module('RCSapp',
         'RCSapp.splash',
         'RCSapp.tournaments',
         'RCSapp.team',
-        'RCSapp.contact']);
+        'RCSapp.contact',
+        'RCSapp.common']);
 
 app.config('$routeProvider', function($routeProvider){
         $routeProvider
