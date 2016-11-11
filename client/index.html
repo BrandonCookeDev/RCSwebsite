@@ -1,55 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="RCSapp">
 <head>
     <meta charset="UTF-8">
-    <title>Recursion: Southeaster Smash Bros</title>
+    <title>Recursion</title>
     <link rel='stylesheet' type='text/css' href='node_modules/bootstrap/dist/css/bootstrap.min.css' />
     <link rel="stylesheet" type="text/css" href="styles/common.css" />
     <link rel="icon" href="/images/favicon.png" type="image/png" />
     <link rel="shortcut icon" href="/favicon.ico" />
-<body>
+    <meta name="google-site-verification" content="_9C92OGgKn-ULTZuGPp6-Ck2jyk8bK5fRndkFKWdhhY" />
+    <base href="/">
 <body class="main">
 
     <!-- Navbar Div -->
     <!-- RCS LOGO CENTERED -->
-    <img src="images/RCSWhite.png" height="150" width="150" />
+    <a href="/">
+        <img src="images/common/RCSWhiteText.png" height="150" width="125" />
+    </a>
 
     <!-- SMALL HR -->
-    <hr class="main"/>
-
     <!-- NAVBAR CENTERED FLOATING -->
     <div class="navbar">
-        <div class="navbar-collapse">
+        <div class="navbar navbar-collapse" role="navigation">
             <span>
+                <hr class="main"/>
                 <ul class="nav navbar-nav">
+
                     <li ng-class="{active: $route.current.activeTab == 'Home'}">
-                        <a ng-href="#/">Home</a>
+                        <a ng-href="/" class="main">Home</a>
                     </li>
                     <li ng-class="{active: $route.current.activeTab == 'Team'}">
-                        <a ng-href="#/team">Team</a>
+                        <a ng-href="/team" class="main">Team</a>
                     </li>
                     <li ng-class="{active: $route.current.activeTab == 'Tournaments'}">
-                        <a ng-href="#/tournaments">Tournaments</a>
+                        <a ng-href="/tournaments" class="main">Tournaments</a>
                     </li>
                     <li ng-class="{active: $route.current.activeTab == 'Contact'}">
-                        <a ng-href="#/contact">Contact Us</a>
+                        <a ng-href="/contact" class="main">Contact Us</a>
                     </li>
                 </ul>
+                <hr class="main"/>
             </span>
         </div>
     </div>
-
-    <!-- SMALL HR -->
-    <hr class="main"/>
 
     <!-- ngView -->
     <div ng-view></div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-    <!--<script src='node_modules/angular/angular.min.js'></script>-->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--<script src='node_modules/angular/angular.min.js'></script>-->
+    <!--<script src="node_modules/angular-route/angular-route.js"></script>-->
+
+    <script src="app/common/common.module.js"></script>
+
+    <script src="app/contact/contact.module.js"></script>
+    <script src="app/contact/controllers/contact.controller.js"></script>
+
+    <script src="app/tournaments/tournaments.module.js"></script>
+    <script src="app/tournaments/controllers/tournaments.controller.js"></script>
+
+    <script src="app/team/team.module.js"></script>
+    <script src="app/team/services/team.service.js"></script>
+    <script src="app/team/controllers/team.controller.js"></script>
+
+    <script src="app/splash/splash.module.js"></script>
+    <script src="app/splash/controllers/splash.controller.js"></script>
+
+    <script src="app/app.js"></script>
 </body>
 </html>

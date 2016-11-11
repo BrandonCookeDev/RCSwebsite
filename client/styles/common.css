@@ -1,18 +1,285 @@
+/* MAIN CSS */
 body.main{
     text-align: center;
     align: center;
 
-    padding-top: 5%;
+    padding-top: 2%;
 
     background-color: #232324;
 }
 
 hr.main{
-    color: white;
+    color: darkgrey;
     border-top: 2px solid white;
     height: 2px;
-    width: 35%;
+    width: 15%;
     opacity: 0.5;
+    display:inline-block;
+}
+hr.main2{
+    font-size:42pt;
+}
+
+div.main {
+    margin:0 auto;
+    font-size:18pt;
+    width:80%;
+}
+
+div.extras{
+    position:relative;
+    align-content: center;
+    display:inline-block;
+}
+div.twitch{
+    padding-right:20px;
+    padding-left:20px;
+    position:relative
+}
+@media screen and (min-width: 62em){
+    iframe.RCStwitch{
+        height: 478px;
+        width: 850px;
+    }
+}
+@media screen and (min-width: 48em) and (max-width: 61em){
+    iframe.RCStwitch{
+        height: 366px;
+        width: 650px;
+    }
+}
+
+div.twitter{
+    padding-left:100px;
+    float:left;
+}
+div.videos{
+    padding-left:50px;
+    float:left;
+}
+
+p.main{
+    color: darkgrey;
+}
+
+a:link.main{
+    color:dimgrey;
+}
+a:visited.main{
+    color:dimgray;
+}
+a:hover.main{
+    color:dimgrey;
+}
+a:active.main{
+    color:lightslategray;
+}
+
+img.stretch{
+    background-size:cover;
+    left:0px;
+    margin:0;
+}
+
+div.imageStretchMain {
+    background-image: url(../images/common/splash.banner.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:100%;
+    background-color: transparent;
+    background-size:cover;
+}
+
+/* TEAM VIEW */
+h1.team, h2.team,
+h3.team, h4.team,
+h5.team  {
+    color:darkgrey;
+}
+
+h1.teamTitle{
+    color: darkgrey;
+    font-size:50pt;
+    text-align: center;
+}
+@media screen and (min-width: 48em){
+    h1.teamTitle{
+        color: darkgrey;
+        font-size:60pt;
+        text-align: left;
+        padding-left:100px;
+    }
+}
+
+p.team{
+    color:darkgrey;
+    font-size:12pt;
+}
+
+hr.team{
+    color: darkgrey;
+    width: 80%;
+}
+
+div.teamImage{
+
+}
+div.teamBio{
+    text-align:center;
+}
+
+div.teamBioPlayer{
+     text-align:center;
+}
+div.teamResults{
+}
+
+@media screen and (min-width: 48em){
+    img.teamImage{
+        padding-top:25px;
+    }
+    div.teamBio{
+        text-align:left;
+    }
+    div.teamBioPlayer{
+        text-align:center;
+    }
+    div.teamResults {
+        text-align: left;
+        align: left;
+    }
+    table.team,td.team{
+        color:white;
+        width: 250px;
+        font-size:13pt;
+        text-align:left;
+    }
+}
+
+table.team, td.team{
+    color:white;
+    width: 250px;
+    font-size:13pt;
+    text-align:left;
+}
+@media screen and (max-width: 47em){
+    table.team, td.team{
+        margin: 0 auto;
+    }
+}
+
+tr.team{
+    border-bottom: 1pt white;
+}
+
+th.team{
+    text-align:left;
+    font-size:15pt;
+    color:lightgrey;
+}
+
+th.resultPlacing,
+td.resultPlacing{
+    text-align: center;
+}
+
+td.team{
+    height: 100px;
+}
+
+/* CONTACT VIEW */
+div.imageStretchContact{
+    background-image: url(../images/contact/contact.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:100%;
+    background-color: transparent;
+    background-size:cover;
+}
+
+b.red{
+    color:red
+}
+
+form.contact{
+    text-align: left;
+    padding-left:15%;
+}
+
+h1.contact, h2.contact,
+h3.contact, h4.contact,
+h5.contact{
+    color:white;
+}
+
+input[type="text"].email{
+    width:250px;
+}
+textarea.comment{
+    width:350px;
+    height:300px;
+}
+
+/* TOURNAMENTS VIEW */
+div.georgiaArcadian{
+    background-image: url(../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.small.jpg);
+    height:350px;
+    width:100%;
+}
+
+div.georgiaArcadianStretch{
+    background-image: url(../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:100%;
+    background-color: transparent;
+    background-size:cover;
+}
+
+div.comingSoon{
+    background-image: url(../images/tournaments/comingSoon.jpg);
+}
+
+div.georgiaArcadianContent{
+    text-align: left;
+}
+
+div.featured{
+
+}
+@media screen and (min-width: 48em){
+    iframe.featured{
+        width: 700px;
+        height: 394px;
+    }
+}
+
+div.photoColumn{
+    padding-left:100px;
+    padding-right:20px;
+    float:left
+}
+div.videoColumn{
+    float:left;
+}
+
+h1.tournaments, h2.tournaments,
+h3.tournaments, h4.tournaments,
+h5.tournaments{
+    color:white;
+}
+
+h1.georgiaArcadian{
+    font-size: 60pt;
+    font-family: 'Times New Roman';
+}
+h2.georgiaArcadian{
+    font-size: 40pt;
+    font-family: 'Times New Roman';
+}
+
+h2.comingSoon{
+    font-size: 40pt;
 }
 
 /* THIS CENTERS CONTENT IN THE BOOTSTRAP NAVBAR */
@@ -26,4 +293,22 @@ hr.main{
     text-align: center;
     text-color: white;
 
+}
+
+/* THIS RESIZES THE LOADING IMAGE */
+img.loading{
+    height:30%;
+    width:30%;
+}
+@media screen and (min-width: 49em) and (max-width: 62em){
+    img.loading{
+        width: 50%;
+        height: 50%;
+    }
+}
+@media screen and (min-width: 48em){
+    img.loading{
+        width: 40%;
+        height: 40%
+    }
 }
