@@ -33,7 +33,7 @@ angular.module('RCSapp.team')
                     name:'Conor Hagan',
                     position:'Graphics Artist',
                     bio:'',
-                    picture:'../../images/team/staff/Conor.png',
+                    picture:'../../images/team/staff/Conor.jpg',
                     category:'staff'
                 }
             ]
@@ -45,7 +45,7 @@ angular.module('RCSapp.team')
                     name:'Kevin \'KPAN\' Pan',
                     position:'Player',
                     bio:'',
-                    picture:'../../images/team/players/Kevin.png',
+                    picture:'../../images/team/players/KPAN.jpg',
                     category:'player'
                 }
             ]
