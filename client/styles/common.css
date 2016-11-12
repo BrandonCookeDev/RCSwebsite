@@ -116,11 +116,24 @@ h5.contact{
 
 /* TOURNAMENTS VIEW */
 div.georgiaArcadian{
-    background-image: url(../../images/tournaments/arcadianBanner.jpg);
+    background-image: url(../images/tournaments/arcadianBanner.jpg);
+}
+
+div.georgiaArcadianStretch{
+    background-image: url(../images/tournaments/arcadianBanner.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:100%;
+    background-color: transparent;
+    background-size:cover;
 }
 
 div.comingSoon{
-    background-image: url(../../images/tournaments/comingSoon.jpg);
+    background-image: url(../images/tournaments/comingSoon.jpg);
+}
+
+div.georgiaArcadianContent{
+    text-align: left;
 }
 
 /* THIS CENTERS CONTENT IN THE BOOTSTRAP NAVBAR */

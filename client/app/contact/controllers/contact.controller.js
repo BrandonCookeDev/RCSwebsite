@@ -1,5 +1,7 @@
 angular.module('RCSapp.contact')
-    .controller('ContactCtrl', function($scope){
+    .controller('ContactCtrl', function($scope, ContactService){
+
+    $scope.contactService = ContactService;
 
     $scope.firstName = null;
     $scope.lastName = null;
@@ -7,7 +9,9 @@ angular.module('RCSapp.contact')
     $scope.comment = null;
 
     $scope.submitContactForm = function(){
+        var emails = $scope.contactService.getEmailAddresses();
 
+        // TODO EMAIL THE ABOVE CONTACTS
     }
 
 });
