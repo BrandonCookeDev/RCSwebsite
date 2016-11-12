@@ -14,18 +14,23 @@ angular.module('RCSapp.team')
                 {
                     name:'Brandon Cooke',
                     position:'Producer',
-                    bio:'Raised in Woodstock, Georgia, Brandon received his Bachelors degree in Computer Science ' +
-                        'from Kennesaw State University in 2014, and has since continued on to study '+
-                        'Computer Science at Georgia Tech for his Master\'s Degree. After running Clash King Studios '+
-                        'for the Georgia Melee community for over half a year, he brings his experience and tech '+
-                        'savy talent to the Recursion team as our main Producer. ',
+                    bio:'Brandon has been streaming events in the Southeast since August of 2015, starting under ' +
+                    'Clash King Studios. As Clash King Studios, Brandon quickly grew the stream to be Georgia\'s main ' +
+                    'source for Melee content. As it continued to grow, a major rebranding and jump in quality ' +
+                    'were in order. Recursion was started as the beginnings of a Clash King Studios rebrand and ' +
+                    'quickly became its own organization under renewed leadership. Brandon is also a software developer ' +
+                    'for AT&T, graduate student at Georgia Tech, and father of two. ',
                     picture:'../../images/team/staff/Brandon.jpg',
                     category:'staff'
                 },
                 {
                     name:'John \'SleepyK\' Lee',
                     position:'Outreach',
-                    bio:'',
+                    bio:'A long-time community figure, SleepyK has been part of the competitive Melee community since ' +
+                    '2007. Since his retirement from competitive Melee in 2011, SleepyK has focused on growing the ' +
+                    'Georgia Melee community and leading it forward from its grassroots beginnings. He\'s now known ' +
+                    'for his work as a community leader, top-level analyst, and commentator for both local and national events. ' +
+                    'You can often find him analyzing viewers\' matches on his Twitch stream or taking Duna pics at tournaments',
                     picture:'../../images/team/staff/SleepyK.jpg',
                     category:'staff'
                 },
