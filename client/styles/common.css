@@ -114,6 +114,15 @@ h5.contact{
     color:white;
 }
 
+/* TOURNAMENTS VIEW */
+div.georgiaArcadian{
+    background-image: url(../../images/tournaments/arcadianBanner.jpg);
+}
+
+div.comingSoon{
+    background-image: url(../../images/tournaments/comingSoon.jpg);
+}
+
 /* THIS CENTERS CONTENT IN THE BOOTSTRAP NAVBAR */
 .navbar .navbar-nav {
     display: inline-block;
