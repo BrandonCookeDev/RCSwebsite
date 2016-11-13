@@ -24,5 +24,5 @@ app.get('/api/team/:category', function(req, res){
 });
 
 
-console.log('App listening on port 8088');
-app.listen(process.env.PORT || 8088);
+console.log('App listening on port 80');
+app.listen(process.env.PORT || 80);
