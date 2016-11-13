@@ -29,6 +29,10 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'TeamCtrl',
             activeTab: 'Team'
         })
+        .when('/georgiaArcadian', {
+            templateUrl: 'app/tournaments/views/georgiaArcadian.html',
+            controller: 'TournamentsCtrl'
+        })
         .otherwise({
             redirectTo: '#/'
         });

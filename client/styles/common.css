@@ -45,7 +45,7 @@ img.stretch{
 }
 
 div.imageStretchMain {
-    background-image: url(../images/team/common/splash.banner.jpg);
+    background-image: url(../images/common/splash.banner.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;
@@ -114,13 +114,24 @@ h5.contact{
     color:white;
 }
 
+h1.georgiaArcadian{
+    font-size: 60pt;
+    font-family: 'Times New Roman';
+}
+h2.georgiaArcadian{
+    font-size: 40pt;
+    font-family: 'Times New Roman';
+}
+
 /* TOURNAMENTS VIEW */
 div.georgiaArcadian{
-    background-image: url(../images/tournaments/arcadianBanner.jpg);
+    background-image: url(../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.small.jpg);
+    height:350px;
+    width:100%;
 }
 
 div.georgiaArcadianStretch{
-    background-image: url(../images/tournaments/arcadianBanner.jpg);
+    background-image: url(../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;
@@ -134,6 +145,12 @@ div.comingSoon{
 
 div.georgiaArcadianContent{
     text-align: left;
+}
+
+h1.tournaments, h2.tournaments,
+h3.tournaments, h4.tournaments,
+h5.tournaments{
+    color:white;
 }
 
 /* THIS CENTERS CONTENT IN THE BOOTSTRAP NAVBAR */
