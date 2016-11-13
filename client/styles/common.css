@@ -114,15 +114,6 @@ h5.contact{
     color:white;
 }
 
-h1.georgiaArcadian{
-    font-size: 60pt;
-    font-family: 'Times New Roman';
-}
-h2.georgiaArcadian{
-    font-size: 40pt;
-    font-family: 'Times New Roman';
-}
-
 /* TOURNAMENTS VIEW */
 div.georgiaArcadian{
     background-image: url(../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.small.jpg);
@@ -147,10 +138,34 @@ div.georgiaArcadianContent{
     text-align: left;
 }
 
+div.photoColumn{
+    width:50%;
+    float:left;
+    padding-right:20px;
+}
+div.videoColumn{
+    width:50%;
+    float:left;
+    padding-left:20px;
+}
+
 h1.tournaments, h2.tournaments,
 h3.tournaments, h4.tournaments,
 h5.tournaments{
     color:white;
+}
+
+h1.georgiaArcadian{
+    font-size: 60pt;
+    font-family: 'Times New Roman';
+}
+h2.georgiaArcadian{
+    font-size: 40pt;
+    font-family: 'Times New Roman';
+}
+
+h2.comingSoon{
+    font-size: 40pt;
 }
 
 /* THIS CENTERS CONTENT IN THE BOOTSTRAP NAVBAR */
