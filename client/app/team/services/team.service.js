@@ -15,7 +15,7 @@ angular.module('RCSapp.team')
                     category:'staff'
                 },
                 {
-                    name:'Brandon Cooke',
+                    name:'Brandon \'cookiE\' Cooke',
                     position:'Producer',
                     bio:'Brandon has been streaming events in the Southeast since August of 2015, starting under ' +
                     'Clash King Studios. As Clash King Studios, Brandon quickly grew the stream to be Georgia\'s main ' +

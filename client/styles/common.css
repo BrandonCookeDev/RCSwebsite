@@ -114,6 +114,14 @@ h5.contact{
     color:white;
 }
 
+input[type="text"].email{
+    width:250px;
+}
+textarea.comment{
+    width:350px;
+    height:300px;
+}
+
 /* TOURNAMENTS VIEW */
 div.georgiaArcadian{
     background-image: url(../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.small.jpg);

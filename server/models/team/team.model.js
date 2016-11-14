@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/RCSwebsite');
+mongoose.createConnection('mongodb://localhost/RCSwebsite');
 
 var teamSchema = mongoose.Schema({
 	name: String,
