@@ -1,43 +1,48 @@
-<div id="imageDiv" class="imageStretchMain">
-    <!-- THESE BREAKS STRETCH THE IMAGE DIV TO OPTIMAL SIZE -->
-    <br/><br/><br/><br/>
-    <br/><br/><br/><br/>
-    <br/><br/><br/><br/>
-    <br/><br/><br/><br/>
-    <br/><br/><br/><br/>
-    <br/><br/><br/><br/>
+<div id="loading" ng-hide="ready">
+    <img src="../../images/animated/RCSloadingWhite.gif" />
 </div>
-<div class="container">
-    <br/><br/>
-    <div id="descriptionDiv" class="main">
-        <p class="main">
-            <b>
-                Recursion is a small team of Atlanta-based tournament organizers, streamers, and community
-                leaders in the competitive Smash Bros. community. Our goal is to promote the Georgia and
-                Southeastern Smash scenes with proper production, well-run events, and community involvement.
-            </b>
-        </p>
+<div id="content" ng-show="ready">
+    <div id="imageDiv" class="imageStretchMain">
+        <!-- THESE BREAKS STRETCH THE IMAGE DIV TO OPTIMAL SIZE -->
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
     </div>
-    <hr/>
+    <div class="container">
+        <br/><br/>
+        <div id="descriptionDiv" class="main">
+            <p class="main">
+                <b>
+                    Recursion is a small team of Atlanta-based tournament organizers, streamers, and community
+                    leaders in the competitive Smash Bros. community. Our goal is to promote the Georgia and
+                    Southeastern Smash scenes with proper production, well-run events, and community involvement.
+                </b>
+            </p>
+        </div>
+        <hr/>
 
-</div>
-
-<div id="extras">
-    <!-- THIS IS WHERE WE WILL EMBED TWITCH AND YOUTUBE MODULES -->
-    <div class="picture">
-        
     </div>
-    <div class="twitch">
-        <iframe
-                src="http://player.twitch.tv/?channel=RecursionGG"
-                height="400"
-                width="720"
-                frameborder="0"
-                scrolling="no"
-                allowfullscreen="true">
-        </iframe>
-    </div>
-    <div class="videos">
 
+    <div id="extras">
+        <!-- THIS IS WHERE WE WILL EMBED TWITCH AND YOUTUBE MODULES -->
+        <div class="picture">
+
+        </div>
+        <div class="twitch">
+            <iframe
+                    src="http://player.twitch.tv/?channel=RecursionGG"
+                    height="400"
+                    width="720"
+                    frameborder="0"
+                    scrolling="no"
+                    allowfullscreen="true">
+            </iframe>
+        </div>
+        <div class="videos">
+
+        </div>
     </div>
 </div>

@@ -8,4 +8,13 @@ angular.module('RCSapp.team')
     $scope.teamService.playerList = $scope.teamService.getPlayersDb();
     $scope.teamService.staffList = $scope.teamService.getStaffDb();
 
+
+    $scope.ready = false;
+    angular.element(document).ready(function () {
+        setTimeout(function(){
+            $scope.$apply(function(){
+                $scope.ready = true;
+            })
+        }, 500)
+    });
 });
