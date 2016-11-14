@@ -22,19 +22,22 @@ div.main {
 }
 
 div.extras{
-    position:absolute;
+    position:relative;
+    align-content: center;
+    display:inline-block;
 }
 div.twitch{
     padding-right:20px;
     padding-left:20px;
+    position:relative
 }
-div.pictures{
-    float:right;
+div.twitter{
     padding-left:10px;
+    position:relative;
 }
 div.videos{
-    float:left;
     padding-right:10px;
+    position:relative;
 }
 
 p.main{
@@ -162,15 +165,17 @@ div.georgiaArcadianContent{
     text-align: left;
 }
 
+div.featured{
+
+}
 div.photoColumn{
-    width:50%;
-    float:left;
+    padding-top:11px;
+    padding-left:150px;
     padding-right:20px;
+    float:left;
 }
 div.videoColumn{
-    width:50%;
     float:left;
-    padding-left:20px;
 }
 
 h1.tournaments, h2.tournaments,

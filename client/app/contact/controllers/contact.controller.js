@@ -34,6 +34,7 @@ angular.module('RCSapp.contact')
         alert(err.message);
     }
 
+    /* LOADING ANIMATION */
     $scope.ready = false;
     angular.element(document).ready(function () {
         setTimeout(function(){

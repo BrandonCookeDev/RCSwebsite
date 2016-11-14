@@ -9,6 +9,7 @@ angular.module('RCSapp.team')
     $scope.teamService.staffList = $scope.teamService.getStaffDb();
 
 
+    /* LOADING ANIMATION */
     $scope.ready = false;
     angular.element(document).ready(function () {
         setTimeout(function(){
