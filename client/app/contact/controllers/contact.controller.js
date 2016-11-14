@@ -1,9 +1,7 @@
 angular.module('RCSapp.contact')
-    .controller('ContactCtrl', function($scope, ContactService){
+    .controller('ContactCtrl', function($scope){
 
     var hostname = 'localhost';
-
-    $scope.contactService = ContactService;
 
     $scope.firstName = null;
     $scope.lastName = null;
