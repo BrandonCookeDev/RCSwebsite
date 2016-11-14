@@ -1,12 +1,14 @@
 var log			= require('winston');
 var express 	= require('express');
 var bodyParser 	= require('body-parser');
+var mongoose	= require('mongoose');
 var app     	= express();
 
 var Team    = require('./models/team/team.model');
 var Contact = require('./models/contact/contact.model');
-//var Mailer  = require('./components/emailer');
+var Mailer  = require('./components/emailer');
 
+mongoose.connect('mongodb://localhost/RCSwebsite');
 
 var port = process.env.RCSwebsitePort || 8088;
 var ROOT_DIR = __dirname + '/..';
@@ -15,7 +17,6 @@ app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
-
 
 app.post('/api/contact/mail', function(req, res){
 	var firstName = req.body.firstName;
@@ -35,7 +36,7 @@ app.post('/api/contact/mail', function(req, res){
 	.then(function(){
 		var receivers = '';
 		emails.forEach(function(email){
-			receivers += email.email;
+			receivers += email.email + ',';
 		});
 		Mailer.sendMail(firstName, lastName, sender, receivers, message);
 	})
@@ -54,7 +55,7 @@ app.get('/api/team/:category', function(req, res){
 	})
 	.then(function(){
 		res.json(team);
-	})
+	});
 });
 
 

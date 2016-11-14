@@ -1,6 +1,8 @@
 angular.module('RCSapp.contact')
     .controller('ContactCtrl', function($scope, ContactService){
 
+    var hostname = 'localhost';
+
     $scope.contactService = ContactService;
 
     $scope.firstName = null;
@@ -9,9 +11,29 @@ angular.module('RCSapp.contact')
     $scope.comment = null;
 
     $scope.submitContactForm = function(){
-        var emails = $scope.contactService.getEmailAddresses();
+        var url = hostname + '/api/contact/mail';
 
-        // TODO EMAIL THE ABOVE CONTACTS
+        var postParams = {
+            firstName : $scope.firstName,
+            lastName : $scope.lastName,
+            sender : $scope.email,
+            message : $scope.comment
+        }
+
+        $http.post(url, postParams, success, failure);
+    }
+
+    function success(){
+        $scope.firstName = null;
+        $scope.lastName = null;
+        $scope.email = null;
+        $scope.comment = null;
+
+        alert('Message succesfully sent!');
+    }
+
+    function failure(err){
+        alert(err.message);
     }
 
 });

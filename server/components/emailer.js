@@ -5,9 +5,9 @@ var transporter = mailer.createTransport('smtps://smtp.mail.yahoo.com');
 function sendMail(senderFirstName, senderLastName, senderAddr, receivers, body){
 
     var mailOptions = {
-        from: '"senderFirstName senderLastName" ?" <senderAddr>',
+        from: ''+senderFirstName+' '+senderLastName+' ? <'+senderAddr+'>',
         to: receivers,
-        subject: 'Recursion Contact Us', // Subject line
+        subject: 'Recursion: Contact Us', // Subject line
         text: body // plaintext body
     };
 
@@ -18,5 +18,5 @@ function sendMail(senderFirstName, senderLastName, senderAddr, receivers, body){
 }
 
 module.exports = {
-    sendMail : sendMail()
+    sendMail : sendMail
 };
