@@ -58,6 +58,10 @@ app.get('/api/team/:category', function(req, res){
 	});
 });
 
+app.get('/*', function(req, res){
+	if(!req.url.includes('/api/'))
+		res.sendFile('client/index.html', {root: ROOT_DIR});
+});
 
 console.log('	[RCSwebsite] App listening on port ' + port);
 app.listen(port);
