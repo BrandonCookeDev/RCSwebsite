@@ -1,5 +1,5 @@
 angular.module('RCSapp.contact')
-    .controller('ContactCtrl', function($scope){
+    .controller('ContactCtrl', function($scope, $http){
 
     var hostname = 'localhost';
 
