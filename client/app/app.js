@@ -34,6 +34,11 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'TournamentsCtrl'
         })
         .otherwise({
-            redirectTo: '#/'
+            redirectTo: '/'
         });
-}   ]);
+
+}]);
+
+app.config(['$locationProvider', function($locationProvider){
+        $locationProvider.html5Mode(true);
+}]);
