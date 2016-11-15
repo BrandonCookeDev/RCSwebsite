@@ -9,7 +9,8 @@ angular.module('RCSapp.team')
             var team = [
                 {
                     name:'Brian Buckley',
-                    position:'Director',
+                    position:'Director, Co-Founder',
+                    twitter: 'Brian_Buckley',
                     bio:'The head tournament organizer and business planner for Recursion, Brian specializes in ' +
                     'planning events with production value and viewership in mind. Brian got his start in live media ' +
                     'and event planning with gaming charity events, starting with popular marathon series Zeldathon. ' +
@@ -24,7 +25,8 @@ angular.module('RCSapp.team')
                 },
                 {
                     name:'Brandon \'cookiE\' Cooke',
-                    position:'Producer',
+                    position:'Producer, Co-Founder',
+                    twitter: 'RCS_cookiE',
                     bio:'Brandon has been streaming events in the Southeast since August of 2015, starting under ' +
                     'Clash King Studios. As Clash King Studios, Brandon quickly grew the stream to be Georgia\'s main ' +
                     'source for Melee content. As it continued to grow, a major rebranding and jump in quality ' +
@@ -37,7 +39,8 @@ angular.module('RCSapp.team')
                 },
                 {
                     name:'John \'SleepyK\' Lee',
-                    position:'Outreach',
+                    position:'Head of Commentary',
+                    twitter:'sleepike',
                     bio:'A long-time community figure, SleepyK has been part of the competitive Melee community since ' +
                     '2007. Since his retirement from competitive Melee in 2011, SleepyK has focused on growing the ' +
                     'Georgia Melee community and leading it forward from its grassroots beginnings. He\'s now known ' +
@@ -50,6 +53,7 @@ angular.module('RCSapp.team')
                 {
                     name:'Conor \'Guava\' Hagan',
                     position:'Graphics Artist',
+                    twitter:'',
                     bio:null,
                     picture:'../../images/team/staff/Conor.jpg',
                     category:'staff',
@@ -63,6 +67,7 @@ angular.module('RCSapp.team')
                 {
                     name:'Kevin \'KPAN\' Pan',
                     position:'Player',
+                    twitter:'RCS_KPAN',
                     bio:'',
                     picture:'../../images/team/players/KPAN.jpg',
                     category:'player',

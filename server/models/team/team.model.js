@@ -7,6 +7,7 @@ var ResultSchema = mongoose.Schema({
 var TeamSchema = mongoose.Schema({
 	name: String,
 	position: String,
+	twitter: String,
 	bio: String,
 	picture: String,
 	category: String,
