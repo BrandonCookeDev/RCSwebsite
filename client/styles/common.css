@@ -79,6 +79,13 @@ h5.team  {
     color:darkgrey;
 }
 
+h1.teamTitle{
+    color: darkgrey;
+    font-size:60pt;
+    text-align: left;
+    padding-left:100px;
+}
+
 p.team{
     color:darkgrey;
     font-size:12pt;
@@ -87,6 +94,28 @@ p.team{
 hr.team{
     color: darkgrey;
     width: 80%;
+}
+
+div.results{
+    /*padding-left: 50px;*/
+}
+
+table.team, td.team{
+    color:white;
+    padding-left: 30px;
+    width: 300px;
+    font-size:13pt;
+    text-align:right;
+}
+
+td.resultPlacing{
+    text-align:center;
+}
+
+th.team{
+    text-align:right;
+    font-size:15pt;
+    color:lightgrey;
 }
 
 div.teamContainer{

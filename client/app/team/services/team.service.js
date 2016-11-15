@@ -12,7 +12,8 @@ angular.module('RCSapp.team')
                     position:'Director',
                     bio:'',
                     picture:'../../images/team/staff/Brian.jpg',
-                    category:'staff'
+                    category:'staff',
+                    results: []
                 },
                 {
                     name:'Brandon \'cookiE\' Cooke',
@@ -24,7 +25,8 @@ angular.module('RCSapp.team')
                     'quickly became its own organization under renewed leadership. Brandon is also a software developer ' +
                     'for AT&T, graduate student at Georgia Tech, and father of two. ',
                     picture:'../../images/team/staff/Brandon.jpg',
-                    category:'staff'
+                    category:'staff',
+                    results: []
                 },
                 {
                     name:'John \'SleepyK\' Lee',
@@ -35,14 +37,16 @@ angular.module('RCSapp.team')
                     'for his work as a community leader, top-level analyst, and commentator for both local and national events. ' +
                     'You can often find him analyzing viewers\' matches on his Twitch stream or taking Duna pics at tournaments',
                     picture:'../../images/team/staff/SleepyK.jpg',
-                    category:'staff'
+                    category:'staff',
+                    results: []
                 },
                 {
-                    name:'Conor Hagan',
+                    name:'Conor \'Guava\' Hagan',
                     position:'Graphics Artist',
-                    bio:'',
+                    bio:null,
                     picture:'../../images/team/staff/Conor.jpg',
-                    category:'staff'
+                    category:'staff',
+                    results: []
                 }
             ]
             return team;
@@ -54,7 +58,21 @@ angular.module('RCSapp.team')
                     position:'Player',
                     bio:'',
                     picture:'../../images/team/players/KPAN.jpg',
-                    category:'player'
+                    category:'player',
+                    results: [
+                        {
+                            "name" : "WTFox 2",
+                            "place": 17
+                        },
+                        {
+                            "name" : "CEO 2016",
+                            "place": 25
+                        },
+                        {
+                            "name" : "Super Smash Con 16",
+                            "place": 49
+                        }
+                    ]
                 }
             ]
             return team;
