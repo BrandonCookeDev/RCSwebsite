@@ -10,7 +10,14 @@ angular.module('RCSapp.team')
                 {
                     name:'Brian Buckley',
                     position:'Director',
-                    bio:'',
+                    bio:'The head tournament organizer and business planner for Recursion, Brian specializes in ' +
+                    'planning events with production value and viewership in mind. Brian got his start in live media ' +
+                    'and event planning with gaming charity events, starting with popular marathon series Zeldathon. ' +
+                    'There he focused on expanding viewership to outside communities and establishing communications ' +
+                    'with other charities and organizations. In the Smash Bros. community, Brian has been organizing ' +
+                    'and helping run events for two years, often managing stream content and advising in logistics for ' +
+                    'regional and national tournaments. Now he focuses largely on growing the local Smash Bros. scene ' +
+                    'in Georgia and expanding its presence nationally with Recursion.',
                     picture:'../../images/team/staff/Brian.jpg',
                     category:'staff',
                     results: []
