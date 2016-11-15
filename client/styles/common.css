@@ -32,12 +32,12 @@ div.twitch{
     position:relative
 }
 div.twitter{
-    padding-left:10px;
-    position:relative;
+    padding-left:100px;
+    float:left;
 }
 div.videos{
-    padding-right:10px;
-    position:relative;
+    padding-left:50px;
+    float:left;
 }
 
 p.main{
