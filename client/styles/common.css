@@ -96,41 +96,63 @@ hr.team{
     width: 80%;
 }
 
-div.results{
-    /*padding-left: 50px;*/
+
+div.teamContainer{
+    height:auto;
+    height:300px;
+}
+div.teamImage{
+    height:100%;
+    width:33%;
+    padding-top:25px;
+    float:left;
+    padding-left:10%;
+    position:relative;
+}
+div.teamBioPlayer{
+    position:relative;
+    float: left;
+    padding-left:15px;
+    text-align:left;
+    width:28%;
+    height:100%
+}
+div.teamBioStaff{
+    float: left;
+    padding-left:15px;
+    text-align:left;
+    width:60%;
+    height:100%
+}
+div.teamResults{
+    float:left;
+    text-align:left;
+    padding-left: 15px;
+    width:33%;
+    height:100%;
 }
 
 table.team, td.team{
     color:white;
     padding-left: 30px;
-    width: 330px;
+    width: 275px;
     font-size:13pt;
-    text-align:right;
+    text-align:left;
 }
 
-td.resultPlacing{
-    text-align:center;
+tr.team{
+    border-bottom: 1pt white;
 }
 
 th.team{
-    text-align:right;
+    text-align:left;
     font-size:15pt;
     color:lightgrey;
 }
 
-div.teamContainer{
-    height:300px;
-}
-div.teamImage{
-    padding-top:25px;
-    float:left;
-    padding-left:10%;
-}
-div.teamBio{
-    float: left;
-    padding-left:15px;
-    text-align:left;
-    width:60%;
+th.resultPlacing,
+td.resultPlacing{
+    text-align: center;
 }
 
 td.team{

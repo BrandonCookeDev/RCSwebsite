@@ -52,7 +52,7 @@ angular.module('RCSapp.team')
                 },
                 {
                     name:'Conor \'Guava\' Hagan',
-                    position:'Graphics Artist',
+                    position:'Head of Graphics',
                     twitter:'',
                     bio:null,
                     picture:'../../images/team/staff/Conor.jpg',
@@ -83,6 +83,18 @@ angular.module('RCSapp.team')
                         {
                             "name" : "Super Smash Con 16",
                             "place": 49
+                        },
+                        {
+                            "name" : "EVO 2015",
+                            "place": 49
+                        },
+                        {
+                            "name" : "Paragon Orlando 2015",
+                            "place": 25
+                        },
+                        {
+                            "name" : "Bad Moon Rising",
+                            "place": 13
                         }
                     ]
                 }

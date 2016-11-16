@@ -9,39 +9,39 @@
                 <div class="teamImage">
                     <img src="{{player.picture}}" height="250" width="250">
                 </div>
-                <div class="teamBio">
+                <div class="teamBioPlayer">
                     <h2 class="team">{{player.name}}</h2>
-                    <h3 class="team">
+                    <h4 class="team">
                         <a href="http://www.twitter.com/{{player.twitter}}">@{{player.twitter}}</a>
-                    </h3>
-                    <h3 class="team">Notable Results:</h3>
-                    <div class="results">
-                        <table class="team">
-                            <tr>
-                                <th class="team">Tournament</h4></th>
-                                <th class="team">Placing</h4></th>
-                            </tr>
-                            <tr ng-repeat="result in player.results">
-                                <td>{{result.name}}</td>
-                                <td class="resultPlacing"><b>{{result.place}}</b></td>
-                            </tr>
-                        </table>
-                    </div>
+                    </h4>
+
                     <p class="team">{{player.bio}}</p>
+                </div>
+                <div class="teamResults">
+                    <h2 class="team">Notable Results:</h2>
+                    <table class="team">
+                        <tr>
+                            <th class="team"><u>Tournament</u></h4></th>
+                            <th class="resultPlacing"><u>Placing</u></h4></th>
+                        </tr>
+                        <tr ng-repeat="result in player.results" class="team">
+                            <td>{{result.name}}</td>
+                            <td class="resultPlacing"><b>{{result.place}}</b></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
         <hr class="team"/>
         <br/>
-        <h1 class="teamTitle">Staff:</h1>
+        <h1 class="teamTitle">Leadership:</h1>
         <div ng-repeat="staff in staffArray">
             <div class="teamContainer">
                 <div class="teamImage">
                     <img src="{{staff.picture}}" height="250" width="250"/>
                 </div>
-                <div class="teamBio">
-                    <h2 class="team">{{staff.name}}</h2>
-                    <h3 class="team">{{staff.position}}</h3>
+                <div class="teamBioStaff">
+                    <h2 class="team">{{staff.name}} - <u>{{staff.position}}</u></h2>
                     <h4 class="team">
                         <a href="http://www.twitter.com/{{staff.twitter}}">@{{staff.twitter}}</a>
                     </h4>
