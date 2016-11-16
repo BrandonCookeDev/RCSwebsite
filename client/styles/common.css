@@ -102,33 +102,29 @@ div.teamContainer{
     height:300px;
 }
 div.teamImage{
-    height:100%;
-    width:33%;
     padding-top:25px;
     float:left;
     padding-left:10%;
-    position:relative;
 }
-div.teamBioPlayer{
-    position:relative;
-    float: left;
-    padding-left:15px;
-    text-align:left;
-    width:28%;
-    height:100%
-}
-div.teamBioStaff{
+div.teamBio{
     float: left;
     padding-left:15px;
     text-align:left;
     width:60%;
-    height:100%
 }
+div.teamBioPlayer{
+     position:relative;
+     float: left;
+     padding-left:15px;
+     text-align:left;
+     width:28%;
+     height:100%
+ }
 div.teamResults{
     float:left;
     text-align:left;
     padding-left: 15px;
-    width:33%;
+    width:28%;
     height:100%;
 }
 

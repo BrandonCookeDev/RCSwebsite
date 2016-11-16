@@ -16,17 +16,20 @@ function sendMail(senderFirstName, senderLastName, senderAddr, receivers, body, 
         from: ''+senderFirstName+' '+senderLastName + ' <' + senderAddr + '>',
         to: receivers,
         subject: 'Recursion: Contact Us', // Subject line
-        text: body // plaintext body
+        text: '\n' +
+        'Message from <' + senderAddr + '> \n' +
+        '----------------------------------\n' +
+        body
     };
 
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
             log.error(error.message);
-            response.send(400);
+            response.sendStatus(400);
         }
         else{
             log.info('Message sent: ' + info.response);
-            response.send(200)
+            response.sendStatus(200)
         }
     });
 }
