@@ -52,7 +52,7 @@ angular.module('RCSapp.team')
                 },
                 {
                     name:'Conor \'Guava\' Hagan',
-                    position:'Head of Graphics',
+                    position:'Head of Graphic Design',
                     twitter:'',
                     bio:null,
                     picture:'../../images/team/staff/Conor.jpg',
