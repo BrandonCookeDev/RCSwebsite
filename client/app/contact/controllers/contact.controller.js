@@ -1,7 +1,7 @@
 angular.module('RCSapp.contact')
     .controller('ContactCtrl', function($scope, $http){
 
-    var hostname = 'localhost';
+    var apiHostname = 'http://localhost:8000';
 
     $scope.firstName = null;
     $scope.lastName = null;
@@ -9,7 +9,7 @@ angular.module('RCSapp.contact')
     $scope.comment = null;
 
     $scope.submitContactForm = function(){
-        var url = hostname + '/api/contact/mail';
+        var url = apiHostname + '/api/contact/mail';
 
         var postParams = {
             firstName : $scope.firstName,
