@@ -130,7 +130,7 @@ div.teamBio{
 
 div.teamBioPlayer{
      text-align:center;
- }
+}
 div.teamResults{
     text-align:center;
     align:center;
@@ -144,7 +144,7 @@ div.teamResults{
         text-align:left;
     }
     div.teamBioPlayer{
-        text-align:left;
+        text-align:center;
     }
     div.teamResults {
         text-align: left;
@@ -289,3 +289,19 @@ h2.comingSoon{
 }
 
 /* THIS RESIZES THE LOADING IMAGE */
+img.loading{
+    height:35%;
+    width:35%;
+}
+@media screen and (min-width: 49em) and (max-width: 62em){
+    img.loading{
+        width: 70%;
+        height: 70%;
+    }
+}
+@media screen and (min-width: 48em){
+    img.loading{
+        width: 50%;
+        height: 50%
+    }
+}
