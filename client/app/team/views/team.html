@@ -6,18 +6,17 @@
         <h1 class="teamTitle">Players:</h1>
         <div ng-repeat="player in playersArray" >
             <div class="row">
-                <div class="col-xs-6">
+                <div class="col-sm-4">
                     <img src="{{player.picture}}" height="250" width="250">
                 </div>
-                <div class="col-xs-6">
+                <div class="col-sm-4 teamBioPlayer">
                     <h2 class="team">{{player.name}}</h2>
                     <h4 class="team">
                         <a href="http://www.twitter.com/{{player.twitter}}">@{{player.twitter}}</a>
                     </h4>
-
                     <p class="team">{{player.bio}}</p>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-sm-4 teamResults">
                     <h2 class="team">Notable Results:</h2>
                     <table class="team">
                         <tr>
@@ -36,11 +35,11 @@
         <br/>
         <h1 class="teamTitle">Leadership:</h1>
         <div ng-repeat="staff in staffArray">
-            <div class="teamContainer">
-                <div class="teamImage">
+            <div class="row">
+                <div class="col-sm-4">
                     <img src="{{staff.picture}}" height="250" width="250"/>
                 </div>
-                <div class="teamBio">
+                <div class="col-sm-8 teamBio">
                     <h2 class="team">{{staff.name}} - <u>{{staff.position}}</u></h2>
                     <h4 class="team">
                         <a href="http://www.twitter.com/{{staff.twitter}}">@{{staff.twitter}}</a>
@@ -48,6 +47,7 @@
                     <p class="team">{{staff.bio}}</p>
                 </div>
             </div>
+            <br/>
         </div>
     </div>
 </div>
