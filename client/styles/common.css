@@ -36,6 +36,19 @@ div.twitch{
     padding-left:20px;
     position:relative
 }
+@media screen and (min-width: 62em){
+    iframe.RCStwitch{
+        height: 478px;
+        width: 850px;
+    }
+}
+@media screen and (min-width: 48em) and (max-width: 61em){
+    iframe.RCStwitch{
+        height: 366px;
+        width: 650px;
+    }
+}
+
 div.twitter{
     padding-left:100px;
     float:left;
@@ -86,9 +99,16 @@ h5.team  {
 
 h1.teamTitle{
     color: darkgrey;
-    font-size:60pt;
-    text-align: left;
-    padding-left:100px;
+    font-size:50pt;
+    text-align: center;
+}
+@media screen and (min-width: 48em){
+    h1.teamTitle{
+        color: darkgrey;
+        font-size:60pt;
+        text-align: left;
+        padding-left:100px;
+    }
 }
 
 p.team{
@@ -115,7 +135,11 @@ div.teamResults{
     text-align:center;
     align:center;
 }
+
 @media screen and (min-width: 48em){
+    img.teamImage{
+        padding-top:25px;
+    }
     div.teamBio{
         text-align:left;
     }
@@ -127,7 +151,6 @@ div.teamResults{
         align: left;
     }
 }
-
 
 table.team, td.team{
     margin: 0 auto;
@@ -217,6 +240,13 @@ div.georgiaArcadianContent{
 div.featured{
 
 }
+@media screen and (min-width: 48em){
+    iframe.featured{
+        width: 700px;
+        height: 394px;
+    }
+}
+
 div.photoColumn{
     padding-left:100px;
     padding-right:20px;
@@ -257,3 +287,5 @@ h2.comingSoon{
     text-color: white;
 
 }
+
+/* THIS RESIZES THE LOADING IMAGE */
