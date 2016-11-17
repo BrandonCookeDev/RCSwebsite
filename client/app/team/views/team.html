@@ -4,12 +4,12 @@
 <div id="contents" ng-show="ready">
     <div class="container">
         <h1 class="teamTitle">Players:</h1>
-        <div ng-repeat="player in playersArray">
-            <div class="teamContainer">
-                <div class="teamImage">
+        <div ng-repeat="player in playersArray" >
+            <div class="row">
+                <div class="col-xs-6">
                     <img src="{{player.picture}}" height="250" width="250">
                 </div>
-                <div class="teamBioPlayer">
+                <div class="col-xs-6">
                     <h2 class="team">{{player.name}}</h2>
                     <h4 class="team">
                         <a href="http://www.twitter.com/{{player.twitter}}">@{{player.twitter}}</a>
@@ -17,7 +17,7 @@
 
                     <p class="team">{{player.bio}}</p>
                 </div>
-                <div class="teamResults">
+                <div class="col-xs-6">
                     <h2 class="team">Notable Results:</h2>
                     <table class="team">
                         <tr>
