@@ -132,8 +132,6 @@ div.teamBioPlayer{
      text-align:center;
 }
 div.teamResults{
-    text-align:center;
-    align:center;
 }
 
 @media screen and (min-width: 48em){
@@ -150,15 +148,24 @@ div.teamResults{
         text-align: left;
         align: left;
     }
+    table.team,td.team{
+        color:white;
+        width: 250px;
+        font-size:13pt;
+        text-align:left;
+    }
 }
 
 table.team, td.team{
-    margin: 0 auto;
     color:white;
-    padding-left: 30px;
-    width: 275px;
+    width: 250px;
     font-size:13pt;
     text-align:left;
+}
+@media screen and (max-width: 47em){
+    table.team, td.team{
+        margin: 0 auto;
+    }
 }
 
 tr.team{
@@ -290,18 +297,18 @@ h2.comingSoon{
 
 /* THIS RESIZES THE LOADING IMAGE */
 img.loading{
-    height:35%;
-    width:35%;
+    height:30%;
+    width:30%;
 }
 @media screen and (min-width: 49em) and (max-width: 62em){
     img.loading{
-        width: 70%;
-        height: 70%;
+        width: 50%;
+        height: 50%;
     }
 }
 @media screen and (min-width: 48em){
     img.loading{
-        width: 50%;
-        height: 50%
+        width: 40%;
+        height: 40%
     }
 }
