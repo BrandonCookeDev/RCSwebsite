@@ -16,9 +16,14 @@ hr.main{
     opacity: 0.5;
     display:inline-block;
 }
+hr.main2{
+    font-size:42pt;
+}
 
 div.main {
-    font-size:16pt;
+    margin:0 auto;
+    font-size:18pt;
+    width:80%;
 }
 
 div.extras{
