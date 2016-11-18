@@ -90,6 +90,16 @@ var Sleepy = new Team({
     results: []
 });
 
+var Conor = new Team({
+    name:'Conor \'Guava\' Hagan',
+        position:'Head of Graphic Design',
+    twitter:'',
+    bio:null,
+    picture:'../../images/team/staff/Conor.jpg',
+    category:'staff',
+    results: []
+});
+
 Kevin.save(function(err, kevin){
     if(!err) console.log('Successfully inserted Kevin!');
     else console.log(err.message);
@@ -108,4 +118,9 @@ Brian.save(function(err, brian){
 Sleepy.save(function(err, sleepy){
     if(!err) console.log('Successfully inserted Sleey!');
     else console.log(err.message);
-})
+});
+
+Conor.save(function(err, conor){
+    if(!err) console.log('Successfully inserted Conor!');
+    else console.log(err.message);
+});

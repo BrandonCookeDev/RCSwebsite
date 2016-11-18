@@ -2,11 +2,11 @@ angular.module('RCSapp.team')
     .controller('TeamCtrl', function($scope, TeamService){
 
     $scope.teamService = TeamService;
-    $scope.playersArray = $scope.teamService.getPlayers();
-    $scope.staffArray = $scope.teamService.getStaff();
+    $scope.playersArray = null;//$scope.teamService.getPlayers();
+    $scope.staffArray = null;//$scope.teamService.getStaff();
 
-    $scope.teamService.playerList = $scope.teamService.getPlayersDb();
-    $scope.teamService.staffList = $scope.teamService.getStaffDb();
+    $scope.p = $scope.teamService.getPlayersDb();
+    $scope.s = $scope.teamService.getStaffDb();
 
 
     /* LOADING ANIMATION */
@@ -14,8 +14,10 @@ angular.module('RCSapp.team')
     angular.element(document).ready(function () {
         setTimeout(function(){
             $scope.$apply(function(){
+                $scope.playersArray = $scope.p;
+                $scope.staffArray = $scope.s;
                 $scope.ready = true;
             })
-        }, 500)
+        }, 1000)
     });
 });

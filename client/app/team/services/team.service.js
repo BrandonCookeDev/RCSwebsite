@@ -2,7 +2,7 @@ angular.module('RCSapp.team')
     .service('TeamService', function($http){
 
     var service = {
-        hostname: 'http://localhost:8088',
+        hostname: 'http://localhost:8000',
         playerList: null,
         staffList: null,
         getStaff: function(){
