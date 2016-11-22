@@ -33,6 +33,10 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/tournaments/views/georgiaArcadian.html',
             controller: 'TournamentsCtrl'
         })
+        .when('/superFamiCon', {
+            templateUrl: 'app/tournaments/views/superFamiCon.html',
+            controller: 'TournamentsCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });

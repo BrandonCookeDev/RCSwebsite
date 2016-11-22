@@ -227,8 +227,23 @@ div.georgiaArcadian{
     width:100%;
 }
 
+div.superFamiCon{
+    background-image: url(../images/tournaments/SuperFamiCon/DruggedfoxChi.jpg);
+    height:350px;
+    width:100%;
+}
+
 div.georgiaArcadianStretch{
     background-image: url(../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:100%;
+    background-color: transparent;
+    background-size:cover;
+}
+
+div.superFamiConStretch{
+    background-image: url(../images/tournaments/SuperFamiCon/ColbolSami.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;
