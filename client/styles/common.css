@@ -142,7 +142,7 @@ div.teamResults{
         text-align:left;
     }
     div.teamBioPlayer{
-        text-align:center;
+        text-align:left;
     }
     div.teamResults {
         text-align: left;
@@ -150,7 +150,7 @@ div.teamResults{
     }
     table.team,td.team{
         color:white;
-        width: 250px;
+        width: 225px;
         font-size:13pt;
         text-align:left;
     }
@@ -158,13 +158,19 @@ div.teamResults{
 
 table.team, td.team{
     color:white;
-    width: 250px;
+    width: 300px;
     font-size:13pt;
-    text-align:left;
+    text-align:right;
 }
-@media screen and (max-width: 47em){
-    table.team, td.team{
-        margin: 0 auto;
+th.team{
+    text-align:right;
+    font-size:15pt;
+    color:lightgrey;
+}
+@media screen and (max-width: 62em){
+    table.team, td.team, th.team{
+        text-align: center;
+        margin:0 auto;
     }
 }
 
@@ -172,11 +178,7 @@ tr.team{
     border-bottom: 1pt white;
 }
 
-th.team{
-    text-align:left;
-    font-size:15pt;
-    color:lightgrey;
-}
+
 
 th.resultPlacing,
 td.resultPlacing{

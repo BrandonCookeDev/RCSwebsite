@@ -6,17 +6,9 @@
         <h1 class="teamTitle">Players:</h1>
         <div ng-repeat="player in playersArray" >
             <div class="row">
-                <div class="col-xs-12 col-sm-4">
+                <div class="col-xs-12 col-sm-4 ">
                     <img src="{{player.picture}}" height="250" width="250">
-                </div>
-                <div class="col-xs-12 col-sm-4 teamBioPlayer">
-                    <h2 class="team">{{player.name}}</h2>
-                    <h4 class="team">
-                        <a href="http://www.twitter.com/{{player.twitter}}">@{{player.twitter}}</a>
-                    </h4>
-                    <p class="team">{{player.bio}}</p>
-                </div>
-                <div class="col-xs-12 col-sm-4 teamResults">
+                    <br/>
                     <h2 class="team">Notable Results:</h2>
                     <table class="team">
                         <tr>
@@ -28,6 +20,13 @@
                             <td class="resultPlacing"><b>{{result.place}}</b></td>
                         </tr>
                     </table>
+                </div>
+                <div class="col-xs-12 col-sm-8 teamBioPlayer">
+                    <h2 class="team">{{player.name}}</h2>
+                    <h4 class="team">
+                        <a href="http://www.twitter.com/{{player.twitter}}">@{{player.twitter}}</a>
+                    </h4>
+                    <p class="team">{{player.bio}}</p>
                 </div>
             </div>
         </div>
