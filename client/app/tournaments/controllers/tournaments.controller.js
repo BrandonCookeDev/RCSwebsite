@@ -1,6 +1,10 @@
 angular.module('RCSapp.tournaments')
     .controller('TournamentsCtrl', function($scope){
 
+    $scope.getFamiConText = function(s){
+
+    };
+
     /* LOADING ANIMATION */
     $scope.ready = false;
     angular.element(document).ready(function () {

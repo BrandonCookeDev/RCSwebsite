@@ -243,7 +243,7 @@ div.georgiaArcadianStretch{
 }
 
 div.superFamiConStretch{
-    background-image: url(../images/tournaments/SuperFamiCon/ColbolSami.jpg);
+    background-image: url(../images/tournaments/SuperFamiCon/ColbolClem.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;
@@ -289,9 +289,21 @@ h1.georgiaArcadian{
     font-family: 'Times New Roman';
 }
 h2.georgiaArcadian{
-    font-size: 40pt;
+    font-size: 60pt;
     font-family: 'Times New Roman';
 }
+
+h1.superFamiCon{
+    font-size: 70pt;
+    font-family:"Roboto Bold";
+    color: lightgrey;
+}
+h2.superFamiCon{
+    font-size: 60pt;
+    font-family:"Roboto Bold";
+    color: lightgrey;
+}
+
 
 h2.comingSoon{
     font-size: 40pt;
