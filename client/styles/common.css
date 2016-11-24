@@ -120,6 +120,10 @@ p.team{
     font-size:12pt;
 }
 
+span.name{
+    color:white;
+}
+
 hr.team{
     color: darkgrey;
     width: 80%;
