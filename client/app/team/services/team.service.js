@@ -63,12 +63,20 @@ angular.module('RCSapp.team')
             return team;
         },
         getPlayers: function(){
+            var linebreak = document.createElement('br');
             var team = [
                 {
                     name:'Kevin \'KPAN\' Pan',
                     position:'Player',
                     twitter:'RCS_KPAN',
-                    bio:'',
+                    bio:'Kevin Pan, or KPAN, has been playing Melee competitively since 2012. Training with other ' +
+                    'students and top players at Georgia Tech, Kevin quickly grew to prominence to become one of the ' +
+                    'best Falco players in Georgia and the Southeast. KPAN is currently ranked 3rd in the Georgia ' +
+                    'Power Rankings and is a strong contender for top 100 players in the world. Kevin is also known ' +
+                    'for his strength in crew battles, helping Georgia Tech achieve a close 2nd place at ' +
+                    'The Melee Games finals at Genesis 3. Notable results include 49th at EVO 2015, 25th at ' +
+                    'CEO 2016, 17th at WTFox2, and more. You can find KPAN at the top of nearly any Georgia Melee ' +
+                    'bracket, as well as traveling to national events under Recursion.',
                     picture:'../../images/team/players/KPAN.jpg',
                     category:'player',
                     results: [
