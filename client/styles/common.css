@@ -102,14 +102,15 @@ h5.team  {
 }
 
 h1.teamTitle{
-    color: darkgrey;
-    font-size:50pt;
+    color: white;
+    font-size:40pt;
     text-align: center;
+
 }
 @media screen and (min-width: 48em){
     h1.teamTitle{
-        color: darkgrey;
-        font-size:60pt;
+        color: white;
+        font-size:40pt;
         text-align: left;
         padding-left:100px;
     }
