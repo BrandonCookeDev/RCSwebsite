@@ -64,15 +64,19 @@ p.main{
 
 a:link.main{
     color:dimgrey;
+    font-weight: 400;
 }
 a:visited.main{
     color:dimgray;
+    font-weight: 400;
 }
 a:hover.main{
     color:dimgrey;
+    font-weight: 400;
 }
 a:active.main{
     color:lightslategray;
+    font-weight: 400;
 }
 
 img.stretch{
