@@ -33,7 +33,7 @@ angular.module('RCSapp.team')
                     'were in order. Recursion was started as the beginnings of a Clash King Studios rebrand and ' +
                     'quickly became its own organization under renewed leadership. Brandon is also a software developer ' +
                     'for AT&T, graduate student at Georgia Tech, and father of two. ',
-                    picture:'../../images/team/staff/Brandon.jpg',
+                    picture:'../../images/team/staff/Brandon.png',
                     category:'staff',
                     results: []
                 },
@@ -53,7 +53,7 @@ angular.module('RCSapp.team')
                 {
                     name:'Conor \'Guava\' Hagan',
                     position:'Head of Graphic Design',
-                    twitter:'',
+                    twitter:'RCS_Guava',
                     bio:null,
                     picture:'../../images/team/staff/Conor.jpg',
                     category:'staff',
