@@ -1,0 +1,22 @@
+<div id="loading" ng-hide="ready">
+    <img src="../../images/animated/RCSloadingWhite.gif" class="loading"/>
+</div>
+<div class="container">
+    <div class="row" ng-repeat="event in eventsArray">
+        <div class="col-xs-12 col-sm-12 col-lg-12">
+            <!-- ACCORDIAN FOR EVENT -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a ng-click="isCollapsed = !isCollapsed">
+                            Rankings Control Panel
+                        </a>
+                    </h4>
+                </div>
+                <div collapse="isCollapsed">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

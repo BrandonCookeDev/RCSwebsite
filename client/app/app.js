@@ -4,6 +4,7 @@ var app = angular.module('RCSapp',
         'RCSapp.tournaments',
         'RCSapp.team',
         'RCSapp.contact',
+        'RCSapp.upcoming',
         'RCSapp.common'
          ]);
 
@@ -13,6 +14,11 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/splash/views/splash.html',
             controller: 'SplashCtrl',
             activeTab: 'Home'
+        })
+        .when('/upcoming', {
+            templateUrl: 'app/upcoming/views/upcoming.html',
+            controller: 'UpcomingCtrl',
+            activeTab: 'Upcoming'
         })
         .when('/tournaments', {
             templateUrl: 'app/tournaments/views/tournaments.html',
