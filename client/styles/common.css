@@ -103,7 +103,7 @@ h5.team  {
 
 h1.teamTitle{
     color: white;
-    font-size:40pt;
+    font-size:35pt;
     text-align: center;
 
 }
@@ -130,6 +130,10 @@ hr.team{
     width: 80%;
 }
 
+div.teamContent{
+    align:center;
+}
+
 div.teamImage{
     padding-top:25px;
 }
@@ -149,6 +153,7 @@ div.teamResults{
     }
     div.teamBio{
         text-align:left;
+        width:50%;
     }
     div.teamBioPlayer{
         text-align:left;
