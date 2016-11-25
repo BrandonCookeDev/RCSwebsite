@@ -291,9 +291,10 @@ h5.tournaments{
 
 p.tournament{
     font-size: 16pt;
-    color:white;
+    color:darkgrey;
     text-align: left;
     width:90%;
+    font-weight:0;
     margin:0 auto;
 }
 
