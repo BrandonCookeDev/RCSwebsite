@@ -10,9 +10,9 @@ body.main{
 
 hr.main{
     color: darkgrey;
-    border-top: 2px solid white;
-    height: 2px;
-    width: 15%;
+    border-top: 2px solid lightgrey;
+    height: 1px;
+    width: 20%;
     opacity: 0.5;
     display:inline-block;
 }
@@ -151,6 +151,11 @@ div.teamResults{
     img.teamImage{
         padding-top:25px;
     }
+
+    div.teamContent{
+        margin:0 auto;
+    }
+
     div.teamBio{
         text-align:left;
         width:50%;
@@ -284,6 +289,14 @@ h5.tournaments{
     color:white;
 }
 
+p.tournament{
+    font-size: 16pt;
+    color:white;
+    text-align: left;
+    width:90%;
+    margin:0 auto;
+}
+
 h1.georgiaArcadian{
     font-size: 60pt;
     font-family: 'Times New Roman';
@@ -291,6 +304,19 @@ h1.georgiaArcadian{
 h2.georgiaArcadian{
     font-size: 40pt;
     font-family: 'Times New Roman';
+}
+
+div.brackets{
+    text-align:center
+}
+@media screen and (min-width:62em){
+    div.brackets{
+        text-align:right
+    }
+}
+
+h2.right{
+    text-align: right;
 }
 
 h2.comingSoon{
