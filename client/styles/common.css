@@ -10,9 +10,9 @@ body.main{
 
 hr.main{
     color: darkgrey;
-    border-top: 2px solid white;
-    height: 2px;
-    width: 15%;
+    border-top: 2px solid lightgrey;
+    height: 1px;
+    width: 20%;
     opacity: 0.5;
     display:inline-block;
 }
@@ -64,15 +64,19 @@ p.main{
 
 a:link.main{
     color:dimgrey;
+    font-weight: 400;
 }
 a:visited.main{
     color:dimgray;
+    font-weight: 400;
 }
 a:hover.main{
     color:dimgrey;
+    font-weight: 400;
 }
 a:active.main{
     color:lightslategray;
+    font-weight: 400;
 }
 
 img.stretch{
@@ -98,14 +102,15 @@ h5.team  {
 }
 
 h1.teamTitle{
-    color: darkgrey;
-    font-size:50pt;
+    color: white;
+    font-size:35pt;
     text-align: center;
+
 }
 @media screen and (min-width: 48em){
     h1.teamTitle{
-        color: darkgrey;
-        font-size:60pt;
+        color: white;
+        font-size:40pt;
         text-align: left;
         padding-left:100px;
     }
@@ -116,9 +121,17 @@ p.team{
     font-size:12pt;
 }
 
+span.name{
+    color:white;
+}
+
 hr.team{
     color: darkgrey;
     width: 80%;
+}
+
+div.teamContent{
+    align:center;
 }
 
 div.teamImage{
@@ -138,8 +151,14 @@ div.teamResults{
     img.teamImage{
         padding-top:25px;
     }
+
+    div.teamContent{
+        margin:0 auto;
+    }
+
     div.teamBio{
         text-align:left;
+        width:50%;
     }
     div.teamBioPlayer{
         text-align:left;
@@ -270,6 +289,15 @@ h5.tournaments{
     color:white;
 }
 
+p.tournament{
+    font-size: 16pt;
+    color:darkgrey;
+    text-align: left;
+    width:90%;
+    font-weight:0;
+    margin:0 auto;
+}
+
 h1.georgiaArcadian{
     font-size: 60pt;
     font-family: 'Times New Roman';
@@ -277,6 +305,19 @@ h1.georgiaArcadian{
 h2.georgiaArcadian{
     font-size: 40pt;
     font-family: 'Times New Roman';
+}
+
+div.brackets{
+    text-align:center
+}
+@media screen and (min-width:62em){
+    div.brackets{
+        text-align:right
+    }
+}
+
+h2.right{
+    text-align: right;
 }
 
 h2.comingSoon{
