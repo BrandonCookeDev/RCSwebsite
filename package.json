@@ -9,6 +9,7 @@
   "author": "Brandon Cooke",
   "license": "ISC",
   "dependencies": {
+    "angular-bootstrap": "^0.12.2",
     "angularjs": "0.0.1",
     "body-parser": "^1.15.2",
     "bower": "^1.8.0",

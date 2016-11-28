@@ -1,0 +1,22 @@
+<div class="container">
+
+    <div upcoming_pills></div>
+
+    <div class="row" ng-repeat="event in eventsArray">
+        <div class="col-xs-12 col-sm-12 col-lg-12">
+            <!-- ACCORDIAN FOR EVENT -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a ng-click="isCollapsed = !isCollapsed">
+                            {{ event.name }} - {{ event.date }}
+                        </a>
+                    </h4>
+                </div>
+                <div collapse="!isCollapsed">
+                    <h1>test</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

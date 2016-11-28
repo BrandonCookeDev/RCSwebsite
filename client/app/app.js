@@ -1,5 +1,5 @@
 var app = angular.module('RCSapp',
-    ['ngRoute',
+    ['ngRoute', 'ui.bootstrap',
         'RCSapp.splash',
         'RCSapp.tournaments',
         'RCSapp.team',
@@ -38,6 +38,14 @@ app.config(['$routeProvider', function($routeProvider) {
         .when('/georgiaArcadian', {
             templateUrl: 'app/tournaments/views/georgiaArcadian.html',
             controller: 'TournamentsCtrl'
+        })
+        .when('/comingSoon', {
+            templateUrl: 'app/upcoming/views/events_coming_up.html',
+            controller: 'UpcomingCtrl'
+        })
+        .when('/calendar', {
+            templateUrl: 'app/upcoming/views/calendar.html',
+            controller: 'UpcomingCtrl'
         })
         .otherwise({
             redirectTo: '/'

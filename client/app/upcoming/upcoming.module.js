@@ -1,1 +1,1 @@
-angular.module('RCSapp.upcoming', []);
+angular.module('RCSapp.upcoming', ['ui.bootstrap']);
