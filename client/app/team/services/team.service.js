@@ -1,8 +1,8 @@
 angular.module('RCSapp.team')
-    .service('TeamService', function($http){
+    .factory('TeamService', function($http){
 
     var service = {
-        hostname: 'http://localhost:8088',
+        hostname: 'http://localhost:8000',
         playerList: null,
         staffList: null,
         getStaff: function(){
@@ -113,6 +113,7 @@ angular.module('RCSapp.team')
             var url = this.hostname + '/api/team/staff';
             $http.get(url)
                 .success(function(data){
+                    this.staffList = data;
                     return data;
                 })
                 .error(function(err){
@@ -123,6 +124,7 @@ angular.module('RCSapp.team')
             var url = this.hostname + '/api/team/player';
             $http.get(url)
                 .success(function(data){
+                    this.playerList = data;
                     return data;
                 })
                 .error(function(err){
