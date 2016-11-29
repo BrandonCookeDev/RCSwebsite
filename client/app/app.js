@@ -40,12 +40,14 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'TournamentsCtrl'
         })
         .when('/comingSoon', {
-            templateUrl: 'app/upcoming/views/events_coming_up.html',
-            controller: 'UpcomingCtrl'
+            templateUrl: 'app/upcoming/views/events.html',
+            controller: 'UpcomingCtrl',
+            activeTab: 'ComingSoon'
         })
         .when('/calendar', {
             templateUrl: 'app/upcoming/views/calendar.html',
-            controller: 'UpcomingCtrl'
+            controller: 'UpcomingCtrl',
+            activeTab: 'Calendar'
         })
         .otherwise({
             redirectTo: '/'

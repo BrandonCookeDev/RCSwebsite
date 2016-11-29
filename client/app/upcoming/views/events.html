@@ -1,19 +1,24 @@
 <div class="container">
 
-    <div upcoming_pills></div>
+    <div upcomingpills-directive></div>
+    <br/><hr/>
 
     <div class="row" ng-repeat="event in eventsArray">
         <div class="col-xs-12 col-sm-12 col-lg-12">
             <!-- ACCORDIAN FOR EVENT -->
+            <h2 class="tournaments">{{ event.date | date: MM/dd/yyyy }}</h2>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a ng-click="isCollapsed = !isCollapsed">
-                            {{ event.name }} - {{ event.date }}
-                        </a>
+                        <h3>
+                            <a ng-click="isCollapsed = !isCollapsed">
+                                {{ event.name }}
+                            </a>
+                        </h3>
                     </h4>
                 </div>
                 <div collapse="!isCollapsed">
+                    <!-- CONTENT GOES HERE -->
                     <h1>test</h1>
                 </div>
             </div>
