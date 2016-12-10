@@ -41,6 +41,15 @@ div.videoColumn{
     float:left;
 }
 
+/* IFRAMES */
+@media screen and (min-width: 48em){
+    iframe.FocusChaosDunk{
+        width: 700px;
+        height:394px;
+
+    }
+}
+
 h1.tournaments, h2.tournaments,
 h3.tournaments, h4.tournaments,
 h5.tournaments{

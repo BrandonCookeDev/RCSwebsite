@@ -19,6 +19,9 @@ hr.main{
 hr.main2{
     font-size:42pt;
 }
+hr.main3{
+    width:75%;
+}
 
 div.main {
     margin:0 auto;
