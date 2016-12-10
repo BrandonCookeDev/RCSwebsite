@@ -1,0 +1,51 @@
+
+div.extras{
+    position:relative;
+    align-content: center;
+    display:inline-block;
+}
+div.twitch{
+    padding-right:20px;
+    padding-left:20px;
+    position:relative
+}
+@media screen and (min-width: 62em){
+    iframe.RCStwitch{
+        height: 478px;
+        width: 850px;
+    }
+}
+@media screen and (min-width: 48em) and (max-width: 61em){
+    iframe.RCStwitch{
+        height: 366px;
+        width: 650px;
+    }
+}
+
+div.twitter{
+    padding-left:100px;
+    float:left;
+}
+div.videos{
+    padding-left:50px;
+    float:left;
+}
+
+p.main{
+    color: darkgrey;
+}
+
+img.stretch{
+    background-size:cover;
+    left:0px;
+    margin:0;
+}
+
+div.imageStretchMain {
+    background-image: url(../../../images/common/splash.banner.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:100%;
+    background-color: transparent;
+    background-size:cover;
+}
