@@ -17,7 +17,7 @@ angular.module('RCSapp.team')
         $http.get(playerUrl)
             .success(function(data){
                 $scope.playersArray = data;
-                $scope.$apply();
+                //$scope.$apply();
             })
             .error(function(err){
                 if(err) console.log(err.message);
@@ -26,7 +26,7 @@ angular.module('RCSapp.team')
         $http.get(staffUrl)
             .success(function(data){
                 $scope.staffArray = data;
-                $scope.$apply();
+                //$scope.$apply();
             })
             .error(function(err){
                 if(err) console.log(err.message);
