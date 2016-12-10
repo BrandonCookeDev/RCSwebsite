@@ -20,13 +20,19 @@ hr.main2{
     font-size:42pt;
 }
 hr.main3{
-    width:75%;
+    width:70%;
 }
 
 div.main {
     margin:0 auto;
     font-size:18pt;
     width:80%;
+}
+
+@media screen and (min-width:62em) {
+    .left_margin {
+        padding-left: 50px;
+    }
 }
 
 a:link.main{
