@@ -23,9 +23,14 @@ span.menu{
     float:right;
     padding-top:50px;
 }
-.icon-bar{
+.navbar-toggle .icon-bar {
+    display: block;
     background-color: grey;
     color:white;
+    height:5px;
+    width:30px;
+    border-radius: 2px;
+    border-color:white;
 }
 
 hr.main{
