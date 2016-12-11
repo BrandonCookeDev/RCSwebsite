@@ -62,6 +62,16 @@ p.tournament{
     width:90%;
     margin:0 auto;
 }
+@media screen and (max-width: 62em){
+    p.tournament {
+        font-weight: 200;
+        font-size: 20pt;
+        color: darkgrey;
+        text-align: left;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
 
 h1.georgiaArcadian{
     font-size: 60pt;

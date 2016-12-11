@@ -8,6 +8,16 @@ body.main{
     background-color: #232324;
 }
 
+p.main{
+    color: darkgrey;
+}
+@media screen and (max-width: 62em){
+    p.main{
+        color:darkgrey;
+        font-size: 24pt;
+    }
+}
+
 img.logo_header{
     height:0px;
     width:0px;
@@ -21,14 +31,14 @@ img.logo_header{
 
 span.menu{
     float:right;
-    padding-top:50px;
+    padding-top:40px;
 }
 .navbar-toggle .icon-bar {
     display: block;
     background-color: grey;
     color:white;
-    height:8px;
-    width:40px;
+    height:15px;
+    width:50px;
     border-radius: 2px;
     border-color:white;
 }

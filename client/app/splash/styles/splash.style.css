@@ -31,10 +31,6 @@ div.videos{
     float:left;
 }
 
-p.main{
-    color: darkgrey;
-}
-
 img.stretch{
     background-size:cover;
     left:0px;
