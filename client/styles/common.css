@@ -20,11 +20,8 @@ img.logo_header{
 }
 
 span.menu{
-    border:2pt;
-    border-color:white;
-    padding-top:50px;
     float:right;
-    position:fixed;
+    padding-top:50px;
 }
 .icon-bar{
     background-color: grey;
