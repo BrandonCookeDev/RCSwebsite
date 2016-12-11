@@ -6,18 +6,10 @@ h5.team  {
 }
 
 h1.teamTitle{
-    color: white;
+    color: dimgrey;
     font-size:35pt;
     text-align: center;
-
-}
-@media screen and (min-width: 48em){
-    h1.teamTitle{
-        color: white;
-        font-size:40pt;
-        text-align: left;
-        padding-left:100px;
-    }
+    font-weight: bold;
 }
 
 p.team{

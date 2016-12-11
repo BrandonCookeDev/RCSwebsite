@@ -3,11 +3,11 @@
 </div>
 <div id="contents" class="teamContent" ng-show="ready">
     <div class="container">
-        <h1 class="teamTitle left_margin">Players:</h1>
+        <h1 class="teamTitle"><u>PLAYERS</u></h1>
         <div ng-repeat="player in playersArray" class="left_margin">
             <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-xs-12 col-sm-4 col-lg-3">
+                <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                     <img src="{{player.picture}}" height="250" width="225" class="teamImage">
                     <!--
                     <br/>
@@ -24,31 +24,47 @@
                     </table>
                     -->
                 </div>
-                <div class="col-xs-12 col-sm-8 col-lg-8 teamBio">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 teamBio">
                     <h3 class="team"><span class="name">{{player.name}}</span></h3>
                     <h4 class="team">
-                        <a href="http://www.twitter.com/{{player.twitter}}">@{{player.twitter}}</a>
+                        <a href="http://www.twitter.com/{{player.twitter}}">
+                            <span>
+                                <img src="../../../images/common/twitter-128.png" height="20" width="20" />
+                            </span>
+                            <span style="padding-left:2px;">
+                                @{{player.twitter}}
+                            </span>
+                        </a>
                     </h4>
                     <p class="team">{{player.bio}}</p>
                 </div>
+                <div class=" col-md-1"></div>
             </div>
         </div>
         <hr class="team"/>
         <br/>
-        <h1 class="teamTitle left_margin">Leadership:</h1>
+        <h1 class="teamTitle"><u>LEADERSHIP</u></h1>
         <div ng-repeat="staff in staffArray" class="left_margin">
             <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-xs-12 col-sm-4 col-lg-3">
+                <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                     <img src="{{staff.picture}}" height="250" width="225" class="teamImage"/>
                 </div>
-                <div class="col-xs-12 col-sm-8 col-lg-8 teamBio">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-8 teamBio">
                     <h3 class="team"><span class="name">{{staff.name}}</span><span> - {{staff.position}}</span></h3>
                     <h4 class="team">
-                        <a href="http://www.twitter.com/{{staff.twitter}}">@{{staff.twitter}}</a>
+                        <a href="http://www.twitter.com/{{staff.twitter}}">
+                            <span>
+                                <img src="../../../images/common/twitter-128.png" height="20" width="20" />
+                            </span>
+                            <span style="padding-left:2px;">
+                                @{{staff.twitter}}
+                            </span>
+                        </a>
                     </h4>
                     <p class="team">{{staff.bio}}</p>
                 </div>
+                <div class="col-md-1"></div>
             </div>
             <br/>
         </div>
