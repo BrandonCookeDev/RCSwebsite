@@ -139,6 +139,23 @@ img.loading{
         width: 0%;
     }
     a.main{
-        font-size:16pt;
+        font-size:18pt;
+        color: white;
+    }
+    a:link.main{
+        color:white;
+        font-weight: 400;
+    }
+    a:visited.main{
+        color:white;
+        font-weight: 400;
+    }
+    a:hover.main{
+        color:dimgrey;
+        font-weight: 400;
+    }
+    a:active.main{
+        color:lightslategray;
+        font-weight: 400;
     }
 }
