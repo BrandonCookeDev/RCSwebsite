@@ -67,6 +67,7 @@ a:active.main{
     font-weight: 400;
 }
 
+
 /* THIS CENTERS CONTENT IN THE BOOTSTRAP NAVBAR */
 .navbar .navbar-nav {
     display: inline-block;
@@ -136,5 +137,8 @@ img.loading{
     }
     hr.main{
         width: 0%;
+    }
+    a.main{
+        font-size:16pt;
     }
 }
