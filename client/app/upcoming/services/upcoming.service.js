@@ -8,7 +8,7 @@ angular.module('RCSapp.upcoming')
                         name: 'NaCl December',
                         date: new Date(),
                         address: 'TBD',
-                        registration: 'TBD'
+                        prereg: 'https://smash.gg/tournament/the-lab-gaming-presents-nacl-december-2016-north-atlanta-championship/register/embed'
                     }
                 ];
                 return events;
