@@ -8,6 +8,17 @@ body.main{
     background-color: #232324;
 }
 
+img.logo_header{
+    height:0px;
+    width:0px;
+}
+@media screen and (min-width: 48em) {
+    img.logo_header{
+        height:150px;
+        width:125px;
+    }
+}
+
 hr.main{
     color: darkgrey;
     border-top: 2px solid lightgrey;
@@ -16,6 +27,12 @@ hr.main{
     opacity: 0.5;
     display:inline-block;
 }
+@media screen and (max-width: 48em){
+    hr.main{
+        width: 0%;
+    }
+}
+
 hr.main2{
     font-size:42pt;
 }
