@@ -25,13 +25,24 @@
                     </div>
                     <hr/>
                     <div class="row">
-                        <div class="col-sm-6 col-md-6">
+                        <div class="col-sm-12 col-md-5">
                             <div style="width:500px; text-align:left;">
                                 <iframe ng-src="{{trustSrc(event.prereg)}}"
                                         frameborder="0" height="600" width="100%" vspace="0" hspace="0" marginheight="5"
                                         marginwidth="5" scrolling="auto" allowtransparency="true">
                                 </iframe>
+                                /* AIzaSyBUOr4Rw-mWbSvk02V1gUghQlLm7ox_1LM */
+
                             </div>
+                        </div>
+                        <div class="col-sm-12 col-md-7">
+                            <iframe width="600" height="450" frameborder="0" style="border:0"
+                                    ng-src="{{getGoogleMapsSrc(event.address)}}"
+                                    allowfullscreen>
+                            </iframe>
+                            <br />
+                            <h3>{{event.address}}</h3>
+                            <br/>
                         </div>
                     </div>
                 </div>
