@@ -38,10 +38,20 @@ img.stretch{
 }
 
 div.imageStretchMain {
-    background-image: url(../../../images/common/splash.banner.jpg);
+    background-image: url(../../../images/common/splash.banner.mobile.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;
     background-color: transparent;
     background-size:cover;
+}
+@media screen and (max-width: 62em){
+    div.imageStretchMain {
+        background-image: url(../../../images/common/splash.banner.mobile.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size:100%;
+        background-color: transparent;
+        background-size:cover;
+    }
 }
