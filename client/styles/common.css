@@ -19,6 +19,18 @@ img.logo_header{
     }
 }
 
+span.menu{
+    border:2pt;
+    border-color:white;
+    padding-top:50px;
+    float:right;
+    position:fixed;
+}
+.icon-bar{
+    background-color: grey;
+    color:white;
+}
+
 hr.main{
     color: darkgrey;
     border-top: 2px solid lightgrey;
