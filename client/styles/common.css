@@ -12,10 +12,13 @@ img.logo_header{
     height:0px;
     width:0px;
 }
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 64em) {
     img.logo_header{
         height:150px;
         width:125px;
+    }
+    hr.main{
+        width: 0%;
     }
 }
 
@@ -28,9 +31,7 @@ hr.main{
     display:inline-block;
 }
 @media screen and (max-width: 48em){
-    hr.main{
-        width: 0%;
-    }
+
 }
 
 hr.main2{
@@ -97,5 +98,43 @@ img.loading{
     img.loading{
         width: 40%;
         height: 40%
+    }
+}
+
+/* THIS CHANGES THE SIZE WHEN NAVBAR COLLAPSES */
+@media (max-width: 64em) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
     }
 }
