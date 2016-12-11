@@ -11,13 +11,13 @@ angular.module('RCSapp.team')
         $scope.playersArray = [];
         $scope.staffArray = [];
 
-        var url = 'http://localhost:8000/api/team/';
+        var url = 'http://138.197.24.51:8000/api/team/';
         var playerUrl = url + 'player';
         var staffUrl = url + 'staff';
         $http.get(playerUrl)
             .success(function(data){
                 $scope.playersArray = data;
-                $scope.$apply();
+                //$scope.$apply();
             })
             .error(function(err){
                 if(err) console.log(err.message);
@@ -26,7 +26,7 @@ angular.module('RCSapp.team')
         $http.get(staffUrl)
             .success(function(data){
                 $scope.staffArray = data;
-                $scope.$apply();
+                //$scope.$apply();
             })
             .error(function(err){
                 if(err) console.log(err.message);

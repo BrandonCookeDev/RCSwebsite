@@ -2,7 +2,7 @@ angular.module('RCSapp.team')
     .factory('TeamService', function($http){
 
     var service = {
-        hostname: 'http://localhost:8000',
+        hostname: 'http://138.197.24.51:8000',
         playerList: null,
         staffList: null,
         getStaff: function(){

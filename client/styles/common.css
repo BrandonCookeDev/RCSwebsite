@@ -8,6 +8,41 @@ body.main{
     background-color: #232324;
 }
 
+p.main{
+    color: darkgrey;
+}
+@media screen and (max-width: 62em){
+    p.main{
+        color:darkgrey;
+        font-size: 24pt;
+    }
+}
+
+img.logo_header{
+    height:0px;
+    width:0px;
+}
+@media screen and (min-width: 64em) {
+    img.logo_header{
+        height:150px;
+        width:125px;
+    }
+}
+
+span.menu{
+    float:right;
+    padding-top:40px;
+}
+.navbar-toggle .icon-bar {
+    display: block;
+    background-color: grey;
+    color:white;
+    height:15px;
+    width:50px;
+    border-radius: 2px;
+    border-color:white;
+}
+
 hr.main{
     color: darkgrey;
     border-top: 2px solid lightgrey;
@@ -16,8 +51,15 @@ hr.main{
     opacity: 0.5;
     display:inline-block;
 }
+@media screen and (max-width: 48em){
+
+}
+
 hr.main2{
     font-size:42pt;
+}
+hr.main3{
+    width:70%;
 }
 
 div.main {
@@ -26,40 +68,10 @@ div.main {
     width:80%;
 }
 
-div.extras{
-    position:relative;
-    align-content: center;
-    display:inline-block;
-}
-div.twitch{
-    padding-right:20px;
-    padding-left:20px;
-    position:relative
-}
-@media screen and (min-width: 62em){
-    iframe.RCStwitch{
-        height: 478px;
-        width: 850px;
+@media screen and (min-width:62em) {
+    .left_margin {
+        padding-left: 50px;
     }
-}
-@media screen and (min-width: 48em) and (max-width: 61em){
-    iframe.RCStwitch{
-        height: 366px;
-        width: 650px;
-    }
-}
-
-div.twitter{
-    padding-left:100px;
-    float:left;
-}
-div.videos{
-    padding-left:50px;
-    float:left;
-}
-
-p.main{
-    color: darkgrey;
 }
 
 a:link.main{
@@ -79,250 +91,6 @@ a:active.main{
     font-weight: 400;
 }
 
-img.stretch{
-    background-size:cover;
-    left:0px;
-    margin:0;
-}
-
-div.imageStretchMain {
-    background-image: url(../images/common/splash.banner.jpg);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size:100%;
-    background-color: transparent;
-    background-size:cover;
-}
-
-/* TEAM VIEW */
-h1.team, h2.team,
-h3.team, h4.team,
-h5.team  {
-    color:darkgrey;
-}
-
-h1.teamTitle{
-    color: white;
-    font-size:35pt;
-    text-align: center;
-
-}
-@media screen and (min-width: 48em){
-    h1.teamTitle{
-        color: white;
-        font-size:40pt;
-        text-align: left;
-        padding-left:100px;
-    }
-}
-
-p.team{
-    color:darkgrey;
-    font-size:12pt;
-}
-
-span.name{
-    color:white;
-}
-
-hr.team{
-    color: darkgrey;
-    width: 80%;
-}
-
-div.teamContent{
-    align:center;
-}
-
-div.teamImage{
-    padding-top:25px;
-}
-div.teamBio{
-    text-align:center;
-}
-
-div.teamBioPlayer{
-     text-align:center;
-}
-div.teamResults{
-}
-
-@media screen and (min-width: 48em){
-    img.teamImage{
-        padding-top:25px;
-    }
-
-    div.teamContent{
-        margin:0 auto;
-    }
-
-    div.teamBio{
-        text-align:left;
-        width:50%;
-    }
-    div.teamBioPlayer{
-        text-align:left;
-    }
-    div.teamResults {
-        text-align: left;
-        align: left;
-    }
-    table.team,td.team{
-        color:white;
-        width: 225px;
-        font-size:13pt;
-        text-align:left;
-    }
-}
-
-table.team, td.team{
-    color:white;
-    width: 275px;
-    font-size:13pt;
-    text-align:center;
-}
-th.team{
-    text-align:center;
-    font-size:15pt;
-    color:lightgrey;
-}
-@media screen and (max-width: 62em){
-    table.team, td.team, th.team{
-        margin:0 auto;
-    }
-}
-
-tr.team{
-    border-bottom: 1pt white;
-}
-
-
-
-th.resultPlacing,
-td.resultPlacing{
-    text-align: center;
-}
-
-td.team{
-    height: 100px;
-}
-
-/* CONTACT VIEW */
-div.imageStretchContact{
-    background-image: url(../images/contact/contact.jpg);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size:100%;
-    background-color: transparent;
-    background-size:cover;
-}
-
-b.red{
-    color:red
-}
-
-form.contact{
-    text-align: left;
-    padding-left:15%;
-}
-
-h1.contact, h2.contact,
-h3.contact, h4.contact,
-h5.contact{
-    color:white;
-}
-
-input[type="text"].email{
-    width:250px;
-}
-textarea.comment{
-    width:350px;
-    height:300px;
-}
-
-/* TOURNAMENTS VIEW */
-div.georgiaArcadian{
-    background-image: url(../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.small.jpg);
-    height:350px;
-    width:100%;
-}
-
-div.georgiaArcadianStretch{
-    background-image: url(../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.jpg);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size:100%;
-    background-color: transparent;
-    background-size:cover;
-}
-
-div.comingSoon{
-    background-image: url(../images/tournaments/comingSoon.jpg);
-}
-
-div.georgiaArcadianContent{
-    text-align: left;
-}
-
-div.featured{
-
-}
-@media screen and (min-width: 48em){
-    iframe.featured{
-        width: 700px;
-        height: 394px;
-    }
-}
-
-div.photoColumn{
-    padding-left:100px;
-    padding-right:20px;
-    float:left
-}
-div.videoColumn{
-    float:left;
-}
-
-h1.tournaments, h2.tournaments,
-h3.tournaments, h4.tournaments,
-h5.tournaments{
-    color:white;
-}
-
-p.tournament{
-    font-size: 16pt;
-    color:darkgrey;
-    text-align: left;
-    width:90%;
-    font-weight:0;
-    margin:0 auto;
-}
-
-h1.georgiaArcadian{
-    font-size: 60pt;
-    font-family: 'Times New Roman';
-}
-h2.georgiaArcadian{
-    font-size: 40pt;
-    font-family: 'Times New Roman';
-}
-
-div.brackets{
-    text-align:center
-}
-@media screen and (min-width:62em){
-    div.brackets{
-        text-align:right
-    }
-}
-
-h2.right{
-    text-align: right;
-}
-
-h2.comingSoon{
-    font-size: 40pt;
-}
 
 /* THIS CENTERS CONTENT IN THE BOOTSTRAP NAVBAR */
 .navbar .navbar-nav {
@@ -352,5 +120,66 @@ img.loading{
     img.loading{
         width: 40%;
         height: 40%
+    }
+}
+
+/* THIS CHANGES THE SIZE WHEN NAVBAR COLLAPSES */
+@media (max-width: 64em) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+    hr.main{
+        width: 0%;
+    }
+    a.main{
+        font-size:18pt;
+        color: white;
+    }
+    a:link.main{
+        color:white;
+        font-weight: 400;
+    }
+    a:visited.main{
+        color:white;
+        font-weight: 400;
+    }
+    a:hover.main{
+        color:dimgrey;
+        font-weight: 400;
+    }
+    a:active.main{
+        color:lightslategray;
+        font-weight: 400;
     }
 }

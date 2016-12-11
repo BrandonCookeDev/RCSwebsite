@@ -5,22 +5,43 @@
     <title>Recursion</title>
     <link rel='stylesheet' type='text/css' href='node_modules/bootstrap/dist/css/bootstrap.min.css' />
     <link rel="stylesheet" type="text/css" href="styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="app/splash/styles/splash.style.css" />
+    <link rel="stylesheet" type="text/css" href="app/team/styles/team.style.css"/>
+    <link rel="stylesheet" type="text/css" href="app/contact/styles/contact.style.css"/>
+    <link rel="stylesheet" type="text/css" href="app/tournaments/styles/tournaments.style.css"/>
+
     <link rel="icon" href="/images/favicon.png" type="image/png" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="google-site-verification" content="_9C92OGgKn-ULTZuGPp6-Ck2jyk8bK5fRndkFKWdhhY" />
     <base href="/">
+</head>
 <body class="main">
 
     <!-- Navbar Div -->
     <!-- RCS LOGO CENTERED -->
     <a href="/">
-        <img src="images/common/RCSWhiteText.png" height="150" width="125" />
+        <img src="images/common/RCSWhiteText.png" class="logo_header" />
     </a>
 
     <!-- SMALL HR -->
     <!-- NAVBAR CENTERED FLOATING -->
-    <div class="navbar">
-        <div class="navbar navbar-collapse" role="navigation">
+    <div class="navbar ">
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#RCSnavbar">
+            <span>
+                <img src="images/common/RCSWhiteTextOnly.png" width="50%" height="40%"/>
+            </span>
+            <span>
+                <img src="images/common/RCSWhite.png" height="125" width="110"/>
+            </span>
+            <span class="menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </span>
+            <hr class="main2" />
+        </button>
+        <div class="collapse navbar-collapse" role="navigation" id="RCSnavbar">
             <span>
                 <hr class="main"/>
                 <ul class="nav navbar-nav">
