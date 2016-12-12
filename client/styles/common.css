@@ -8,6 +8,17 @@ body.main{
     background-color: #232324;
 }
 
+h1.bebas, h2.bebas,
+h3.bebas, h4.bebas,
+h5.bebas{
+    font-family: "Bebas Neue";
+}
+
+p.bebas{
+    font-family: "Bebas Neue";
+}
+
+
 p.main{
     color: darkgrey;
 }
@@ -71,6 +82,9 @@ div.main {
 @media screen and (min-width:62em) {
     .left_margin {
         padding-left: 50px;
+    }
+    .left_margin_small{
+        padding-left: 20px;
     }
 }
 
@@ -182,4 +196,12 @@ img.loading{
         color:lightslategray;
         font-weight: 400;
     }
+}
+
+/* FONTS */
+@font-face {
+    font-family: "Bebas Neue";
+    src: url('../fonts/BebasNeue Regular.otf');
+    font-weight: normal;
+    font-style: normal;
 }

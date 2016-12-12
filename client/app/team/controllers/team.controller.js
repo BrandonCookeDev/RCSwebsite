@@ -21,7 +21,7 @@ angular.module('RCSapp.team')
             })
             .error(function(err){
                 if(err) console.log(err.message);
-            })
+            });
 
         $http.get(staffUrl)
             .success(function(data){
@@ -30,7 +30,7 @@ angular.module('RCSapp.team')
             })
             .error(function(err){
                 if(err) console.log(err.message);
-            })
+            });
         //$scope.$apply();
 
     /* LOADING ANIMATION */
