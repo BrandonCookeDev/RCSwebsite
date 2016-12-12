@@ -7,10 +7,9 @@
 
     <div class="row" ng-repeat="event in eventsArray">
         <div class="col-xs-12 col-sm-12 col-lg-12">
-            <h1 class="upcoming">UPCOMING EVENTS</h1>
+            <h1 class="upcoming"><u>UPCOMING EVENTS</u></h1>
         </div>
         <br/>
-        <hr class="main3" />
         <div class="col-xs-12 col-sm-12 col-lg-12">
             <!-- ACCORDIAN FOR EVENT -->
             <h2 class="tournaments bebas">{{ event.date | date: MM/dd/yyyy }}</h2>
@@ -41,6 +40,7 @@
                                         marginwidth="5" scrolling="auto" allowtransparency="true">
                                 </iframe>
                             </div>
+                            <hr/>
                         </div>
                         <div class="col-sm-12 col-md-12 col-lg-7">
                             <h2 class="bebas">TRAVEL</h2><br />
@@ -51,6 +51,7 @@
                             <br />
                             <h3>{{event.address}}</h3>
                             <br/>
+                            <hr/>
                         </div>
                     </div>
                 </div>
