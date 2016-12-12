@@ -1,9 +1,10 @@
 var app = angular.module('RCSapp',
-    ['ngRoute',
+    ['ngRoute', 'ui.bootstrap',
         'RCSapp.splash',
         'RCSapp.tournaments',
         'RCSapp.team',
         'RCSapp.contact',
+        'RCSapp.upcoming',
         'RCSapp.common'
          ]);
 
@@ -13,6 +14,11 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/splash/views/splash.html',
             controller: 'SplashCtrl',
             activeTab: 'Home'
+        })
+        .when('/upcoming', {
+            templateUrl: 'app/upcoming/views/upcoming.html',
+            controller: 'UpcomingCtrl',
+            activeTab: 'Upcoming'
         })
         .when('/tournaments', {
             templateUrl: 'app/tournaments/views/tournaments.html',
@@ -32,6 +38,16 @@ app.config(['$routeProvider', function($routeProvider) {
         .when('/georgiaArcadian', {
             templateUrl: 'app/tournaments/views/georgiaArcadian.html',
             controller: 'TournamentsCtrl'
+        })
+        .when('/comingSoon', {
+            templateUrl: 'app/upcoming/views/events.html',
+            controller: 'UpcomingCtrl',
+            activeTab: 'ComingSoon'
+        })
+        .when('/calendar', {
+            templateUrl: 'app/upcoming/views/calendar.html',
+            controller: 'UpcomingCtrl',
+            activeTab: 'Calendar'
         })
         .otherwise({
             redirectTo: '/'
