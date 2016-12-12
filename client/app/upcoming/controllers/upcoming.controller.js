@@ -14,8 +14,7 @@ angular.module('RCSapp.upcoming')
             )
         };
 
-        //var url = 'http://138.197.24.51:8000/api/events/';
-        var url = 'http://localhost:8000/api/events/';
+        var url = 'http://138.197.24.51:8000/api/events/';
         $http.get(url)
             .success(function(data){
                 $scope.eventsArray = data;
