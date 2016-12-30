@@ -17,20 +17,20 @@ angular.module('RCSapp.team')
         $http.get(playerUrl)
             .success(function(data){
                 $scope.playersArray = data;
-                $scope.$apply();
+                //$scope.$apply();
             })
             .error(function(err){
                 if(err) console.log(err.message);
-            })
+            });
 
         $http.get(staffUrl)
             .success(function(data){
                 $scope.staffArray = data;
-                $scope.$apply();
+                //$scope.$apply();
             })
             .error(function(err){
                 if(err) console.log(err.message);
-            })
+            });
         //$scope.$apply();
 
     /* LOADING ANIMATION */
