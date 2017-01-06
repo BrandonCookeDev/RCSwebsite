@@ -25,10 +25,14 @@ div.georgiaArcadianContent{
 div.featured{
 
 }
-@media screen and (min-width: 48em){
+@media screen and (min-width: 62em){
     iframe.featured{
         width: 700px;
         height: 394px;
+    }
+
+    img.featured{
+        width:65%;
     }
 }
 
@@ -67,7 +71,7 @@ p.tournament{
         font-weight: 200;
         font-size: 20pt;
         color: darkgrey;
-        text-align: left;
+        text-align: center;
         width: 90%;
         margin: 0 auto;
     }
