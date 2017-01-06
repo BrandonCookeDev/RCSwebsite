@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var Event = require('../../upcoming/event.model');
+var Event = require('../models/upcoming/event.model');
 
 var args = process.argv;
 

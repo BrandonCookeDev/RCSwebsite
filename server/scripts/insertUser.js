@@ -1,5 +1,5 @@
 var crypto  = require('crypto');
-var User    = require('../../user/user.model');
+var User    = require('../models/user/user.model');
 
 var usage = 'USAGE node insertUser.js username password';
 if(process.argv.length != 4)
