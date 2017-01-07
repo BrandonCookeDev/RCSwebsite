@@ -1,5 +1,7 @@
 angular.module('RCSapp.tournaments')
-    .controller('TournamentsCtrl', function($scope){
+    .controller('TournamentsCtrl', function($scope, $routeParams){
+
+    //var tournament =
 
     /* LOADING ANIMATION */
     $scope.ready = false;

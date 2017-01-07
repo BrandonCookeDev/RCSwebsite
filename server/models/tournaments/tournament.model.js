@@ -13,9 +13,6 @@ var BracketSchema = mongoose.Schema({
 var Bracket = mongoose.model('Bracket', BracketSchema);
 var YTPlaylist = mongoose.model('YTPlaylist', YTPlaylistSchema);
 
-//exports.Bracket = Bracket;
-//exports.YTPlaylist = YTPlaylist;
-
 var TournamentSchema = mongoose.Schema({
     name: String,
     date: Date,
