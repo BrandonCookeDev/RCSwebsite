@@ -1,5 +1,5 @@
 angular.module('RCSapp.tournaments')
-    .controller('TournamentsCtrl', function($scope, $routeParams){
+    .controller('TournamentsCtrl', function($scope){
 
     //var tournament =
 

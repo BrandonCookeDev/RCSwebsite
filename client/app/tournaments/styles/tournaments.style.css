@@ -22,17 +22,17 @@ div.georgiaArcadianContent{
     text-align: left;
 }
 
-div.featured{
-
+img.featured{
+    width:65%;
 }
-@media screen and (min-width: 62em){
+@media screen and (min-width: 48em){
     iframe.featured{
         width: 700px;
         height: 394px;
     }
 
     img.featured{
-        width:65%;
+        width:100%;
     }
 }
 
@@ -89,7 +89,7 @@ h2.georgiaArcadian{
 div.brackets{
     text-align:center
 }
-@media screen and (min-width:62em){
+@media screen and (min-width:64em){
     div.brackets{
         text-align:right
     }
@@ -97,14 +97,43 @@ div.brackets{
 
 h2.FocusChaosDunk{
     text-align: center;
+    color:white;
 }
-@media screen and (min-width: 48em){
+@media screen and (min-width: 62em){
     h2.FocusChaosDunk{
         text-align: right;
+        color:white;
     }
 }
-
-
 h2.comingSoon{
     font-size: 40pt;
+}
+
+h1.superFamiCon, h2.superFamiCon,
+h3.superFamiCon, h4.superFamiCon,
+h5.superFamiCon{
+    color:white;
+}
+
+h1.superFamiCon{
+    font-size: 65pt;
+}
+
+h2.superFamiCon{
+    font-size:50pt;
+}
+
+div.superFamiCon{
+    background-image: url(../../../images/tournaments/SuperFamiCon/DruggedfoxChi.jpg);
+    height:350px;
+    width:100%;
+}
+
+div.superFamiConStretch{
+    background-image: url(../../../images/tournaments/SuperFamiCon/ColbolClemContrast.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:100%;
+    background-color: transparent;
+    background-size:cover;
 }
