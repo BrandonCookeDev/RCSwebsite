@@ -1,8 +1,8 @@
 angular.module('RCSapp.team')
-    .service('TeamService', function($http){
+    .factory('TeamService', function($http){
 
     var service = {
-        hostname: 'http://localhost:8088',
+        hostname: 'http://138.197.24.51:8000',
         playerList: null,
         staffList: null,
         getStaff: function(){
@@ -33,7 +33,7 @@ angular.module('RCSapp.team')
                     'were in order. Recursion was started as the beginnings of a Clash King Studios rebrand and ' +
                     'quickly became its own organization under renewed leadership. Brandon is also a software developer ' +
                     'for AT&T, graduate student at Georgia Tech, and father of two. ',
-                    picture:'../../images/team/staff/Brandon.jpg',
+                    picture:'../../images/team/staff/Brandon.png',
                     category:'staff',
                     results: []
                 },
@@ -53,7 +53,7 @@ angular.module('RCSapp.team')
                 {
                     name:'Conor \'Guava\' Hagan',
                     position:'Head of Graphic Design',
-                    twitter:'',
+                    twitter:'RCS_Guava',
                     bio:null,
                     picture:'../../images/team/staff/Conor.jpg',
                     category:'staff',
@@ -63,12 +63,20 @@ angular.module('RCSapp.team')
             return team;
         },
         getPlayers: function(){
+            var linebreak = document.createElement('br');
             var team = [
                 {
                     name:'Kevin \'KPAN\' Pan',
                     position:'Player',
                     twitter:'RCS_KPAN',
-                    bio:'',
+                    bio:'Kevin Pan, or KPAN, has been playing Melee competitively since 2012. Training with other ' +
+                    'students and top players at Georgia Tech, Kevin quickly grew to prominence to become one of the ' +
+                    'best Falco players in Georgia and the Southeast. KPAN is currently ranked 3rd in the Georgia ' +
+                    'Power Rankings and is a strong contender for top 100 players in the world. Kevin is also known ' +
+                    'for his strength in crew battles, helping Georgia Tech achieve a close 2nd place at ' +
+                    'The Melee Games finals at Genesis 3. Notable results include 49th at EVO 2015, 25th at ' +
+                    'CEO 2016, 17th at WTFox2, and more. You can find KPAN at the top of nearly any Georgia Melee ' +
+                    'bracket, as well as traveling to national events under Recursion.',
                     picture:'../../images/team/players/KPAN.jpg',
                     category:'player',
                     results: [
@@ -105,6 +113,7 @@ angular.module('RCSapp.team')
             var url = this.hostname + '/api/team/staff';
             $http.get(url)
                 .success(function(data){
+                    this.staffList = data;
                     return data;
                 })
                 .error(function(err){
@@ -115,6 +124,7 @@ angular.module('RCSapp.team')
             var url = this.hostname + '/api/team/player';
             $http.get(url)
                 .success(function(data){
+                    this.playerList = data;
                     return data;
                 })
                 .error(function(err){

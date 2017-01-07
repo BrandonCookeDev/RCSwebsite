@@ -5,6 +5,8 @@ var common      = require('./common/common');
 
 var Team    = require('./models/team/team.model');
 var Contact = require('./models/contact/contact.model');
+var Events  = require('./models/upcoming/event.model');
+var Tournaments = require('./models/tournaments/tournament.model');
 var Mailer  = require('./components/emailer');
 
 mongoose.connect('mongodb://localhost/RCSwebsite');
@@ -39,6 +41,63 @@ app.post('/api/contact/mail', function(req, res){
             receivers += email.email + ',';
         });
         Mailer.sendMail(firstName, lastName, sender, receivers, message, res);
+    })
+});
+
+app.get('/api/events', function(req, res){
+    var date = new Date();
+    var endDate = null;
+
+    var events = [];
+    Events.find({ "date" : { $gte : date }}).lean().exec(function(err, docs){
+        if(err) log.error(err.message);
+        else log.info(docs);
+
+        docs.forEach(function(event){
+            events.push(event)
+        })
+    })
+    .then(function(){
+        res.json(events);
+    })
+});
+
+app.get('/api/events/:date', function(req, res){
+    var dateStr = req.params.date;
+    var dateRegex = new Regex("/^\d{2}-\d{2}-\d{4}$/");
+
+    if(!dateStr.match(dateRegex)){
+        //TRY TO FORMAT
+    }
+
+    var date = new Date(Date.parse(dateStr));
+    var endDate = null;
+
+    if(!date)
+        date = new Date();
+
+    var events = [];
+    Events.find({ "date" : { $gte : date }}).lean().exec(function(err, docs){
+        if(err) log.error(err.message);
+        else log.info(docs);
+
+        docs.forEach(function(event){
+            events.push(event)
+        })
+    })
+    .then(function(){
+        res.json(events);
+    })
+});
+
+app.get('/api/tournaments/:name', function(req, res){
+    var name = req.params.name;
+
+    Tournaments.Tournament.findOne({"name":name}).lean().exec(function(err, docs){
+        if(err) log.error(err.message);
+        else log.info(docs);
+
+        res.json(docs);
     })
 });
 

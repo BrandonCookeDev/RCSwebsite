@@ -1,0 +1,105 @@
+/* TEAM VIEW */
+h1.team, h2.team,
+h3.team, h4.team,
+h5.team  {
+    color:darkgrey;
+}
+
+h1.teamTitle{
+    color: dimgrey;
+    font-size:35pt;
+    text-align: center;
+    font-weight: bold;
+}
+
+p.team{
+    color:darkgrey;
+    font-size:12pt;
+}
+
+span.name{
+    color:white;
+}
+
+hr.team{
+    color: darkgrey;
+    width: 80%;
+}
+
+div.teamContent{
+    align:center;
+}
+
+div.teamImage{
+    padding-top:25px;
+}
+div.teamBio{
+    text-align:center;
+}
+
+div.teamBioPlayer{
+    text-align:center;
+}
+div.teamResults{
+}
+
+@media screen and (min-width: 48em){
+    img.teamImage{
+        padding-top:25px;
+    }
+
+    div.teamContent{
+        margin:0 auto;
+    }
+
+    div.teamBio{
+        text-align:left;
+        width:50%;
+    }
+    div.teamBioPlayer{
+        text-align:left;
+    }
+    div.teamResults {
+        text-align: left;
+        align: left;
+    }
+    table.team,td.team{
+        color:white;
+        width: 225px;
+        font-size:13pt;
+        text-align:left;
+    }
+}
+
+table.team, td.team{
+    color:white;
+    width: 275px;
+    font-size:13pt;
+    text-align:center;
+}
+th.team{
+    text-align:center;
+    font-size:15pt;
+    color:lightgrey;
+}
+@media screen and (max-width: 62em){
+    table.team, td.team, th.team{
+        margin:0 auto;
+    }
+}
+
+tr.team{
+    border-bottom: 1pt white;
+}
+
+
+
+th.resultPlacing,
+td.resultPlacing{
+    text-align: center;
+}
+
+td.team{
+    height: 100px;
+}
+

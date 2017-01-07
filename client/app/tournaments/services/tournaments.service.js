@@ -1,6 +1,7 @@
 angular.module('RCSapp.tournaments')
-    .service('TournamentsService', function($routeProvider){
+    .service('TournamentsService', function($routeProvider, $http){
         var service = {
+            url: 'localhost:8000/api/tournaments',
             tournamentLinks: [
                 {
                     name: 'The Georgia Arcadian',
@@ -23,7 +24,17 @@ angular.module('RCSapp.tournaments')
                     ],
                     videos: []
                 }
-            ]
-        }
+            ],
+            getTournamentFromDbByName: function(name){
+                var newUrl = this.url + '/' + name;
+                $http.get(newUrl)
+                    .then(function(data){
+                        return data;
+                    })
+                    .then(function(err){
+                        if(err) console.log(err.message);
+                    })
+            }
+        };
         return service;
     });

@@ -1,0 +1,32 @@
+/* CONTACT VIEW */
+div.imageStretchContact{
+    background-image: url(../../../images/contact/contact.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:100%;
+    background-color: transparent;
+    background-size:cover;
+}
+
+b.red{
+    color:red
+}
+
+form.contact{
+    text-align: left;
+    padding-left:15%;
+}
+
+h1.contact, h2.contact,
+h3.contact, h4.contact,
+h5.contact{
+    color:white;
+}
+
+input[type="text"].email{
+    width:250px;
+}
+textarea.comment{
+    width:350px;
+    height:300px;
+}

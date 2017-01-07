@@ -1,0 +1,110 @@
+/* TOURNAMENTS VIEW */
+div.georgiaArcadian{
+    background-image: url(../../../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.small.jpg);
+    height:350px;
+    width:100%;
+}
+
+div.georgiaArcadianStretch{
+    background-image: url(../../../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size:100%;
+    background-color: transparent;
+    background-size:cover;
+}
+
+div.comingSoon{
+    background-image: url(../../../images/tournaments/comingSoon.jpg);
+}
+
+div.georgiaArcadianContent{
+    text-align: left;
+}
+
+div.featured{
+
+}
+@media screen and (min-width: 62em){
+    iframe.featured{
+        width: 700px;
+        height: 394px;
+    }
+
+    img.featured{
+        width:65%;
+    }
+}
+
+div.photoColumn{
+    padding-left:100px;
+    padding-right:20px;
+    float:left
+}
+div.videoColumn{
+    float:left;
+}
+
+/* IFRAMES */
+@media screen and (min-width: 62em){
+    iframe.FocusChaosDunk{
+        width: 700px;
+        height:394px;
+    }
+}
+
+h1.tournaments, h2.tournaments,
+h3.tournaments, h4.tournaments,
+h5.tournaments{
+    color:white;
+}
+
+p.tournament{
+    font-size: 16pt;
+    color:darkgrey;
+    text-align: left;
+    width:90%;
+    margin:0 auto;
+}
+@media screen and (max-width: 62em){
+    p.tournament {
+        font-weight: 200;
+        font-size: 20pt;
+        color: darkgrey;
+        text-align: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+h1.georgiaArcadian{
+    font-size: 60pt;
+    font-family: 'Times New Roman';
+}
+h2.georgiaArcadian{
+    font-size: 40pt;
+    font-family: 'Times New Roman';
+}
+
+div.brackets{
+    text-align:center
+}
+@media screen and (min-width:62em){
+    div.brackets{
+        text-align:right
+    }
+}
+
+h2.FocusChaosDunk{
+    text-align: center;
+}
+@media screen and (min-width: 48em){
+    h2.FocusChaosDunk{
+        text-align: right;
+    }
+}
+
+
+h2.comingSoon{
+    font-size: 40pt;
+}
