@@ -1,20 +1,28 @@
 angular.module('AdminPortalApp.common')
-    .controller('AuthenticationCtrl', function($scope, $http){
+    .controller('AuthenticationCtrl', function($scope, $http, SessionService){
         $scope.hostname = 'http://localhost:8000/';
+        $scope.sessionService = SessionService;
+
         $scope.authCreds = {
             uname: '',
             upass: ''
         }
 
         $scope.attemptLogin = function(){
-            var url = $scope.hostname + 'api/user';
+            var url = $scope.hostname + 'api/user/login';
             $http.post(url, $scope.authCreds,
                 function(data){
                     console.log('success');
-                    console.log(data);
+                    $scope.sessionService.loggedIn = true;
+                    $scope.sessionService.userInfo = data;
                 },
                 function(err){
                     console.log(err.message);
                 })
+        }
+
+        $scope.logout = function(){
+            var url = $scope.hostname + 'api/user/logout'
+            $http.delete(url);
         }
 });

@@ -14,11 +14,18 @@ mongoose.connect('mongodb://localhost/RCSwebsite');
 
 var express     = require('express');
 var app     	= express();
+var session     = require('express-session');
 
 app.use(common.allowCrossDomain);
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({
     extended: true
+}));
+
+app.use(session({
+    secret: '2C44-4D44-WppQ38S',
+    resave: true,
+    saveUninitialized: true
 }));
 
 app.post('/api/contact/mail', function(req, res){
@@ -61,6 +68,10 @@ app.get('/api/events', function(req, res){
     .then(function(){
         res.json(events);
     })
+});
+
+app.delete('/api/events', function(req, res){
+
 });
 
 app.post('/api/events', function(req, res){
@@ -141,7 +152,25 @@ app.get('/api/team/:category', function(req, res){
     });
 });
 
-app.post('/api/user', function(req, res){
+app.get('/api/user/:name', function(req, res){
+    var uname = req.params.name;
+
+    var user = null;
+    User.find({'name':name}).lean().exec(function(err, docs){
+        if(err) {
+            log.error(err.message);
+            res.sendStatus(403);
+            return;
+        }
+
+        user = docs[0];
+    })
+    .then(function(){
+        res.json(user);
+    })
+});
+
+app.post('/api/user/login', function(req, res){
     var uname = req.body.uname;
     var upass  = req.body.upass;
 
@@ -158,10 +187,20 @@ app.post('/api/user', function(req, res){
     .then(function(){
         common.verifyPassword(user.hashedPassword, user.salt, user.iterations, upass)
             .then(function(isAuthorized){
-                if(isAuthorized) res.sendStatus(200);
+                if(isAuthorized){
+                    req.session.user = user.name;
+                    req.session.admin = true;
+                    res.json(user);
+                    res.end();
+                }
                 else res.sendStatus(403);
             })
     })
+});
+
+app.delete('/api/user/logout', function(req, res){
+    req.session.destroy();
+    res.send("logout success!");
 });
 
 module.exports = {
