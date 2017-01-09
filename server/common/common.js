@@ -1,7 +1,6 @@
 var crypto = require('crypto');
 
 var hashPassword = function(password){
-
     return new Promise(function(resolve, reject){
         var salt = crypto.randomBytes(16).toString('base64');
         var iterations = 10000;
@@ -23,8 +22,16 @@ var hashPassword = function(password){
 };
 
 var verifyPassword = function (savedHash, savedSalt, savedIterations, passwordAttempt) {
-    return savedHash == crypto.pbkdf2(passwordAttempt, savedSalt, savedIterations);
-}
+    return new Promise(function(resolve, reject){
+        crypto.pbkdf2(passwordAttempt, savedSalt, savedIterations, 512, 'sha256',
+            function(err, key){
+                if (err) throw err;
+                hash = (key.toString('hex'));
+
+                resolve(savedHash == hash);
+            });
+    });
+};
 
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');

@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var UsersSchema = mongoose.Schema({
     name: String,
-    hashed_password: String,
+    hashedPassword: String,
     iterations: Number,
     salt: String
 });

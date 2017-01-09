@@ -17,7 +17,7 @@ common.hashPassword(password)
 
         var u = new User({
             name: uname,
-            password: hash.hashedPassword,
+            hashedPassword: hash.hashedPassword,
             iterations: hash.iterations,
             salt: hash.salt
         });
