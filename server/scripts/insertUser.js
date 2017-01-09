@@ -25,6 +25,8 @@ common.hashPassword(password)
         u.save(function(err, user){
             if(err) log.error(err.message);
             else log.info('User Successfully Saved: ' + user.name);
-        })
+        });
+
+        process.exit(0);
     });
 

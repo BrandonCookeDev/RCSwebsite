@@ -6,8 +6,8 @@ var Users    = require('../../models/user/user.model.js');
 mongoose.connect('mongodb://localhost/RCSwebsite');
 
 //REPLACE THESE WITH WHATEVER IS IN THE DB YOU'RE TRYING TO VALIDATE
-var name = 'brandon';
-var pass = 'helloWorld';
+var name = process.argv[2];
+var pass = process.argv[3];
 
 user = null;
 Users.find({'name':name}).lean().exec(function(err, docs){
@@ -18,8 +18,6 @@ Users.find({'name':name}).lean().exec(function(err, docs){
     }
 }).then(function(){
     console.log(user.name);
-    common.verifyPassword(user.hashedPassword, user.salt, user.iterations, 'testing').then((data)=>{console.log(data);});
-    common.verifyPassword(user.hashedPassword, user.salt, user.iterations, pass).then((data)=>{console.log(data);});
-    common.verifyPassword(user.hashedPassword, user.salt, user.iterations, 'testing2').then((data)=>{console.log(data);});
+    common.verifyPassword(user.hashedPassword, user.salt, user.iterations, pass).then((data)=>{console.log(data); process.exit(0)});
 });
 
