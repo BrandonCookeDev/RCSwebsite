@@ -56,7 +56,8 @@ app.config(['$routeProvider', function($routeProvider) {
         .when('/superFamiCon', {
             templateUrl: 'app/tournaments/views/superFamiCon.html',
             controller: 'TournamentsCtrl'
-        })        .otherwise({
+        })
+        .otherwise({
             redirectTo: '/'
         });
 

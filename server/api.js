@@ -62,6 +62,29 @@ app.get('/api/events', function(req, res){
     })
 });
 
+app.post('/api/events', function(req, res){
+    var name = req.body.name;
+    var date = req.body.date;
+    var addr = req.body.addr;
+    var prereg = req.body.prereg;
+
+    var e = new Events({
+        name: name,
+        date: date,
+        address: addr,
+        prereg: prereg
+    });
+
+    e.save(function(err, event){
+        if(err){
+            log.error(err.message);
+            res.send(400);
+        }
+        log.info('Successfully saved event! \n' + event.toString());
+        res.send(200);
+    })
+});
+
 app.get('/api/events/:date', function(req, res){
     var dateStr = req.params.date;
     var dateRegex = new Regex("/^\d{2}-\d{2}-\d{4}$/");
@@ -119,4 +142,4 @@ app.get('/api/team/:category', function(req, res){
 
 module.exports = {
     app: app
-}
+};

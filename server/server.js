@@ -5,6 +5,8 @@ var app     	= express();
 var common		= require('./common/common');
 var api 		= require('./api');
 
+var adminPortal = require('./adminPortalServer');
+
 var port = process.env.RCSwebsitePort || 8088;
 var ROOT_DIR = __dirname + '/..';
 app.use(express.static(ROOT_DIR + '/client'));
@@ -32,3 +34,5 @@ console.log('	[RCSwebsite API] API listening on port ' + 8000);
 app.listen(port);
 console.log('	[RCSwebsite] Website listening on port ' + port);
 
+adminPortal.app.listen(9999);
+console.log('	[RCSwebsite] Admin Portal listening on port ' + 9999);
