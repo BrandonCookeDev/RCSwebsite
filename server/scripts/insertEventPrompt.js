@@ -1,5 +1,8 @@
 var readline = require('readline');
+var mongoose = require('mongoose');
 var Event = require('../models/upcoming/event.model')
+
+mongoose.connect('mongodb://localhost/RCSwebsite');
 
 var event = {
     name : null,

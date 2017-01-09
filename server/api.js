@@ -6,6 +6,7 @@ var common      = require('./common/common');
 var Team    = require('./models/team/team.model');
 var Contact = require('./models/contact/contact.model');
 var Events  = require('./models/upcoming/event.model');
+var User    = require('./models/user/user.model');
 var Tournaments = require('./models/tournaments/tournament.model');
 var Mailer  = require('./components/emailer');
 
@@ -13,11 +14,18 @@ mongoose.connect('mongodb://localhost/RCSwebsite');
 
 var express     = require('express');
 var app     	= express();
+var session     = require('express-session');
 
 app.use(common.allowCrossDomain);
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({
     extended: true
+}));
+
+app.use(session({
+    secret: '2C44-4D44-WppQ38S',
+    resave: true,
+    saveUninitialized: true
 }));
 
 app.post('/api/contact/mail', function(req, res){
@@ -44,21 +52,147 @@ app.post('/api/contact/mail', function(req, res){
     })
 });
 
-app.get('/api/events', function(req, res){
+app.get('/api/events/:all', function(req, res){
+    var getAll = req.params.all;
+
     var date = new Date();
     var endDate = null;
 
     var events = [];
-    Events.find({ "date" : { $gte : date }}).lean().exec(function(err, docs){
-        if(err) log.error(err.message);
+    if(getAll && getAll == "true"){
+        log.info('Getting ALL events');
+        Events.find().lean().exec(function (err, docs) {
+            if (err) {
+                log.error(err.message);
+                res.sendStatus(500);
+                return res;
+            }
+
+            log.info(docs);
+            docs.forEach(function (event) {
+                events.push(event)
+            })
+        })
+        .then(function () {
+            log.info(events);
+            res.json(events);
+        })
+    }
+    else{
+        log.info('Getting all Future events');
+        Events.find({"date": {$gte: date}}).lean().exec(function (err, docs) {
+            if (err) {
+                log.error(err.message);
+                res.sendStatus(500);
+                return res;
+            }
+
+            log.info(docs);
+            docs.forEach(function (event) {
+                events.push(event)
+            })
+        })
+        .then(function () {
+            log.info(events);
+            res.json(events);
+        })
+    }
+});
+
+app.get('/api/events', function(req, res){
+    var date = new Date();
+    var endDate = null;
+
+    log.info('Fetching all future events');
+
+    var events = [];
+    Events.find({"date": {$gte: date}}).lean().exec(function (err, docs) {
+        if (err) log.error(err.message);
         else log.info(docs);
 
-        docs.forEach(function(event){
+        docs.forEach(function (event) {
             events.push(event)
         })
     })
-    .then(function(){
+    .then(function () {
+        log.info(events);
         res.json(events);
+    })
+});
+
+app.delete('/api/events/:id', function(req, res){
+    var id = req.params.id;
+    log.warn('Attempting to delete event: ' + id);
+
+    Events.find({'_id':id}).remove(function(err){
+        if(err){
+            log.error(err.message);
+            res.sendStatus(500);
+            return res;
+        }
+
+        log.info('Successfully Deleted Event');
+        res.sendStatus(200);
+        return res;
+    })
+});
+
+app.post('/api/events', function(req, res){
+    var id   = req.body._id;
+    var name = req.body.name;
+    var date = req.body.date;
+    var addr = req.body.address;
+    var prereg = req.body.prereg;
+
+    log.info("Altering the event: " + id);
+
+    Events.find({'_id': id}, function(err, event){
+        if(err){
+            log.error(err.message);
+            res.sendStatus(500);
+            return res;
+        }
+
+        event.name = name;
+        event.date = date;
+        event.address = addr;
+        event.prereg = prereg;
+
+        event.save(function(err, event){
+            if(err){
+                log.error(err.message);
+                res.sendStatus(500);
+                return res;
+            }
+            else{
+                log.info('Event altered successfully!');
+                res.sendStatus(200);
+                return res;
+            }
+        });
+    })
+});
+
+app.put('/api/events', function(req, res){
+    var name = req.body.name;
+    var date = req.body.date;
+    var addr = req.body.addr;
+    var prereg = req.body.prereg;
+
+    var e = new Events({
+        name: name,
+        date: date,
+        address: addr,
+        prereg: prereg
+    });
+
+    e.save(function(err, event){
+        if(err){
+            log.error(err.message);
+            res.send(400);
+        }
+        log.info('Successfully saved event! \n' + event.toString());
+        res.send(200);
     })
 });
 
@@ -117,6 +251,70 @@ app.get('/api/team/:category', function(req, res){
     });
 });
 
+app.get('/api/user/:name', function(req, res){
+    var uname = req.params.name;
+
+    var user = null;
+    User.find({'name':uname}).lean().exec(function(err, docs){
+        if(err) {
+            log.error(err.message);
+            res.sendStatus(403);
+            return;
+        }
+
+        user = docs[0];
+    })
+    .then(function(){
+        //TODO fix this so it doesn't expose the user's hash or salt.
+        //res.json(user);
+    })
+});
+
+app.post('/api/user/login', function(req, res){
+    var uname = req.body.uname;
+    var upass  = req.body.upass;
+
+    log.info('Attempting login for account: ' + uname);
+
+    var user = null;
+    User.find({'name':uname}).lean().exec(function(err, docs){
+        if(err){
+            log.error(err.message);
+            res.sendStatus(403);
+            return res;
+        }
+
+        log.info('Found user. Password check next');
+        user = docs[0];
+        if(!user){
+            res.send('User not in the db', 400);
+        }
+    })
+    .then(function(){
+        common.verifyPassword(user.hashedPassword, user.salt, user.iterations, upass)
+            .then(function(isAuthorized){
+                if(isAuthorized){
+                    log.info('Login Success...');
+                    req.session.user = user.name;
+                    req.session.admin = true;
+                    res.json(user.name);
+                    res.end();
+                    return res;
+                }
+                else {
+                    log.warn('Login Failed...')
+                    res.sendStatus(403);
+                    return res;
+                }
+            })
+    })
+});
+
+app.delete('/api/user/logout', function(req, res){
+    req.session.destroy();
+    res.send("logout success!");
+});
+
 module.exports = {
     app: app
-}
+};
