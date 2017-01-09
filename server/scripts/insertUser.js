@@ -1,5 +1,9 @@
-var crypto  = require('crypto');
-var User    = require('../models/user/user.model');
+var log      = require('Winston');
+var common   = require('../common/common');
+var mongoose = require('mongoose');
+var User     = require('../models/user/user.model');
+
+mongoose.connect('mongodb://localhost/RCSwebsite');
 
 var usage = 'USAGE node insertUser.js username password';
 if(process.argv.length != 4)
@@ -7,10 +11,20 @@ if(process.argv.length != 4)
 
 var uname = process.argv[2];
 var password = process.argv[3];
-var hash = crypto.createHash('sha256').update(password).digest('base64');
+common.hashPassword(password)
+    .then(function(data){
+        var hash = data;
 
-var u = new User({
-    name: uname,
-    password: hash,
-    salt: salt
-});
+        var u = new User({
+            name: uname,
+            password: hash.hashedPassword,
+            iterations: hash.iterations,
+            salt: hash.salt
+        });
+
+        u.save(function(err, user){
+            if(err) log.error(err.message);
+            else log.info('User Successfully Saved: ' + user.name);
+        })
+    });
+

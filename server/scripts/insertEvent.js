@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 var Event = require('../models/upcoming/event.model');
 
+mongoose.connect('mongodb://localhost/RCSwebsite');
+
 var args = process.argv;
 
 if(args.length != 6) {
