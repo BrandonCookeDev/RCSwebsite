@@ -39,6 +39,10 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/tournaments/views/georgiaArcadian.html',
             controller: 'TournamentsCtrl'
         })
+		.when('/superFamiCon', {
+            templateUrl: 'app/tournaments/views/superFamiCon.html',
+            controller: 'TournamentsCtrl'
+        })
         .when('/comingSoon', {
             templateUrl: 'app/upcoming/views/events.html',
             controller: 'UpcomingCtrl',
@@ -49,7 +53,10 @@ app.config(['$routeProvider', function($routeProvider) {
             controller: 'UpcomingCtrl',
             activeTab: 'Calendar'
         })
-        .otherwise({
+        .when('/superFamiCon', {
+            templateUrl: 'app/tournaments/views/superFamiCon.html',
+            controller: 'TournamentsCtrl'
+        })        .otherwise({
             redirectTo: '/'
         });
 

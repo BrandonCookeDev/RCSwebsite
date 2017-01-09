@@ -6,6 +6,7 @@ var common      = require('./common/common');
 var Team    = require('./models/team/team.model');
 var Contact = require('./models/contact/contact.model');
 var Events  = require('./models/upcoming/event.model');
+var Tournaments = require('./models/tournaments/tournament.model');
 var Mailer  = require('./components/emailer');
 
 mongoose.connect('mongodb://localhost/RCSwebsite');
@@ -86,6 +87,17 @@ app.get('/api/events/:date', function(req, res){
     })
     .then(function(){
         res.json(events);
+    })
+});
+
+app.get('/api/tournaments/:name', function(req, res){
+    var name = req.params.name;
+
+    Tournaments.Tournament.findOne({"name":name}).lean().exec(function(err, docs){
+        if(err) log.error(err.message);
+        else log.info(docs);
+
+        res.json(docs);
     })
 });
 

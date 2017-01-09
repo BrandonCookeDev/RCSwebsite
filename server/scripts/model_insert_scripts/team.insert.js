@@ -4,7 +4,7 @@
  */
 
 var mongoose = require('mongoose');
-var Team = require('../team/team.model');
+var Team = require('../../models/team/team.model');
 
 mongoose.connect('mongodb://localhost/RCSwebsite');
 
