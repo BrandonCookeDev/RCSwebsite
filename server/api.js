@@ -6,6 +6,7 @@ var common      = require('./common/common');
 var Team    = require('./models/team/team.model');
 var Contact = require('./models/contact/contact.model');
 var Events  = require('./models/upcoming/event.model');
+var User    = require('./models/user/user.model');
 var Tournaments = require('./models/tournaments/tournament.model');
 var Mailer  = require('./components/emailer');
 
@@ -138,6 +139,29 @@ app.get('/api/team/:category', function(req, res){
     .then(function(){
         res.json(team);
     });
+});
+
+app.post('/api/user', function(req, res){
+    var uname = req.body.uname;
+    var upass  = req.body.upass;
+
+    var user = null;
+    User.find({'name':uname}).lean().exec(function(err, docs){
+        if(err){
+            log.error(err.message);
+            res.sendStatus(403);
+            return;
+        }
+
+        user = docs[0];
+    })
+    .then(function(){
+        common.verifyPassword(user.hashedPassword, user.salt, user.iterations, upass)
+            .then(function(isAuthorized){
+                if(isAuthorized) res.sendStatus(200);
+                else res.sendStatus(403);
+            })
+    })
 });
 
 module.exports = {

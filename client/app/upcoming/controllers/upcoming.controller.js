@@ -1,5 +1,6 @@
 angular.module('RCSapp.upcoming')
     .controller('UpcomingCtrl', function($scope, $sce, $http, UpcomingService){
+        $scope.hostname = 'http://localhost:8000';
         $scope.upcomingService = UpcomingService;
 
         $scope.eventsArray = [];
@@ -14,7 +15,7 @@ angular.module('RCSapp.upcoming')
             )
         };
 
-        var url = 'http://138.197.24.51:8000/api/events/';
+        var url = $scope.hostname + '/api/events/';
         $http.get(url)
             .success(function(data){
                 $scope.eventsArray = data;

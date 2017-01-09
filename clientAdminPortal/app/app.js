@@ -1,7 +1,8 @@
 var app = angular.module('AdminPortalApp',
     ['ngRoute',
         'AdminPortalApp.home',
-        'AdminPortalApp.event']);
+        'AdminPortalApp.event',
+        'AdminPortalApp.common']);
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider

@@ -1,3 +1,19 @@
 <div class="container">
     <h1>Welcome to the Recursion Website Admin Portal!</h1>
+    <h3>Please Log In:</h3>
+    <div ng-controller="AuthenticationCtrl">
+        <form ng-submit="attemptLogin()">
+            <table>
+                <tr>
+                    <td><label>Username</label></td>
+                    <td><input type="text" ng-model="authCreds.uname" /></td>
+                </tr>
+                <tr>
+                    <td><label>Password</label></td>
+                    <td><input type="password" ng-model="authCreds.upass" /></td>
+                </tr>
+            </table>
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
 </div>
