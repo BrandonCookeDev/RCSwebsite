@@ -1,4 +1,3 @@
-var log			= require('winston');
 var express 	= require('express');
 var app     	= express();
 
@@ -23,6 +22,21 @@ app.use(common.allowCrossDomain);
  * available. Since this is a single page application, all
  * dependencies are retrieved via index.
  */
+
+var winston	= require('winston');
+require('winston-daily-rotate-file');
+var transport = new winston.transports.DailyRotateFile({
+	filename: './logs/RCSwebsite',
+	datePattern: '.yyyy-MM-dd.log',
+	handleExceptions: true
+});
+var log = new (winston.Logger)({
+	transports: [
+		transport
+	]
+});
+log.info("Server started!");
+
 app.get('/*', function(req, res){
 	if(!req.url.includes('/api/'))
 		res.sendFile('client/index.html', {root: ROOT_DIR});

@@ -1,5 +1,6 @@
-<div class="container">
-    <div col-sm-12 col-md-12 col-lg-12>
+<div class="container" ng-controller="AuthenticationCtrl" ng-show="sessionService.loggedIn">
+    <div class="col-sm-12 col-md-12 col-lg-4">
+        <h2>Submit New Event</h2>
         <form ng-submit="submitNewEvent()">
             <table>
                 <tr>
@@ -20,6 +21,47 @@
                 </tr>
             </table>
             <input type="submit" value="submit"/>
+        </form>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-8" ng-controller="NewEventCtrl">
+        <h2>Alter Existing Events</h2>
+        <select ng-options="e.name for e in events | orderBy:'-date'" ng-model="selectedEvent"></select> <br/><hr/>
+        <form ng-submit="alterEvent()" ng-hide="!selectedEvent._id">
+            <table style="width:500px">
+                <tr>
+                    <th><u>Current</u></th>
+                    <th><u>New</u></th>
+                </tr>
+                <tr>
+                    <td><label>ID: </label>{{selectedEvent._id}}</td>
+                </tr>
+                <tr>
+                    <td><label>Name: </label> {{selectedEvent.name}} </td>
+                    <td><input type="text" placeholder="New Name (blank if no change)"
+                               ng-model="newSelectedEvent.name" width="50px"/></td>
+                    <td><input type="button" ng-click="newSelectedEvent.name=''" value="Clear"/></td>
+                </tr>
+                <tr>
+                    <td><label>Date: </label> {{selectedEvent.date}}</td>
+                    <td><input type="date" value="{{selectedEvent.date}}" ng-model="newSelectedEvent.date"
+                               placeholder="yyyy-MM-dd" width="50px"/></td>
+                    <td><input type="button" ng-click="newSelectedEvent.date=''" value="Clear"/></td>
+                </tr>
+                <tr>
+                    <td><label>Address: </label> {{selectedEvent.address}}</td>
+                    <td><input type="text" placeholder="New Address (blank if no change)"
+                               ng-model="newSelectedEvent.address" width="50px"/></td>
+                    <td><input type="button" ng-click="newSelectedEvent.address=''" value="Clear"/></td>
+                </tr>
+                <tr>
+                    <td><label>Prereg Link: </label> {{selectedEvent.prereg}}</td>
+                    <td><input type="text" placeholder="New Prereg Link (blank if no change)"
+                               ng-model="newSelectedEvent.prereg" width="50px"/></td>
+                    <td><input type="button" ng-click="newSelectedEvent.prereg=''" value="Clear"/></td>
+                </tr>
+            </table>
+            <input type="submit" value="Submit Event Change" />
+            <input type="button" value="Delete Event" ng-click="deleteEvent()"/>
         </form>
     </div>
 </div>

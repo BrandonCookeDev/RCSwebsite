@@ -5,7 +5,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" ng-controller="AuthenticationCtrl">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -15,8 +15,8 @@
                 </button>
                 <a class="navbar-brand" href="/">Recursion Admin Portal</a>
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
+            <div class="collapse navbar-collapse" id="myNavbar" >
+                <ul class="nav navbar-nav" ng-show="sessionService.loggedIn">
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="#!/newEvent">New Event</a></li>
                     <!--

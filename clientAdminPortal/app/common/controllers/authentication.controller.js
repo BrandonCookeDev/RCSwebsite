@@ -6,20 +6,20 @@ angular.module('AdminPortalApp.common')
         $scope.authCreds = {
             uname: '',
             upass: ''
-        }
+        };
 
         $scope.attemptLogin = function(){
             var url = $scope.hostname + 'api/user/login';
-            $http.post(url, $scope.authCreds,
-                function(data){
+            $http.post(url, $scope.authCreds)
+                .then(function(data){
                     console.log('success');
                     $scope.sessionService.loggedIn = true;
                     $scope.sessionService.userInfo = data;
-                },
-                function(err){
+                })
+                .catch(function(err){
                     console.log(err.message);
                 })
-        }
+        };
 
         $scope.logout = function(){
             var url = $scope.hostname + 'api/user/logout'

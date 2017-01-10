@@ -52,29 +52,128 @@ app.post('/api/contact/mail', function(req, res){
     })
 });
 
-app.get('/api/events', function(req, res){
+app.get('/api/events/:all', function(req, res){
+    var getAll = req.params.all;
+
     var date = new Date();
     var endDate = null;
 
     var events = [];
-    Events.find({ "date" : { $gte : date }}).lean().exec(function(err, docs){
-        if(err) log.error(err.message);
+    if(getAll && getAll == "true"){
+        log.info('Getting ALL events');
+        Events.find().lean().exec(function (err, docs) {
+            if (err) {
+                log.error(err.message);
+                res.sendStatus(500);
+                return res;
+            }
+
+            log.info(docs);
+            docs.forEach(function (event) {
+                events.push(event)
+            })
+        })
+        .then(function () {
+            log.info(events);
+            res.json(events);
+        })
+    }
+    else{
+        log.info('Getting all Future events');
+        Events.find({"date": {$gte: date}}).lean().exec(function (err, docs) {
+            if (err) {
+                log.error(err.message);
+                res.sendStatus(500);
+                return res;
+            }
+
+            log.info(docs);
+            docs.forEach(function (event) {
+                events.push(event)
+            })
+        })
+        .then(function () {
+            log.info(events);
+            res.json(events);
+        })
+    }
+});
+
+app.get('/api/events', function(req, res){
+    var date = new Date();
+    var endDate = null;
+
+    log.info('Fetching all future events');
+
+    var events = [];
+    Events.find({"date": {$gte: date}}).lean().exec(function (err, docs) {
+        if (err) log.error(err.message);
         else log.info(docs);
 
-        docs.forEach(function(event){
+        docs.forEach(function (event) {
             events.push(event)
         })
     })
-    .then(function(){
+    .then(function () {
+        log.info(events);
         res.json(events);
     })
 });
 
-app.delete('/api/events', function(req, res){
+app.delete('/api/events/:id', function(req, res){
+    var id = req.params.id;
+    log.warn('Attempting to delete event: ' + id);
 
+    Events.find({'_id':id}).remove(function(err){
+        if(err){
+            log.error(err.message);
+            res.sendStatus(500);
+            return res;
+        }
+
+        log.info('Successfully Deleted Event');
+        res.sendStatus(200);
+        return res;
+    })
 });
 
 app.post('/api/events', function(req, res){
+    var id   = req.body._id;
+    var name = req.body.name;
+    var date = req.body.date;
+    var addr = req.body.address;
+    var prereg = req.body.prereg;
+
+    log.info("Altering the event: " + id);
+
+    Events.findById(id, function(err, event){
+        if(err){
+            log.error(err.message);
+            res.sendStatus(500);
+            return res;
+        }
+
+        event.name = name;
+        event.date = date;
+        event.address = addr;
+        event.prereg = prereg;
+
+        event.save(function(err, event){
+            if(err){
+                log.error(err.message);
+                res.sendStatus(500);
+                return res;
+            }
+            else{
+                log.info('Event altered successfully!');
+                res.sendStatus(200);
+                return res;
+            }
+        });
+    })
+});
+
+app.put('/api/events', function(req, res){
     var name = req.body.name;
     var date = req.body.date;
     var addr = req.body.addr;
@@ -156,7 +255,7 @@ app.get('/api/user/:name', function(req, res){
     var uname = req.params.name;
 
     var user = null;
-    User.find({'name':name}).lean().exec(function(err, docs){
+    User.find({'name':uname}).lean().exec(function(err, docs){
         if(err) {
             log.error(err.message);
             res.sendStatus(403);
@@ -179,10 +278,13 @@ app.post('/api/user/login', function(req, res){
         if(err){
             log.error(err.message);
             res.sendStatus(403);
-            return;
+            return res;
         }
 
         user = docs[0];
+        if(!user){
+            res.send('User not in the db', 400);
+        }
     })
     .then(function(){
         common.verifyPassword(user.hashedPassword, user.salt, user.iterations, upass)
@@ -190,10 +292,14 @@ app.post('/api/user/login', function(req, res){
                 if(isAuthorized){
                     req.session.user = user.name;
                     req.session.admin = true;
-                    res.json(user);
+                    res.json(user.name);
                     res.end();
+                    return res;
                 }
-                else res.sendStatus(403);
+                else {
+                    res.sendStatus(403);
+                    return res;
+                }
             })
     })
 });

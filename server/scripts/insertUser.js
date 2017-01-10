@@ -1,4 +1,4 @@
-var log      = require('Winston');
+var log      = require('winston');
 var common   = require('../common/common');
 var mongoose = require('mongoose');
 var User     = require('../models/user/user.model');
@@ -25,8 +25,7 @@ common.hashPassword(password)
         u.save(function(err, user){
             if(err) log.error(err.message);
             else log.info('User Successfully Saved: ' + user.name);
+            process.exit(0);
         });
-
-        process.exit(0);
     });
 

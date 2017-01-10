@@ -15,7 +15,7 @@
         <h2 class="tournaments">Please check back at a later time!</h2>
     </div>
 
-    <div class="row" ng-repeat="event in eventsArray" ng-show="eventsArray.length">
+    <div class="row" ng-repeat="event in eventsArray | orderBy:'date'" ng-show="eventsArray.length">
 
         <div class="col-xs-12 col-sm-12 col-lg-12">
             <!-- ACCORDIAN FOR EVENT -->
