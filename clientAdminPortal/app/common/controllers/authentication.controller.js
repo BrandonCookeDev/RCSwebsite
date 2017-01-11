@@ -1,6 +1,5 @@
 angular.module('AdminPortalApp.common')
     .controller('AuthenticationCtrl', function($scope, $http, SessionService){
-        $scope.hostname = 'http://138.197.24.51:8000/';
         $scope.sessionService = SessionService;
 
         $scope.authCreds = {
@@ -9,7 +8,7 @@ angular.module('AdminPortalApp.common')
         };
 
         $scope.attemptLogin = function(){
-            var url = $scope.hostname + 'api/user/login';
+            var url = hostname + 'api/user/login';
             $http.post(url, $scope.authCreds)
                 .then(function(data){
                     console.log('success');
@@ -22,7 +21,7 @@ angular.module('AdminPortalApp.common')
         };
 
         $scope.logout = function(){
-            var url = $scope.hostname + 'api/user/logout'
+            var url = hostname + 'api/user/logout'
             $http.delete(url);
         }
 });

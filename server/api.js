@@ -145,8 +145,9 @@ app.post('/api/events', function(req, res){
     var prereg = req.body.prereg;
 
     log.info("Altering the event: " + id);
+    id = mongoose.Types.ObjectId( id );
 
-    Events.find({'_id': id}, function(err, event){
+    Events.findById(id, function(err, event){
         if(err){
             log.error(err.message);
             res.sendStatus(500);

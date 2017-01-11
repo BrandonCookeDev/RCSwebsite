@@ -1,6 +1,6 @@
 angular.module('AdminPortalApp.event')
     .controller('NewEventCtrl', function($scope, $http){
-        $scope.hostname = 'http://138.197.24.51:8000/';
+
         $scope.events = null;
 
         $scope.event = {
@@ -35,7 +35,7 @@ angular.module('AdminPortalApp.event')
             $scope.newSelectedEvent.mixin();
             Object.assign($scope.selectedEvent, $scope.newSelectedEvent);
 
-            var url = $scope.hostname + 'api/events';
+            var url = hostname + 'api/events';
             $http.post(url, $scope.selectedEvent)
                 .then(function(res){
                     alert('Event changed successfully!');
@@ -47,7 +47,7 @@ angular.module('AdminPortalApp.event')
         };
 
         $scope.submitNewEvent = function(){
-            var url = $scope.hostname + 'api/events';
+            var url = hostname + 'api/events';
             $http.put(url, $scope.event)
                 .then(function(data){
                     alert('Successfully submitted event!');
@@ -62,7 +62,7 @@ angular.module('AdminPortalApp.event')
         };
 
         $scope.deleteEvent = function(){
-            var url = $scope.hostname + 'api/events/' + $scope.selectedEvent._id;
+            var url = hostname + 'api/events/' + $scope.selectedEvent._id;
             $http.delete(url)
                 .then(function(res){
                     alert('Delete Sucessfull!');
@@ -75,7 +75,7 @@ angular.module('AdminPortalApp.event')
 
 
         $scope.getAllEvents = function() {
-            $http.get($scope.hostname + 'api/events/true')
+            $http.get(hostname + 'api/events/true')
                 .then(function (res) {
                     $scope.events = res.data;
                 })
