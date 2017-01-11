@@ -50,9 +50,9 @@ api.app.listen(8000);
 log.info('	[RCSwebsite API] API listening on port ' + 8000)
 console.log('	[RCSwebsite API] API listening on port ' + 8000);
 
-app.listen(port);
-log.info('	[RCSwebsite] Website listening on port ' + port)
-console.log('	[RCSwebsite] Website listening on port ' + port);
+app.listen(webport);
+log.info('	[RCSwebsite] Website listening on port ' + webport)
+console.log('	[RCSwebsite] Website listening on port ' + webport);
 
 adminPortal.app.listen(adminport);
 log.info('	[RCSadmin] Admin Portal listening on port ' + adminport);
