@@ -146,7 +146,7 @@ app.post('/api/events', function(req, res){
 
     log.info("Altering the event: " + id);
 
-    Events.findById(id, function(err, event){
+    Events.find({'_id': id}, function(err, event){
         if(err){
             log.error(err.message);
             res.sendStatus(500);
