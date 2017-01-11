@@ -6,7 +6,11 @@ var api 		= require('./api');
 
 var adminPortal = require('./adminPortalServer');
 
-var port = process.env.RCSwebsitePort || 8088;
+var env = process.env.NODE_ENV || 'development';
+var webport = env == 'production' ? 80 : 8088;
+//var apiport = env == 'production' ? 8000 : 8089;
+var adminport = env == 'production' ? 9999 : 9998;
+
 var ROOT_DIR = __dirname + '/..';
 app.use(express.static(ROOT_DIR + '/client'));
 app.use(common.allowCrossDomain);
@@ -43,10 +47,13 @@ app.get('/*', function(req, res){
 });
 
 api.app.listen(8000);
+log.info('	[RCSwebsite API] API listening on port ' + 8000)
 console.log('	[RCSwebsite API] API listening on port ' + 8000);
 
 app.listen(port);
+log.info('	[RCSwebsite] Website listening on port ' + port)
 console.log('	[RCSwebsite] Website listening on port ' + port);
 
-adminPortal.app.listen(9999);
-console.log('	[RCSwebsite] Admin Portal listening on port ' + 9999);
+adminPortal.app.listen(adminport);
+log.info('	[RCSadmin] Admin Portal listening on port ' + adminport);
+console.log('	[RCSadmin] Admin Portal listening on port ' + adminport);
