@@ -265,13 +265,16 @@ app.get('/api/user/:name', function(req, res){
         user = docs[0];
     })
     .then(function(){
-        res.json(user);
+        //TODO fix this so it doesn't expose the user's hash or salt.
+        //res.json(user);
     })
 });
 
 app.post('/api/user/login', function(req, res){
     var uname = req.body.uname;
     var upass  = req.body.upass;
+
+    log.info('Attempting login for account: ' + uname);
 
     var user = null;
     User.find({'name':uname}).lean().exec(function(err, docs){
@@ -281,6 +284,7 @@ app.post('/api/user/login', function(req, res){
             return res;
         }
 
+        log.info('Found user. Password check next');
         user = docs[0];
         if(!user){
             res.send('User not in the db', 400);
@@ -290,6 +294,7 @@ app.post('/api/user/login', function(req, res){
         common.verifyPassword(user.hashedPassword, user.salt, user.iterations, upass)
             .then(function(isAuthorized){
                 if(isAuthorized){
+                    log.info('Login Success...');
                     req.session.user = user.name;
                     req.session.admin = true;
                     res.json(user.name);
@@ -297,6 +302,7 @@ app.post('/api/user/login', function(req, res){
                     return res;
                 }
                 else {
+                    log.warn('Login Failed...')
                     res.sendStatus(403);
                     return res;
                 }
