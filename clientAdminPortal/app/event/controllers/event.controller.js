@@ -1,6 +1,6 @@
 angular.module('AdminPortalApp.event')
     .controller('NewEventCtrl', function($scope, $http){
-        $scope.hostname = 'http://localhost:8000/';
+        $scope.hostname = 'http://138.197.24.51:8000/';
         $scope.events = null;
 
         $scope.event = {

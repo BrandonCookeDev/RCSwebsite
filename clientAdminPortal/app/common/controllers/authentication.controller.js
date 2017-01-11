@@ -1,6 +1,6 @@
 angular.module('AdminPortalApp.common')
     .controller('AuthenticationCtrl', function($scope, $http, SessionService){
-        $scope.hostname = 'http://localhost:8000/';
+        $scope.hostname = 'http://138.197.24.51:8000/';
         $scope.sessionService = SessionService;
 
         $scope.authCreds = {

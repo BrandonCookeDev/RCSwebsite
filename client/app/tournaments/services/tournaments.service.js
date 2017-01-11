@@ -1,7 +1,7 @@
 angular.module('RCSapp.tournaments')
     .service('TournamentsService', function($routeProvider, $http){
         var service = {
-            url: 'localhost:8000/api/tournaments',
+            url: 'http://138.197.24.51:8000/api/tournaments',
             tournamentLinks: [
                 {
                     name: 'The Georgia Arcadian',
