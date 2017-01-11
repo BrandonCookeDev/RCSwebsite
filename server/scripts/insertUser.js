@@ -1,4 +1,4 @@
-var log      = require('winston');
+var log      = require('../log');
 var common   = require('../common/common');
 var mongoose = require('mongoose');
 var User     = require('../models/user/user.model');

@@ -1,4 +1,4 @@
-var log = require('winston');
+var log = require('../log');
 var mailer = require('nodemailer');
 
 var MailServer = require('../models/contact/mailserver.model');

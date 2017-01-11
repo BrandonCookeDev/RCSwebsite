@@ -2,6 +2,7 @@ var common      = require('./common/common');
 var bodyParser 	= require('body-parser');
 var express     = require('express');
 var app     	= express();
+var log         = require('./log.js');
 
 var ROOT_DIR = __dirname + '/..';
 app.use(express.static(ROOT_DIR + '/clientAdminPortal'));

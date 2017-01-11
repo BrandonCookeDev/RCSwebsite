@@ -8,12 +8,16 @@ var adminPortal = require('./adminPortalServer');
 
 var env = process.env.NODE_ENV || 'development';
 var webport = env == 'production' ? 80 : 8088;
-//var apiport = env == 'production' ? 8000 : 8089;
 var adminport = env == 'production' ? 9999 : 9998;
+var apiport =  env == 'production' ? 8000 : 8001;
 
 var ROOT_DIR = __dirname + '/..';
 app.use(express.static(ROOT_DIR + '/client'));
 app.use(common.allowCrossDomain);
+
+
+var log = require('./log.js');
+log.info("Server started!");
 
 /**
  * THIS METHOD AUTOMATICALLY SERVES THE index.html FILE
@@ -26,32 +30,17 @@ app.use(common.allowCrossDomain);
  * available. Since this is a single page application, all
  * dependencies are retrieved via index.
  */
-
-var winston	= require('winston');
-require('winston-daily-rotate-file');
-var transport = new winston.transports.DailyRotateFile({
-	filename: './logs/RCSwebsite',
-	datePattern: '.yyyy-MM-dd.log',
-	handleExceptions: true
-});
-var log = new (winston.Logger)({
-	transports: [
-		transport
-	]
-});
-log.info("Server started!");
-
 app.get('/*', function(req, res){
 	if(!req.url.includes('/api/'))
 		res.sendFile('client/index.html', {root: ROOT_DIR});
 });
 
-api.app.listen(8000);
-log.info('	[RCSwebsite API] API listening on port ' + 8000)
-console.log('	[RCSwebsite API] API listening on port ' + 8000);
+api.app.listen(apiport);
+log.info('	[RCSwebsite API] API listening on port ' + apiport);
+console.log('	[RCSwebsite API] API listening on port ' + apiport);
 
 app.listen(webport);
-log.info('	[RCSwebsite] Website listening on port ' + webport)
+log.info('	[RCSwebsite] Website listening on port ' + webport);
 console.log('	[RCSwebsite] Website listening on port ' + webport);
 
 adminPortal.app.listen(adminport);

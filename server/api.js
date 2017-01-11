@@ -1,4 +1,4 @@
-var log         = require('winston');
+var log = require('./log.js');
 var bodyParser 	= require('body-parser');
 var mongoose	= require('mongoose');
 var common      = require('./common/common');
