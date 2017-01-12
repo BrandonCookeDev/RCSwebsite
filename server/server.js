@@ -7,7 +7,12 @@ var api 		= require('./api');
 var adminPortal = require('./adminPortalServer');
 
 var env = process.env.NODE_ENV || 'development';
-var webport = env == 'production' ? 80 : 8088;
+var port = process.env.RCSwebsitePort;
+
+var webport;
+if(!port)
+	webport = env == 'production' ? 80 : 8088;
+else webport = port;
 var adminport = env == 'production' ? 9999 : 9998;
 var apiport =  env == 'production' ? 8000 : 8001;
 
