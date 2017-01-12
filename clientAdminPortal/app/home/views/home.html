@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Welcome to the Recursion Website Admin Portal!</h1>
-    <h3>Please Log In:</h3>
     <div ng-controller="AuthenticationCtrl">
+        <h3>Please Log In:</h3>
         <form ng-submit="attemptLogin()" ng-show="!sessionService.loggedIn">
             <table>
                 <tr>
@@ -17,6 +17,7 @@
         </form>
         <div ng-show="sessionService.loggedIn">
             <h2>Welcome {{sessionService.userInfo.name}}!</h2>
+
         </div>
     </div>
 </div>

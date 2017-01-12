@@ -2,6 +2,10 @@ angular.module('RCSapp.team')
     .controller('TeamCtrl', function($scope, $http, TeamService){
 
     $scope.teamService = TeamService;
+    $scope.readyQ = {
+        playersReady: false,
+        staffReady: false
+    };
     //$scope.playersArray = $scope.teamService.getPlayers();
     //$scope.staffArray = $scope.teamService.getStaff();
 
@@ -17,6 +21,7 @@ angular.module('RCSapp.team')
         $http.get(playerUrl)
             .success(function(data){
                 $scope.playersArray = data;
+                $scope.readyQ.playersReady = true;
                 //$scope.$apply();
             })
             .error(function(err){
@@ -26,6 +31,7 @@ angular.module('RCSapp.team')
         $http.get(staffUrl)
             .success(function(data){
                 $scope.staffArray = data;
+                $scope.readyQ.staffReady = true;
                 //$scope.$apply();
             })
             .error(function(err){
@@ -38,7 +44,8 @@ angular.module('RCSapp.team')
     angular.element(document).ready(function () {
         setTimeout(function(){
             $scope.$apply(function(){
-                $scope.ready = true;
+                $scope.readyQ.playersReady = true;
+                $scope.readyQ.staffReady = true;
             })
         }, 500)
     });

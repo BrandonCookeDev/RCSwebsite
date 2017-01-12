@@ -31,7 +31,7 @@ angular.module('RCSapp.contact')
             return
         }
 
-        var url = apiHostname + '/api/contact/mail';
+        var url = hostname + 'api/contact/mail';
 
         var postParams = {
             firstName : $scope.firstName,

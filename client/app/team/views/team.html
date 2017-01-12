@@ -1,7 +1,7 @@
-<div id="loading" ng-hide="ready">
+<div id="loading" ng-hide="readyQ.playersReady && readyQ.staffReady">
     <img src="../../images/animated/RCSloadingWhite.gif" class="loading"/>
 </div>
-<div id="contents" class="teamContent" ng-show="ready">
+<div id="contents" class="teamContent" ng-show="readyQ.playersReady && readyQ.staffReady">
     <div class="container">
         <h1 class="teamTitle"><u>PLAYERS</u></h1>
         <div ng-repeat="player in playersArray" class="left_margin">

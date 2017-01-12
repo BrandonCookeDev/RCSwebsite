@@ -14,10 +14,11 @@ angular.module('RCSapp.upcoming')
             )
         };
 
-        var url = hostname + '/api/events/';
+        var url = hostname + 'api/events/';
         $http.get(url)
             .success(function(data){
                 $scope.eventsArray = data;
+                $scope.ready = true;
             })
             .error(function(err){
                 if(err) console.log(err.message);
