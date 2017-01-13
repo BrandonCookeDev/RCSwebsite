@@ -17,9 +17,14 @@ var adminport = env == 'production' ? 9999 : 9998;
 var apiport =  env == 'production' ? 8000 : 8001;
 
 var ROOT_DIR = __dirname + '/..';
-app.use(express.static(ROOT_DIR + '/client'));
+var CLIENT_DIR = ROOT_DIR + '/client';
+var ADMIN_CLIENT_DIR = ROOT_DIR + '/clientAdminPortal'
+app.use(express.static(CLIENT_DIR));
 app.use(common.allowCrossDomain);
 
+var GlobalVariableCreator = require('./createGlobalVariables');
+GlobalVariableCreator.createGlobalVariables(env, CLIENT_DIR + '/app/globalVariables.js');
+GlobalVariableCreator.createGlobalVariables(env, ADMIN_CLIENT_DIR + '/app/globalVariables.js');
 
 var log = require('./log.js');
 log.info("Server started!");
