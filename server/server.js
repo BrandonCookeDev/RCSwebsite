@@ -27,7 +27,7 @@ GlobalVariableCreator.createGlobalVariables(env, CLIENT_DIR + '/app/globalVariab
 GlobalVariableCreator.createGlobalVariables(env, ADMIN_CLIENT_DIR + '/app/globalVariables.js');
 
 var log = require('./log.js');
-log.info("Server started!");
+log.info("Server started! ENV " + env);
 
 /**
  * THIS METHOD AUTOMATICALLY SERVES THE index.html FILE
