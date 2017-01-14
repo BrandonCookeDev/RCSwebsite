@@ -1,12 +1,12 @@
 /* TOURNAMENTS VIEW */
 div.georgiaArcadian{
-    background-image: url(../../../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.small.jpg);
+    background-image: url(../../../images/tournaments/TheGeorgiaArcadian/ArcadianBannerSmaller.jpg);
     height:350px;
     width:100%;
 }
 
 div.georgiaArcadianStretch{
-    background-image: url(../../../images/tournaments/TheGeorgiaArcadian/georgiaArcadian.banner.jpg);
+    background-image: url(../../../images/tournaments/TheGeorgiaArcadian/ArcadianBanner2.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;
@@ -15,7 +15,7 @@ div.georgiaArcadianStretch{
 }
 
 div.comingSoon{
-    background-image: url(../../../images/tournaments/comingSoon.jpg);
+    background-image: url(../../../images/tournaments/PortfolioBannerSoon.jpg);
 }
 
 div.georgiaArcadianContent{
@@ -124,13 +124,13 @@ h2.superFamiCon{
 }
 
 div.superFamiCon{
-    background-image: url(../../../images/tournaments/SuperFamiCon/DruggedfoxChi.jpg);
+    background-image: url(../../../images/tournaments/SuperFamiCon/SFCbannerSmaller.png);
     height:350px;
     width:100%;
 }
 
 div.superFamiConStretch{
-    background-image: url(../../../images/tournaments/SuperFamiCon/ColbolClemContrast.jpg);
+    background-image: url(../../../images/tournaments/SuperFamiCon/FamiConBanner1.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;

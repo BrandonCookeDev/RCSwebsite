@@ -5,7 +5,7 @@ function createGlobalVariables(env, path){
     if(env == 'staging')
         apiPath = 'http://138.197.24.51:8001/';
 
-    var globalVariables = 'var hostname = \'' + apiPath + '\';';
+    var globalVariables = 'var hostname = \'' + apiPath + '/\';';
 
     fs.writeFile(path, globalVariables, function(err){
         if(err){

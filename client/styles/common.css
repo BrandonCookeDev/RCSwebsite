@@ -1,4 +1,8 @@
 /* MAIN CSS */
+hr{
+    color:darkgrey;
+}
+
 body.main{
     text-align: center;
     align: center;
@@ -17,6 +21,7 @@ h5.bebas{
 p.bebas{
     font-family: "Bebas Neue";
 }
+
 
 
 p.main{
@@ -54,6 +59,8 @@ span.menu{
     border-color:white;
 }
 
+
+
 hr.main{
     color: darkgrey;
     border-top: 2px solid lightgrey;
@@ -68,9 +75,11 @@ hr.main{
 
 hr.main2{
     font-size:42pt;
+    color:darkgrey;
 }
 hr.main3{
     width:70%;
+    color:darkgrey;
 }
 
 div.main {
@@ -204,4 +213,14 @@ img.loading{
     src: url('../fonts/BebasNeue Regular.otf');
     font-weight: normal;
     font-style: normal;
+}
+
+/* UPDATES TO BOOTSTRAP ELEMENTS */
+div.panel{
+    background-color:darkgrey;
+}
+
+div.panel-default{
+    background-color:darkgrey;
+    border-color:darkgrey;
 }

@@ -23,7 +23,10 @@ common.hashPassword(password)
         });
 
         u.save(function(err, user){
-            if(err) log.error(err.message);
+            if(err) {
+                log.error(err.message);
+                console.log(err.message);
+            }
             else log.info('User Successfully Saved: ' + user.name);
             process.exit(0);
         });
