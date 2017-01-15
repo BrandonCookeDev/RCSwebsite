@@ -40,7 +40,7 @@ img.logo_header{
 }
 @media screen and (min-width: 64em) {
     img.logo_header{
-        height:150px;
+        height:135px;
         width:125px;
     }
 }
