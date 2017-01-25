@@ -38,7 +38,7 @@ img.stretch{
 }
 
 div.imageStretchMain {
-    background-image: url(../../../images/common/MainBanner.jpg);
+    background-image: url(../../../images/common/MainBannerMedium.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;
@@ -47,7 +47,7 @@ div.imageStretchMain {
 }
 @media screen and (max-width: 62em){
     div.imageStretchMain {
-        background-image: url(../../../images/common/MainBanner.jpg);
+        background-image: url(../../../images/common/MainBannerSmaller.jpg);
         background-repeat: no-repeat;
         background-position: 50% 50%;
         background-size:100%;
