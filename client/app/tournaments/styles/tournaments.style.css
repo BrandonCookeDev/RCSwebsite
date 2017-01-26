@@ -72,9 +72,10 @@ h5.tournaments{
 }
 
 p.tournament{
-    font-size: 16pt;
+    font-size: 18pt;
     color:darkgrey;
     text-align: left;
+    font-weight:normal;
     width:90%;
     margin:0 auto;
 }
@@ -83,7 +84,7 @@ p.tournament{
         font-weight: 200;
         font-size: 20pt;
         color: darkgrey;
-        text-align: center;
+        text-align: left;
         width: 90%;
         margin: 0 auto;
     }

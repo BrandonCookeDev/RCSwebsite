@@ -22,13 +22,33 @@ p.bebas{
     font-family: "Bebas Neue";
 }
 
+h1.roboto_condensed, h2.roboto_condensed,
+ h3.roboto_condensed, h4.roboto_condensed,
+ h5.roboto_condensed{
+     font-family: "Roboto Condensed";
+ }
 
+p.roboto_condensed{
+    font-family: "Roboto Condensed";
+}
+
+h1.roboto_bold, h2.roboto_bold,
+h3.roboto_bold, h4.roboto_bold,
+h5.roboto_bold{
+    font-family: "Roboto Bold";
+}
+
+p.roboto_condensed{
+    font-family: "Roboto Bold";
+}
 
 p.main{
     color: darkgrey;
+    text-align:left;
 }
 @media screen and (max-width: 62em){
     p.main{
+        text-align:left;
         color:darkgrey;
         font-size: 24pt;
     }

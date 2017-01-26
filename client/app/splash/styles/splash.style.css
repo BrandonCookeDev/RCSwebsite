@@ -11,8 +11,14 @@ div.twitch{
 }
 @media screen and (min-width: 62em){
     iframe.RCStwitch{
-        height: 478px;
-        width: 850px;
+        height: 450px;
+        width: 800px;
+    }
+}
+@media screen and (min-width: 76em){
+    iframe.RCStwitch{
+        height: 563px;
+        width: 1000px;
     }
 }
 @media screen and (min-width: 48em) and (max-width: 61em){
