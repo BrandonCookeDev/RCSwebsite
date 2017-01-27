@@ -1,6 +1,3 @@
-npm install &
-cd client
-npm install &
-cd ..
-cd clientAdminPortal
-npm install &
+npm run-script installRoot
+npm run-script installClient
+npm run-script installAdminClient

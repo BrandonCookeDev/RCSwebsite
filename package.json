@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installRoot": "npm install",
+    "installClient": "cd client && npm install",
+    "installAdminClient": "cd client && npm install"
   },
   "author": "Brandon Cooke",
   "license": "ISC",
