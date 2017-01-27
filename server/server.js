@@ -1,3 +1,4 @@
+var compression = require('compression');
 var express 	= require('express');
 var app     	= express();
 
@@ -18,9 +19,10 @@ var apiport =  env == 'production' ? 8000 : 8001;
 
 var ROOT_DIR = __dirname + '/..';
 var CLIENT_DIR = ROOT_DIR + '/client';
-var ADMIN_CLIENT_DIR = ROOT_DIR + '/clientAdminPortal'
+var ADMIN_CLIENT_DIR = ROOT_DIR + '/clientAdminPortal';
 app.use(express.static(CLIENT_DIR));
 app.use(common.allowCrossDomain);
+app.use(compression());
 
 var GlobalVariableCreator = require('./createGlobalVariables');
 GlobalVariableCreator.createGlobalVariables(env, CLIENT_DIR + '/app/globalVariables.js');
