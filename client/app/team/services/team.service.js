@@ -1,5 +1,5 @@
 angular.module('RCSapp.team')
-    .factory('TeamService', function($http){
+    .factory('TeamService', ['$http', function($http){
 
     var service = {
         playerList: null,
@@ -132,4 +132,4 @@ angular.module('RCSapp.team')
         }
     }
     return service;
-});
+}]);

@@ -1,5 +1,5 @@
 angular.module('RCSapp.contact')
-    .service('ContactService', function(){
+    .service('ContactService', [function(){
         var service = {
             getEmailAddresses: function(){
                 var emails = [
@@ -9,4 +9,4 @@ angular.module('RCSapp.contact')
             }
         }
         return service;
-});
+}]);

@@ -1,5 +1,5 @@
 angular.module('RCSapp.splash')
-    .controller('SplashCtrl', function($scope){
+    .controller('SplashCtrl', ['$scope', function($scope){
 
     /* LOADING ANIMATION */
     $scope.ready = false;
@@ -11,4 +11,4 @@ angular.module('RCSapp.splash')
         }, 3500)
     });
 
-});
+}]);

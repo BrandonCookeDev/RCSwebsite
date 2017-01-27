@@ -1,5 +1,6 @@
 angular.module('RCSapp.upcoming')
-    .controller('UpcomingCtrl', function($scope, $sce, $http, UpcomingService){
+    .controller('UpcomingCtrl', ['$scope','$sce','$http', 'UpcomingService',
+        function($scope, $sce, $http, UpcomingService){
         $scope.upcomingService = UpcomingService;
 
         $scope.eventsArray = [];
@@ -34,4 +35,4 @@ angular.module('RCSapp.upcoming')
                 })
             }, 5000)
         });
-    });
+    }]);

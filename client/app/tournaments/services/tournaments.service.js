@@ -1,5 +1,5 @@
 angular.module('RCSapp.tournaments')
-    .service('TournamentsService', function($routeProvider, $http){
+    .service('TournamentsService', ['$http', function($http){
         var service = {
             url: 'http://138.197.24.51:8000/api/tournaments',
             tournamentLinks: [
@@ -37,4 +37,4 @@ angular.module('RCSapp.tournaments')
             }
         };
         return service;
-    });
+    }]);

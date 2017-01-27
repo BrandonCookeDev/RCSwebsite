@@ -1,5 +1,5 @@
 angular.module('RCSapp.upcoming')
-    .service('UpcomingService', function($http){
+    .service('UpcomingService', ['$http', function($http){
         var service = {
             events: [],
             getEvents: function(){
@@ -15,4 +15,4 @@ angular.module('RCSapp.upcoming')
             }
         };
         return service;
-    });
+    }]);

@@ -1,5 +1,5 @@
 angular.module('RCSapp.tournaments')
-    .controller('TournamentsCtrl', function($scope){
+    .controller('TournamentsCtrl', ['$scope', function($scope){
 
     //var tournament =
 
@@ -16,5 +16,5 @@ angular.module('RCSapp.tournaments')
             })
         }, 1000)
     });
-});
+}]);
 

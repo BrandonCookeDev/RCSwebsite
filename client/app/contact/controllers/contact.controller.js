@@ -1,5 +1,6 @@
 angular.module('RCSapp.contact')
-    .controller('ContactCtrl', function($scope, $http){
+    .controller('ContactCtrl', ['$scope', '$http',
+        function($scope, $http){
 
     var apiHostname = 'http://138.197.24.51:8000';
 
@@ -87,4 +88,4 @@ angular.module('RCSapp.contact')
         }, 1000)
     });
 
-});
+}]);

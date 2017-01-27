@@ -1,5 +1,6 @@
 angular.module('RCSapp.team')
-    .controller('TeamCtrl', function($scope, $http, TeamService){
+    .controller('TeamCtrl', ['$scope','$http','TeamService',
+        function($scope, $http, TeamService){
 
     $scope.teamService = TeamService;
     $scope.readyQ = {
@@ -49,4 +50,4 @@ angular.module('RCSapp.team')
             })
         }, 500)
     });
-});
+}]);
