@@ -27,42 +27,48 @@
     <!-- SMALL HR -->
     <!-- NAVBAR CENTERED FLOATING -->
     <div class="navbar left_margin_small">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#RCSnavbar">
-            <span>
-                <img src="images/common/RCSWhiteTextOnlyTiny.png" width="50%" height="40%"/>
-            </span>
-            <span>
-                <img src="images/common/RCSWhiteTiny.png" />
-            </span>
-            <span class="menu">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </span>
-            <hr class="main2" />
-        </button>
-        <div class="collapse navbar-collapse" role="navigation" id="RCSnavbar">
-            <span>
-                <hr class="main"/>
-                <ul class="nav navbar-nav">
-                    <li ng-class="{active: $route.current.activeTab == 'Home'}">
-                        <a ng-href="/" class="main">Home</a>
-                    </li>
-                    <li ng-class="{active: $route.current.activeTab == 'Upcoming'}">
-                        <a ng-href="/upcoming" class="main">Upcoming</a>
-                    </li>
-                    <li ng-class="{active: $route.current.activeTab == 'Team'}">
-                        <a ng-href="/team" class="main">Team</a>
-                    </li>
-                    <li ng-class="{active: $route.current.activeTab == 'Tournaments'}">
-                        <a ng-href="/tournaments" class="main">Portfolio</a>
-                    </li>
-                    <li ng-class="{active: $route.current.activeTab == 'Contact'}">
-                        <a ng-href="/contact" class="main">Contact Us</a>
-                    </li>
-                </ul>
-                <hr class="main"/>
-            </span>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#RCSnavbar">
+                    <span>
+                        <img src="images/common/RCSWhiteTextOnly.png" width="50%" height="40%"/>
+                    </span>
+                    <span>
+                        <img src="images/common/RCSWhiteTiny.png" />
+                    </span>
+                    <span class="menu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </span>
+                    <hr class="main2" />
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="collapse navbar-collapse" role="navigation" id="RCSnavbar">
+                <span>
+                    <hr class="main"/>
+                    <ul class="nav navbar-nav">
+                        <li ng-class="{active: $route.current.activeTab == 'Home'}">
+                            <a ng-href="/" class="main">Home</a>
+                        </li>
+                        <li ng-class="{active: $route.current.activeTab == 'Upcoming'}">
+                            <a ng-href="/upcoming" class="main">Upcoming</a>
+                        </li>
+                        <li ng-class="{active: $route.current.activeTab == 'Team'}">
+                            <a ng-href="/team" class="main">Team</a>
+                        </li>
+                        <li ng-class="{active: $route.current.activeTab == 'Tournaments'}">
+                            <a ng-href="/tournaments" class="main">Portfolio</a>
+                        </li>
+                        <li ng-class="{active: $route.current.activeTab == 'Contact'}">
+                            <a ng-href="/contact" class="main">Contact Us</a>
+                        </li>
+                    </ul>
+                    <hr class="main"/>
+                </span>
+            </div>
         </div>
     </div>
 
