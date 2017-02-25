@@ -41,7 +41,6 @@ app.use(compression());
 app.use(express.static(CLIENT_DIR));
 app.use(common.allowCrossDomain);
 app.use(logServerError);
-
 api.app.use(logServerError);
 adminPortal.app.use(logServerError);
 

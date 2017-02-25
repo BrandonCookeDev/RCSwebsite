@@ -10,13 +10,15 @@ var User    = require('./models/user/user.model');
 var Tournaments = require('./models/tournaments/tournament.model');
 var Mailer  = require('./components/emailer');
 
-try {
-    mongoose.connect('mongodb://localhost/RCSwebsite');
-}
-catch(ex){
-    log.error(ex.message);
-    log.error(ex.stack);
-}
+mongoose.connect('mongodb://localhost/RCSwebsite');
+mongoose.connection.on('error', function(err){
+    if(err){
+        log.error(err.message);
+        log.error(err.stack);
+        console.error('Mongoose error: ' + err.message);
+        process.exit(1);
+    }
+});
 
 var express     = require('express');
 var app     	= express();
