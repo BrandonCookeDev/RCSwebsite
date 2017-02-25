@@ -25,6 +25,7 @@
     "node-minify": "^2.0.2",
     "nodemailer": "^2.6.4",
     "uglify-js": "^2.7.5",
+    "validator": "^7.0.0",
     "winston": "^2.3.0",
     "winston-daily-rotate-file": "^1.4.2"
   }

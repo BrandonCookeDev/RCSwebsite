@@ -6,6 +6,7 @@ var app     	= express();
 var common		= require('./common/common');
 var api 		= require('./api');
 var adminPortal = require('./adminPortalServer');
+var log			= require('./log');
 
 var env = process.env.NODE_ENV || 'development';
 var port = process.env.RCSwebsitePort;
@@ -39,6 +40,10 @@ else
 app.use(compression());
 app.use(express.static(CLIENT_DIR));
 app.use(common.allowCrossDomain);
+app.use(logServerError);
+
+api.app.use(logServerError);
+adminPortal.app.use(logServerError);
 
 /** CREATE A GLOBAL VARIABLE JS FILE IN THE WEBAPP DIR **/
 var GlobalVariableCreator = require('./createGlobalVariables');
@@ -75,3 +80,8 @@ console.log('	[RCSwebsite] Website listening on port ' + webport);
 adminPortal.app.listen(adminport);
 log.info('	[RCSadmin] Admin Portal listening on port ' + adminport);
 console.log('	[RCSadmin] Admin Portal listening on port ' + adminport);
+
+function logServerError(ex, req, res, next){
+	log.error(ex.message);
+	log.error(ex.stack);
+}

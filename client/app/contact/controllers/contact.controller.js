@@ -10,21 +10,19 @@ angular.module('RCSapp.contact')
     $scope.comment = null;
 
     $scope.validateForm = function(){
-        if($scope.firstName == '' || $scope.firstName == null
-            || $scope.lastName == '' || $scope.lastName == null
-            || $scope.email == '' || $scope.email == null
-            || $scope.comment == '' || $scope.comment == null)
-                return false;
+        if(!$scope.firstName) return false;
+        if(!$scope.lastName) return false;
+        if(!$scope.email) return false;
+        if(!$scope.comment) return false;
 
-        if(!$scope.validateEmail($scope.email))
-            return false;
+        if(validator.isEmpty($scope.firstName)) return false;
+        if(validator.isEmpty($scope.lastName)) return false;
+        if(validator.isEmpty($scope.email)) return false;
+        if(validator.isEmpty($scope.comment)) return false;
+        if(!validator.isEmail($scope.email)) return false;
+
         return true;
-    }
-
-    $scope.validateEmail = function(email) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    }
+    };
 
     $scope.submitContactForm = function(){
         if(!$scope.validateForm()){
