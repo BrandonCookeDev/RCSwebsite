@@ -1,6 +1,6 @@
 /* CONTACT VIEW */
 div.imageStretchContact{
-    background-image: url(../../../images/contact/contact.jpg);
+    background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/contact/contact.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;

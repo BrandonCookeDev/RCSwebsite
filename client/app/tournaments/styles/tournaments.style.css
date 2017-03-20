@@ -1,12 +1,12 @@
 /* TOURNAMENTS VIEW */
 div.georgiaArcadian{
-    background-image: url(../../../images/tournaments/TheGeorgiaArcadian/ArcadianBannerSmaller.jpg);
+    background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/TheGeorgiaArcadian/ArcadianBannerSmaller.jpg);
     height:350px;
     width:100%;
 }
 @media screen and (max-width: 62em){
     div.georgiaArcadian {
-        background-image: url(../../../images/tournaments/TheGeorgiaArcadian/ArcadianBanner2Smaller.jpg);
+        background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/TheGeorgiaArcadian/ArcadianBanner2Smaller.jpg);
         background-repeat: no-repeat;
         background-position: 50% 50%;
         background-size:100%;
@@ -17,7 +17,7 @@ div.georgiaArcadian{
 
 
 div.georgiaArcadianStretch{
-    background-image: url(../../../images/tournaments/TheGeorgiaArcadian/ArcadianBanner2Smaller.jpg);
+    background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/TheGeorgiaArcadian/ArcadianBanner2Smaller.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;
@@ -27,7 +27,7 @@ div.georgiaArcadianStretch{
 
 
 div.comingSoon{
-    background-image: url(../../../images/tournaments/PortfolioBannerSoon.jpg);
+    background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/PortfolioBannerSoon.jpg);
 }
 
 div.georgiaArcadianContent{
@@ -137,13 +137,13 @@ h2.superFamiCon{
 }
 
 div.superFamiCon{
-    background-image: url(../../../images/tournaments/SuperFamiCon/FamiConBanner2Smaller.jpg);
+    background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/SuperFamicon/FamiConBanner2Smaller.jpg);
     height:350px;
     width:100%;
 }
 
 div.superFamiConStretch{
-    background-image: url(../../../images/tournaments/SuperFamiCon/FamiConBanner1Smaller.jpg);
+    background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/SuperFamicon/FamiConBanner1Smaller.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size:100%;
