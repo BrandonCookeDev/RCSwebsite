@@ -8,7 +8,7 @@ angular.module('RCSapp.splash')
             $scope.$apply(function(){
                 $scope.ready = true;
             })
-        }, 3500)
+        }, 2000)
     });
 
 }]);

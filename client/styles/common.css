@@ -227,13 +227,7 @@ img.loading{
     }
 }
 
-/* FONTS */
-@font-face {
-    font-family: "Bebas Neue";
-    src: url('../fonts/BebasNeue Regular.otf');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 /* UPDATES TO BOOTSTRAP ELEMENTS */
 div.panel{

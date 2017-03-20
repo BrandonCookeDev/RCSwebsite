@@ -1,6 +1,7 @@
 @font-face {
     font-family: "Roboto Condensed";
     src: url('../fonts/RobotoCondensed-Regular.ttf');
+    /*src: url('https://s3.amazonaws.com/rcswebsitebucket/client/fonts/RobotoCondensed-Regular.ttf');*/
     font-weight: normal;
     font-style: normal;
 }
@@ -8,10 +9,16 @@
 @font-face{
     font-family: "Roboto Bold";
     src: url('../fonts/RobotoCondensed-Bold.ttf');
+    /*src: url('https://s3.amazonaws.com/rcswebsitebucket/client/fonts/RobotoCondensed-Bold.ttf');*/
     font-weight: normal;
     font-style: normal;
 }
 
+/* FONTS */
 @font-face {
-
+    font-family: "Bebas Neue";
+    src: url('../fonts/BebasNeue Regular.otf');
+    /*src: url('https://s3.amazonaws.com/rcswebsitebucket/client/fonts/BebasNeue Regular.otf');*/
+    font-weight: normal;
+    font-style: normal;
 }
