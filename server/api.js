@@ -1,14 +1,18 @@
 var log = require('./log.js');
+
+var _           = require('lodash');
+var wreck       = require('wreck');
 var bodyParser 	= require('body-parser');
 var mongoose	= require('mongoose');
 var common      = require('./common/common');
 
-var Team    = require('./models/team/team.model');
-var Contact = require('./models/contact/contact.model');
-var Events  = require('./models/upcoming/event.model');
-var User    = require('./models/user/user.model');
+var Cache       = require('./cache').instance;
+var Team        = require('./models/team/team.model');
+var Contact     = require('./models/contact/contact.model');
+var Events      = require('./models/upcoming/event.model');
+var User        = require('./models/user/user.model');
 var Tournaments = require('./models/tournaments/tournament.model');
-var Mailer  = require('./components/emailer');
+var Mailer      = require('./components/emailer');
 
 mongoose.connect('mongodb://localhost/RCSwebsite');
 mongoose.connection.on('error', function(err){
@@ -35,6 +39,36 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+app.get('/api/getS3Resource/:path', function(req, res){
+    var path = req.params.path;
+
+    uid = 'rcs--'+path;
+    let cachedValue = Cache.checkCacheForSomething(uid)
+        .then(function(cachedValue){
+            if(!cachedValue){
+
+                /** FETCH FROM S3 **/
+                let s3url = 'https://s3.amazonaws.com';
+                let bucketName = 'rcswebsitebucket';
+                let s3Path = _.join([s3url, bucketName, path], '/');
+
+                wreck.get(s3Path, {}, function(err, s3Res, data){
+                    if(err){
+                        log.error(err.stack);
+                        res.send(500);
+                    }
+
+                    Cache.cacheSomething(uid, data);
+
+                    log.info('Sending Resource: ' + path);
+                    return res.end(data, 'binary');
+                })
+
+            }
+            else return res.end(cachedValue, 'binary');
+        });
+});
 
 app.post('/api/contact/mail', function(req, res){
     var firstName = req.body.firstName;
