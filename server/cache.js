@@ -1,5 +1,8 @@
 'use strict';
 
+let log  = require('./log');
+let NodeCache = require('node-cache');
+
 let keys = {};
 
 class Cache{

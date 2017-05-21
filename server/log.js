@@ -3,7 +3,8 @@ require('winston-daily-rotate-file');
 var transport = new winston.transports.DailyRotateFile({
     filename: './logs/RCSwebsite',
     datePattern: '.yyyy-MM-dd.log',
-    handleExceptions: true
+    handleExceptions: true,
+    json: false
 });
 var log = new (winston.Logger)({
     transports: [

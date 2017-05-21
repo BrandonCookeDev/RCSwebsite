@@ -6,7 +6,7 @@ var bodyParser 	= require('body-parser');
 var mongoose	= require('mongoose');
 var common      = require('./common/common');
 
-var Cache       = require('./cache').instance;
+var Cache = require('./cache').instance;
 var Team        = require('./models/team/team.model');
 var Contact     = require('./models/contact/contact.model');
 var Events      = require('./models/upcoming/event.model');
@@ -20,7 +20,11 @@ mongoose.connection.on('error', function(err){
         log.error(err.message);
         log.error(err.stack);
         console.error('Mongoose error: ' + err.message);
-        process.exit(1);
+        process.exit(7);
+    }
+    else {
+        log.info('mongo connected!');
+        console.log('mongo connected!');
     }
 });
 
@@ -44,14 +48,14 @@ app.get('/api/getS3Resource/:path', function(req, res){
     var path = req.params.path;
 
     uid = 'rcs--'+path;
-    let cachedValue = Cache.checkCacheForSomething(uid)
+    var cachedValue = Cache.checkCacheForSomething(uid)
         .then(function(cachedValue){
             if(!cachedValue){
 
                 /** FETCH FROM S3 **/
-                let s3url = 'https://s3.amazonaws.com';
-                let bucketName = 'rcswebsitebucket';
-                let s3Path = _.join([s3url, bucketName, path], '/');
+                var s3url = 'https://s3.amazonaws.com';
+                var bucketName = 'rcswebsitebucket';
+                var s3Path = _.join([s3url, bucketName, path], '/');
 
                 wreck.get(s3Path, {}, function(err, s3Res, data){
                     if(err){
