@@ -4,6 +4,8 @@ let log    = require('./log');
 let format = require('util').format;
 let mongo  = require('mongodb').MongoClient;
 
+let config = require('./config/config')(process.env.NODE_ENV || 'dev');
+
 //collections
 let collections = ['contact', 'team', 'tournaments', 'events', 'users'];
 
@@ -12,7 +14,7 @@ class Mongo{
         Mongo.mongoDomain = 'mongodb://';
         Mongo.mongoUser = process.env.MongoUser;
         Mongo.mongoPwd = process.env.MongoPwd;
-        Mongo.mongoHost = process.env.MongoUrl || 'localhost/RCSwebsite';
+        Mongo.mongoHost = process.env.MongoHost || 'localhost/RCSwebsite';
         Mongo.mongoAuth = Mongo.mongoUser && Mongo.mongoPwd ? format("%s:%s@", Mongo.mongoUser, Mongo.mongoPwd) : '';
         Mongo.mongoUrl = format("%s%s%s", Mongo.mongoDomain, Mongo.mongoAuth, Mongo.mongoHost);
         log.info('mongo data collected: ', Mongo.mongoUrl);

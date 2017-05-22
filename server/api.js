@@ -7,7 +7,7 @@ var mongoose	= require('mongoose');
 var format      = require('util').format;
 var common      = require('./common/common');
 
-var Cache = require('./cache').instance;
+var Cache       = require('./cache').instance;
 var Team        = require('./models/team/team.model');
 var Contact     = require('./models/contact/contact.model');
 var Events      = require('./models/upcoming/event.model');

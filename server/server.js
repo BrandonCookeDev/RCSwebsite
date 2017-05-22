@@ -1,6 +1,7 @@
 'use strict';
 
-let co  = require('co');
+var env = process.env.NODE_ENV || 'dev';
+var config = require('./config/config')(env);
 var log	= require('./log');
 
 /** INIT THE DATABASE OPTIONS **/
@@ -18,18 +19,6 @@ var GlobalVariableCreator = require('./createGlobalVariables');
 var adminPortal           = require('./adminPortalServer');
 var common		          = require('./common/common');
 var api 		          = require('./api.js');
-
-var env = process.env.NODE_ENV || 'development';
-var port = process.env.RCSwebsitePort;
-
-/** DETERMINE PORTS THE APP SHOULD RUN ON BASED ON THE DEPLOYMENT ENVIRONMENT **/
-var webport;
-if(!port)
-    webport = env == 'production' ? 80 : 8088;
-else webport = port;
-var adminport = env == 'production' ? 9999 : 9998;
-var apiport =  env == 'production' ? 8000 : 8001;
-
 
 /** COMMON FILE SYSTEM PATHS **/
 var ROOT_DIR = __dirname + '/..';
@@ -85,17 +74,17 @@ app.get('/*', function(req, res){
         res.sendFile('client/index.html', {root: ROOT_DIR});
 });
 
-api.app.listen(apiport);
-log.info('	[RCSwebsite API] API listening on port ' + apiport);
-console.log('	[RCSwebsite API] API listening on port ' + apiport);
+api.app.listen(config.api.port);
+log.info('	[RCSwebsite API] API listening on port ' + config.api.port);
+console.log('	[RCSwebsite API] API listening on port ' + config.api.port);
 
-app.listen(webport);
-log.info('	[RCSwebsite] Website listening on port ' + webport);
-console.log('	[RCSwebsite] Website listening on port ' + webport);
+app.listen(config.websitePort);
+log.info('	[RCSwebsite] Website listening on port ' + config.websitePort);
+console.log('	[RCSwebsite] Website listening on port ' + config.websitePort);
 
-adminPortal.app.listen(adminport);
-log.info('	[RCSadmin] Admin Portal listening on port ' + adminport);
-console.log('	[RCSadmin] Admin Portal listening on port ' + adminport);
+adminPortal.app.listen(config.adminPort);
+log.info('	[RCSadmin] Admin Portal listening on port ' + config.adminPort);
+console.log('	[RCSadmin] Admin Portal listening on port ' + config.adminPort);
 
 function logServerError(ex, req, res, next){
     log.error(ex.message);

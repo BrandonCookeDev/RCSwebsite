@@ -1,7 +1,10 @@
 var winston	= require('winston');
 require('winston-daily-rotate-file');
+
+var config = require('./config/config')(process.env.NODE_ENV || 'dev');
+
 var transport = new winston.transports.DailyRotateFile({
-    filename: '/tmp/RCSwebsite',
+    filename: './logs/RCSwebsite',
     datePattern: '.yyyy-MM-dd.log',
     handleExceptions: true,
     json: false,
