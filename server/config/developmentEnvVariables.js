@@ -9,13 +9,14 @@ module.exports = function() {
     //process.env.MongoPwd        = null;
     process.env.MongoHost       = 'localhost/RCSwebsite';
 
-    process.env.LogFileFilename         = './logs/RCSwebsite';
+    process.env.LogFileName             = './logs/RCSwebsite';
     process.env.LogFileLevel            = 'warn';
-    process.env.LogFileJson             = true;
+    process.env.LogFileJson             = false;
     process.env.LogFileHandleException  = true;
     process.env.LogFileColorize         = false;
 
     process.env.LogConsoleLevel             = 'info';
+    process.env.LogConsoleJson              = false;
     process.env.LogConsoleColorize          = true;
     process.env.LogConsoleHandleExceptions  = true;
 };
