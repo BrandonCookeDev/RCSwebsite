@@ -1,3 +1,12 @@
+'use strict';
+
+let co  = require('co');
+var log	= require('./log');
+
+/** INIT THE DATABASE OPTIONS **/
+var Mongo = require('./mongo');
+Mongo.init();
+
 var _           = require('lodash');
 var fs 			= require('fs');
 var compression = require('compression');
@@ -5,12 +14,10 @@ var express 	= require('express');
 var nocache 	= require('nocache');
 var app     	= express();
 
-
 var GlobalVariableCreator = require('./createGlobalVariables');
 var adminPortal           = require('./adminPortalServer');
 var common		          = require('./common/common');
 var api 		          = require('./api.js');
-var log			          = require('./log');
 
 var env = process.env.NODE_ENV || 'development';
 var port = process.env.RCSwebsitePort;
@@ -22,6 +29,7 @@ if(!port)
 else webport = port;
 var adminport = env == 'production' ? 9999 : 9998;
 var apiport =  env == 'production' ? 8000 : 8001;
+
 
 /** COMMON FILE SYSTEM PATHS **/
 var ROOT_DIR = __dirname + '/..';

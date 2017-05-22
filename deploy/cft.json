@@ -1,9 +1,73 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
   "Parameters": {
-
+    "NODE_ENV": {
+      "Type": "String",
+      "Default": "dev",
+      "Description": "The deployment mode for the application.",
+      "AllowedValues": [
+        "dev",
+        "production"
+      ]
+    },
+    "RCSWebsitePort": {
+      "Type": "Number",
+      "Default": 80,
+      "Description": "Port number that the website will run on"
+    }
+  },
+  "Metadata":{
+    "AWS::CloudFormation::Interface":{
+      "ParameterGroups": [
+        {
+          "Label":"default",
+          "Parameters": [
+            "NODE_ENV",
+            "RCSWebsitePort"
+          ]
+        }
+      ],
+      "ParameterLabels": {
+        "NODE_ENV":{
+          "default": "Deployment Mode"
+        },
+        "RCSWebsitePort": {
+          "default": "Website Port"
+        }
+      }
+    }
   },
   "Resources": {
 
+    "RCSSecurityGroup":{
+      "Type":"AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Enable HTTP"
+      }
+    },
+
+    "RCSWebsiteApplication":{
+      "Type": "AWS::ElasticBeanstalk::Application",
+      "Properties": {
+        "Description": "Website for RecursionGG"
+      }
+    },
+
+    "RCSWebsiteApplicationVersion":{
+      "Type": "AWS::ElasticBeanstalk::ApplicationVersion",
+      "Properties": {
+        "ApplicationName": {
+          "Ref": "RCSWebsiteApplication"
+        },
+        "SourceBundle": {
+          "S3Bucket": "rcs-website-bucket",
+          "S3Key": "versions/rcsWebsite.zip"
+        }
+      }
+    },
+
+    "RCSWebsiteRole": {
+      "Type": "AWS::IMA::"
+    }
   }
 }

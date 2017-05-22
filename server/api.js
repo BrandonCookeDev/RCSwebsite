@@ -4,6 +4,7 @@ var _           = require('lodash');
 var wreck       = require('wreck');
 var bodyParser 	= require('body-parser');
 var mongoose	= require('mongoose');
+var format      = require('util').format;
 var common      = require('./common/common');
 
 var Cache = require('./cache').instance;
@@ -13,8 +14,10 @@ var Events      = require('./models/upcoming/event.model');
 var User        = require('./models/user/user.model');
 var Tournaments = require('./models/tournaments/tournament.model');
 var Mailer      = require('./components/emailer');
+var Mongo       = require('./mongo');
 
-mongoose.connect('mongodb://localhost/RCSwebsite');
+var mongoUrl = Mongo.getMongoUrl();
+mongoose.connect(mongoUrl);
 mongoose.connection.on('error', function(err){
     if(err){
         log.error(err.message);
