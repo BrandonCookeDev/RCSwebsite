@@ -47,7 +47,6 @@ app.use(express.static(CLIENT_DIR));
 app.use(common.allowCrossDomain);
 app.use(nocache());
 app.use(logServerError);
-api.app.use(logServerError);
 adminPortal.app.use(logServerError);
 
 /** CREATE A GLOBAL VARIABLE JS FILE IN THE WEBAPP DIR **/
@@ -74,17 +73,23 @@ app.get('/*', function(req, res){
         res.sendFile('client/index.html', {root: ROOT_DIR});
 });
 
-api.app.listen(config.api.port);
-log.info('	[RCSwebsite API] API listening on port ' + config.api.port);
-console.log('	[RCSwebsite API] API listening on port ' + config.api.port);
+//Add api endpoints
+api(app);
 
 app.listen(config.websitePort);
 log.info('	[RCSwebsite] Website listening on port ' + config.websitePort);
 console.log('	[RCSwebsite] Website listening on port ' + config.websitePort);
 
+/*
+api.app.listen(config.api.port);
+log.info('	[RCSwebsite API] API listening on port ' + config.api.port);
+console.log('	[RCSwebsite API] API listening on port ' + config.api.port);
+
+
 adminPortal.app.listen(config.adminPort);
 log.info('	[RCSadmin] Admin Portal listening on port ' + config.adminPort);
 console.log('	[RCSadmin] Admin Portal listening on port ' + config.adminPort);
+*/
 
 function logServerError(ex, req, res, next){
     log.error(ex.message);

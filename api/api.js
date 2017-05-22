@@ -16,10 +16,7 @@ var Tournaments = require('./models/tournaments/tournament.model');
 var Mailer      = require('./components/emailer');
 var Mongo       = require('./mongo');
 
-var express     = require('express');
-var router      = express.Router();
-
-
+Mongo.init();
 var mongoUrl = Mongo.getMongoUrl();
 mongoose.connect(mongoUrl);
 mongoose.connection.on('error', function(err){
@@ -35,17 +32,23 @@ mongoose.connection.on('error', function(err){
     }
 });
 
+var express     = require('express');
+var app     	= express();
+var session     = require('express-session');
 
+app.use(common.allowCrossDomain);
+app.use( bodyParser.json() );
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-/*
 app.use(session({
     secret: '2C44-4D44-WppQ38S',
     resave: true,
     saveUninitialized: true
 }));
-*/
 
-router.route('/api/getS3Resource/:path').get(function(req, res){
+app.get('/api/getS3Resource/:path', function(req, res){
     var path = req.params.path;
 
     uid = 'rcs--'+path;
@@ -75,7 +78,7 @@ router.route('/api/getS3Resource/:path').get(function(req, res){
         });
 });
 
-router.route('/api/contact/mail').post(function(req, res){
+app.post('/api/contact/mail', function(req, res){
     var firstName = req.body.firstName;
     var lastName = req.body.lastName;
     var sender = req.body.sender;
@@ -99,7 +102,7 @@ router.route('/api/contact/mail').post(function(req, res){
     })
 });
 
-router.route('/api/events/:all').get(function(req, res){
+app.get('/api/events/:all', function(req, res){
     var getAll = req.params.all;
 
     var date = new Date();
@@ -146,7 +149,7 @@ router.route('/api/events/:all').get(function(req, res){
     }
 });
 
-router.route('/api/events').get(function(req, res){
+app.get('/api/events', function(req, res){
     var date = new Date();
     var endDate = null;
 
@@ -167,7 +170,7 @@ router.route('/api/events').get(function(req, res){
     })
 });
 
-router.route('/api/events/:id').delete(function(req, res){
+app.delete('/api/events/:id', function(req, res){
     var id = req.params.id;
     log.warn('Attempting to delete event: ' + id);
 
@@ -184,7 +187,7 @@ router.route('/api/events/:id').delete(function(req, res){
     })
 });
 
-router.route('/api/events').post(function(req, res){
+app.post('/api/events', function(req, res){
     var id   = req.body._id;
     var name = req.body.name;
     var date = req.body.date;
@@ -220,7 +223,7 @@ router.route('/api/events').post(function(req, res){
     })
 });
 
-router.route('/api/events').put(function(req, res){
+app.put('/api/events', function(req, res){
     var name = req.body.name;
     var date = req.body.date;
     var addr = req.body.addr;
@@ -243,7 +246,7 @@ router.route('/api/events').put(function(req, res){
     })
 });
 
-router.route('/api/events/:date').get(function(req, res){
+app.get('/api/events/:date', function(req, res){
     var dateStr = req.params.date;
     var dateRegex = new Regex("/^\d{2}-\d{2}-\d{4}$/");
 
@@ -271,7 +274,7 @@ router.route('/api/events/:date').get(function(req, res){
     })
 });
 
-router.route('/api/tournaments/:name').get(function(req, res){
+app.get('/api/tournaments/:name', function(req, res){
     var name = req.params.name;
 
     Tournaments.Tournament.findOne({"name":name}).lean().exec(function(err, docs){
@@ -282,7 +285,7 @@ router.route('/api/tournaments/:name').get(function(req, res){
     })
 });
 
-router.route('/api/team/:category').get(function(req, res){
+app.get('/api/team/:category', function(req, res){
     var cat = req.params.category;
     var team = [];
     Team.find({ "category" : cat }).lean().exec(function(err, docs){
@@ -298,7 +301,7 @@ router.route('/api/team/:category').get(function(req, res){
     });
 });
 
-router.route('/api/user/:name').get(function(req, res){
+app.get('/api/user/:name', function(req, res){
     var uname = req.params.name;
 
     var user = null;
@@ -317,7 +320,7 @@ router.route('/api/user/:name').get(function(req, res){
     })
 });
 
-router.route('/api/user/login').post(function(req, res){
+app.post('/api/user/login', function(req, res){
     var uname = req.body.uname;
     var upass  = req.body.upass;
 
@@ -349,7 +352,7 @@ router.route('/api/user/login').post(function(req, res){
                     return res;
                 }
                 else {
-                    log.warn('Login Failed...');
+                    log.warn('Login Failed...')
                     res.sendStatus(403);
                     return res;
                 }
@@ -357,20 +360,9 @@ router.route('/api/user/login').post(function(req, res){
     })
 });
 
-router.route('/api/user/logout').delete(function(req, res){
+app.delete('/api/user/logout', function(req, res){
     req.session.destroy();
     res.send("logout success!");
 });
 
-module.exports = function(app){
-
-    app.use(common.allowCrossDomain);
-    app.use( bodyParser.json() );
-    app.use(bodyParser.urlencoded({
-        extended: true
-    }));
-
-    app.use(router);
-
-};
-
+module.exports = app;
