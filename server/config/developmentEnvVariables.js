@@ -2,8 +2,9 @@ module.exports = function() {
     process.env.NODE_ENV = 'development';
     process.env.RCSWebsitePort  = 8088;
     process.env.RCSAdminPort    = 9998;
+
     process.env.RCSApiHost      = 'localhost';
-    process.env.RCSApiPort      = 8001;
+    process.env.RCSApiPort      = 8000;
 
     //process.env.MongoUser       = null;
     //process.env.MongoPwd        = null;

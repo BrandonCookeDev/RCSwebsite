@@ -285,22 +285,6 @@ app.get('/api/tournaments/:name', function(req, res){
     })
 });
 
-app.get('/api/team/:category', function(req, res){
-    var cat = req.params.category;
-    var team = [];
-    Team.find({ "category" : cat }).lean().exec(function(err, docs){
-        if(err) log.error(err.message);
-        else log.info(docs);
-
-        docs.forEach(function(member){
-            team.push(member);
-        });
-    })
-    .then(function(){
-        res.json(team);
-    });
-});
-
 app.get('/api/user/:name', function(req, res){
     var uname = req.params.name;
 
@@ -352,7 +336,7 @@ app.post('/api/user/login', function(req, res){
                     return res;
                 }
                 else {
-                    log.warn('Login Failed...')
+                    log.warn('Login Failed...');
                     res.sendStatus(403);
                     return res;
                 }
@@ -364,5 +348,7 @@ app.delete('/api/user/logout', function(req, res){
     req.session.destroy();
     res.send("logout success!");
 });
+
+require('./models/team/endpoints')(app);
 
 module.exports = app;

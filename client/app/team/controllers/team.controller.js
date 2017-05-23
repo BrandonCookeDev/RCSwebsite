@@ -16,7 +16,7 @@ angular.module('RCSapp.team')
         $scope.playersArray = [];
         $scope.staffArray = [];
 
-        var url = hostname + 'api/team/';
+        var url = hostname + 'team/';
         var playerUrl = url + 'player';
         var staffUrl = url + 'staff';
         $http.get(playerUrl)

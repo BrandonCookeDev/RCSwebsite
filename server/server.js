@@ -18,13 +18,16 @@ var app     	= express();
 var GlobalVariableCreator = require('./createGlobalVariables');
 var adminPortal           = require('./adminPortalServer');
 var common		          = require('./common/common');
-var api 		          = require('./api.js');
 
 /** COMMON FILE SYSTEM PATHS **/
 var ROOT_DIR = __dirname + '/..';
 var CLIENT_DIR = ROOT_DIR + '/client';
 var APP_DIR = CLIENT_DIR + '/app';
 var ADMIN_CLIENT_DIR = ROOT_DIR + '/clientAdminPortal';
+
+/** CREATE A GLOBAL VARIABLE JS FILE IN THE WEBAPP DIR **/
+GlobalVariableCreator.createGlobalVariables(env, CLIENT_DIR + '/app/globalVariables.js');
+GlobalVariableCreator.createGlobalVariables(env, ADMIN_CLIENT_DIR + '/app/globalVariables.js');
 
 /** MINIFY ALL PROJECT JS FILES INTO ONE **/
 var minifiedFileName = "/app.min.js";
@@ -49,11 +52,6 @@ app.use(nocache());
 app.use(logServerError);
 adminPortal.app.use(logServerError);
 
-/** CREATE A GLOBAL VARIABLE JS FILE IN THE WEBAPP DIR **/
-GlobalVariableCreator.createGlobalVariables(env, CLIENT_DIR + '/app/globalVariables.js');
-GlobalVariableCreator.createGlobalVariables(env, ADMIN_CLIENT_DIR + '/app/globalVariables.js');
-
-
 /**
  * THIS METHOD AUTOMATICALLY SERVES THE index.html FILE
  * TO ANY REQUEST THAT PASSES THROUGH THIS SERVER. THIS
@@ -72,9 +70,6 @@ app.get('/*', function(req, res){
     if(!req.url.includes('/api/'))
         res.sendFile('client/index.html', {root: ROOT_DIR});
 });
-
-//Add api endpoints
-api(app);
 
 app.listen(config.websitePort);
 log.info('	[RCSwebsite] Website listening on port ' + config.websitePort);
