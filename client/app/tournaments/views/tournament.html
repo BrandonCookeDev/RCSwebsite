@@ -1,0 +1,113 @@
+<div id="loading" ng-hide="ready">
+    <img src="https://s3.amazonaws.com/rcswebsitebucket/client/images/animated/RCSloadingWhite.gif"
+         class="loading"/>
+</div>
+
+<div class='container'>
+	<div class="bannerStretch" id='bannerImage'>
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
+    </div>
+
+
+	<div class='row' id='tournamentIntro'>
+        <div class="col-sm-1 col-lg-1"></div>
+        <div class="col-sm-10 col-lg-10 main">
+            <h2 class="tournaments roboto_condensed">{{ tournament.name }}</h2>
+            <p class="tournament left_margin roboto_condensed">
+            	{{ tournament.intro }}
+            </p>
+        </div>
+        <div class="col-sm-1 col-lg-1"></div>
+	</div>
+
+	<div class='row' id='featuredVideo'>
+		<div class="col-sm-12 col-lg-12">
+            <iframe width="560" height="315"
+                    ng-src="tournament.featuredVideo.link" frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+	</div>
+
+	<div class='row' id='featuredVideoDescription'>
+        <div class="col-sm-1 col-lg-1"></div>
+        <div class="col-sm-10 col-lg-10 main">
+            <h2 class="tournaments"></h2>
+            <p class="tournament left_margin roboto_condensed">
+                {{ tournament.featuredVideo.description }}
+            </p>
+        </div>
+        <div class="col-sm-1 col-lg-1"></div>
+	</div>
+
+	<div class='row' id='brackets'>
+        <div class="col-sm-12 col-md-12 col-lg-4 brackets">
+            <h2 class="tournaments bebas">Links:</h2>
+
+            <table id='bracketTable'>
+        		<tr>
+    				<th>Brackets</th>
+        		</tr>
+        		<tr ng-repeat='bracket for bracket in tournament.brackets'>
+    				<td>
+    					<h3><a href='bracket.link'>{{ bracket.name }}</a></h3>
+					</td>
+        		</tr>
+            </table>
+
+
+            <!--
+            <h3 class="tournaments bebas">
+                <a href="https://smash.gg/tournament/super-famicon-2016/events">All Brackets</a>
+            </h3>
+            <h3 class="tournaments bebas">
+                <a href="https://smash.gg/tournament/super-famicon-2016/events/melee-singles/brackets/87459">
+                    Top 48
+                </a>
+            </h3>
+            <h3 class="tournaments bebas">
+                <a href="https://smash.gg/tournament/super-famicon-2016/events/melee-singles/brackets/71811">
+                    Pools
+                </a>
+            </h3>
+            -->
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+            <img class="featured" ng-src="tournamentbrackets.bracketImage" width="100%" />
+        </div>
+        <div class="col-lg-2"></div>
+	</div>
+
+	<div class='row' id='media'>
+		<table>
+			<tr>
+				<th ng-show='tournament.media.youtube'>Youtube Playlists</th>
+				<th ng-show='tournament.media.photos'>Photos</th>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr ng-repeat='yt for yt in tournament.media.youtube'>
+							<td>
+								<a href='yt.link'>{{ yt.name }}</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table>
+						<tr ng-repeat='album for album in tournament.media.photos'>
+							<td>
+								<a href='album.link'>{{ album.name }}</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

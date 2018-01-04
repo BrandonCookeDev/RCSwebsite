@@ -10,9 +10,9 @@ let collections = ['contact', 'team', 'tournaments', 'events', 'users'];
 class Mongo{
     static init(){
         Mongo.mongoDomain = 'mongodb://';
-        Mongo.mongoUser = 'bcooke91';
-        Mongo.mongoPwd = 'w1nt3rSun91';
-        Mongo.mongoHost = '54.202.55.198/RCSwebsite' || 'localhost/RCSwebsite';
+        Mongo.mongoUser = process.env.MongoUser;
+        Mongo.mongoPwd = process.env.MongoPwd;
+        Mongo.mongoHost = process.env.MongoHost || 'localhost/RCSwebsite';
         Mongo.mongoAuth = Mongo.mongoUser && Mongo.mongoPwd ? format("%s:%s@", Mongo.mongoUser, Mongo.mongoPwd) : '';
         Mongo.mongoUrl = format("%s%s%s", Mongo.mongoDomain, Mongo.mongoAuth, Mongo.mongoHost);
         log.info('mongo data collected: ', Mongo.mongoUrl);

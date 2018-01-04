@@ -44,6 +44,7 @@ class Mongo{
     }
     */
 
+
     static getMongoUrl(){
         return Mongo.mongoUrl;
     }
