@@ -3,10 +3,10 @@ var log = require('./log');
 
 function createGlobalVariables(env, path){
     log.info('Creating Global Variable file for ENV: ' + env);
-    var apiPath = env == 'production' ? 'http://138.197.24.51:8000' : 'http://localhost:8001';
-    if(env == 'staging')
-        apiPath = 'http://138.197.24.51:8001/';
+    var config  = require('./config/config')(env);
 
+    var apiPath = env == 'production' ? 'http://' + config.api.host + ":" + config.api.port
+                                      : 'http://localhost:'+config.api.port;
     var globalVariables = 'var hostname = \'' + apiPath + '/\';';
     log.info('Writing variables: ' + globalVariables);
 

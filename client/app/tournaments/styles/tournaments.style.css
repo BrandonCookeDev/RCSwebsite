@@ -1,6 +1,46 @@
 /* TOURNAMENTS VIEW */
-div.georgiaArcadian{
+@media screen and (max-width: 62em){
+    div.coverPhoto{
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size:100%;
+        background-color: transparent;
+        background-size:cover;
+    }
+}
+
+div.portfolioListing{
+    height:350px;
+    width:100%;
+}
+
+/* IMAGES */
+div.georgiaArcadianPFP{
     background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/TheGeorgiaArcadian/ArcadianBannerSmaller.jpg);
+}
+div.superFamiConPFP{
+    background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/SuperFamicon/FamiConBanner2Smaller.jpg);
+}
+div.functionPFP{
+    background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/Function/FunctionPortfolio.jpg);
+}
+div.bmr2PFP{
+
+}
+div.tippedOffPFP{
+
+}
+div.superFamiCon2017PFP{
+
+}
+div.shine2017PFP{
+
+}
+
+
+/********************/
+/* GEORGIA ARCADIAN */
+div.georgiaArcadian{
     height:350px;
     width:100%;
 }
@@ -14,8 +54,6 @@ div.georgiaArcadian{
         background-size:cover;
     }
 }
-
-
 div.georgiaArcadianStretch{
     background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/TheGeorgiaArcadian/ArcadianBanner2Smaller.jpg);
     background-repeat: no-repeat;
@@ -24,15 +62,26 @@ div.georgiaArcadianStretch{
     background-color: transparent;
     background-size:cover;
 }
+div.georgiaArcadianContent{
+    text-align: left;
+}
+h1.georgiaArcadian{
+    font-size: 60pt;
+    font-family: 'Times New Roman';
+}
+h2.georgiaArcadian{
+    font-size: 40pt;
+    font-family: 'Times New Roman';
+}
 
 
+h2.comingSoon{
+    font-size: 40pt;
+}
 div.comingSoon{
     background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/PortfolioBannerSoon.jpg);
 }
 
-div.georgiaArcadianContent{
-    text-align: left;
-}
 
 img.featured{
     width:65%;
@@ -90,14 +139,6 @@ p.tournament{
     }
 }
 
-h1.georgiaArcadian{
-    font-size: 60pt;
-    font-family: 'Times New Roman';
-}
-h2.georgiaArcadian{
-    font-size: 40pt;
-    font-family: 'Times New Roman';
-}
 
 div.brackets{
     text-align:center
@@ -118,10 +159,9 @@ h2.FocusChaosDunk{
         color:white;
     }
 }
-h2.comingSoon{
-    font-size: 40pt;
-}
 
+
+/* SUPER FAMICON */
 h1.superFamiCon, h2.superFamiCon,
 h3.superFamiCon, h4.superFamiCon,
 h5.superFamiCon{
@@ -131,17 +171,14 @@ h5.superFamiCon{
 h1.superFamiCon{
     font-size: 65pt;
 }
-
 h2.superFamiCon{
     font-size:50pt;
 }
-
 div.superFamiCon{
     background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/SuperFamicon/FamiConBanner2Smaller.jpg);
     height:350px;
     width:100%;
 }
-
 div.superFamiConStretch{
     background-image: url(https://s3.amazonaws.com/rcswebsitebucket/client/images/portfolio/SuperFamicon/FamiConBanner1Smaller.jpg);
     background-repeat: no-repeat;

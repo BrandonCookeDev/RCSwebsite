@@ -43,6 +43,18 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/tournaments/views/superFamiCon.html',
             controller: 'TournamentsCtrl'
         })
+        .when('/bmr2', {
+            templateUrl: 'app/tournaments/views/bmr2.html',
+            controller: 'TournamentsCtrl'
+        })
+        .when('/function', {
+            templateUrl: 'app/tournaments/views/function.html',
+            controller: 'TournamentsCtrl'
+        })
+        .when('/shine2017', {
+            templateUrl: 'app/tournaments/views/shine2017.html',
+            controller: 'TournamentsCtrl'
+        })
         .when('/comingSoon', {
             templateUrl: 'app/upcoming/views/events.html',
             controller: 'UpcomingCtrl',
