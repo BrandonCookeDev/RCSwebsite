@@ -1,6 +1,6 @@
 module.exports = function() {
     process.env.NODE_ENV = 'development';
-    process.env.RCSWebsitePort  = 8088;
+    process.env.RCSWebsitePort  = 8081;
     process.env.RCSAdminPort    = 9998;
 
     process.env.RCSApiHost      = 'localhost';

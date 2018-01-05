@@ -3,3 +3,4 @@ node_modules/
 *.orig
 *.log
 deploy/*.zip
+*.zip
