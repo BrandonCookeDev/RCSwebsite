@@ -71,19 +71,16 @@ app.get('/*', function(req, res){
         res.sendFile('client/index.html', {root: ROOT_DIR});
 });
 
-app.listen(config.websitePort);
-log.info('	[RCSwebsite] Website listening on port ' + config.websitePort);
-console.log('	[RCSwebsite] Website listening on port ' + config.websitePort);
+app.listen(8081);
+log.info('	[RCSwebsite] Website listening on port ' + 8081);
 
 /*
 api.app.listen(config.api.port);
 log.info('	[RCSwebsite API] API listening on port ' + config.api.port);
-console.log('	[RCSwebsite API] API listening on port ' + config.api.port);
 
 
 adminPortal.app.listen(config.adminPort);
 log.info('	[RCSadmin] Admin Portal listening on port ' + config.adminPort);
-console.log('	[RCSadmin] Admin Portal listening on port ' + config.adminPort);
 */
 
 function logServerError(ex, req, res, next){
