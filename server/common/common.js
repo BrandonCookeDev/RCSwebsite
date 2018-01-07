@@ -2,7 +2,7 @@ var fs     = require('fs');
 var path   = require('path');
 var crypto = require('crypto');
 var minifier = require('node-minify');
-var log    = require('../log.js');
+var log = require('winston');
 
 var hashPassword = function(password){
     return new Promise(function(resolve, reject){

@@ -20,7 +20,7 @@
     "express": "^4.14.0",
     "express-session": "^1.15.3",
     "lodash": "^4.17.4",
-    "mongoose": "^4.6.7",
+    "mongoose": "^5.0.0-rc2",
     "ng-annotate": "^1.2.1",
     "nocache": "^2.0.0",
     "node-cache": "^4.1.1",

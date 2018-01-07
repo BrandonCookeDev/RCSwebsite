@@ -2,7 +2,13 @@
 
 var env = process.env.NODE_ENV || 'dev';
 var config = require('./config/config')(env);
-var log	= require('./log');
+
+/** SETUP LOGGING **/
+var log        = require('winston');
+var transports = config.log;
+log.remove(log.transports.Console);
+log.add(log.transports.Console, transports.console);
+log.add(log.transports.File, transports.file);
 
 /** INIT THE DATABASE OPTIONS **/
 var Mongo = require('./mongo');
@@ -73,6 +79,9 @@ app.get('/*', function(req, res){
 
 app.listen(8081);
 log.info('	[RCSwebsite] Website listening on port ' + 8081);
+
+/** INIT API **/
+require('./api/server');
 
 /*
 api.app.listen(config.api.port);
