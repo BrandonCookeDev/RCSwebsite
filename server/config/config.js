@@ -31,7 +31,7 @@ module.exports = function(mode){
                 colorize: process.env.LogConsoleColorize == 'true'
             }
         }
-    }
+    };
 
     return config;
 };
