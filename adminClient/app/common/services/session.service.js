@@ -5,4 +5,4 @@ angular.module('AdminPortalApp.common')
             userInfo: null
         }
         return service;
-    })
+    });

@@ -29,7 +29,7 @@ var common		          = require('./common/common');
 var ROOT_DIR = __dirname + '/..';
 var CLIENT_DIR = ROOT_DIR + '/client';
 var APP_DIR = CLIENT_DIR + '/app';
-var ADMIN_CLIENT_DIR = ROOT_DIR + '/clientAdminPortal';
+var ADMIN_CLIENT_DIR = ROOT_DIR + '/adminClient';
 
 /** CREATE A GLOBAL VARIABLE JS FILE IN THE WEBAPP DIR **/
 GlobalVariableCreator.createGlobalVariables(env, CLIENT_DIR + '/app/globalVariables.js');
@@ -79,6 +79,9 @@ app.get('/*', function(req, res){
 
 app.listen(8081);
 log.info('	[RCSwebsite] Website listening on port ' + 8081);
+
+//app.listen(9999);
+//log.info('  [RCSadmin] Website listening on port ' + 9999);
 
 /** INIT API **/
 require('./api/server');
